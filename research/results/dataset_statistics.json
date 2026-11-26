@@ -1,0 +1,310 @@
+{
+  "cleaning": {
+    "dropped_missing_source_rows": [],
+    "dropped_same_project_and_label_duplicates": [
+      {
+        "kept_source_row": 498,
+        "removed_source_row": 503
+      }
+    ],
+    "rows_with_whitespace_changes": 189
+  },
+  "label_names": {
+    "A": "Availability",
+    "F": "Functional Requirement",
+    "FT": "Fault Tolerance",
+    "L": "Legal",
+    "LF": "Look-and-feel",
+    "MN": "Maintainability",
+    "O": "Operability",
+    "PE": "Performance",
+    "PO": "Portability",
+    "SC": "Scalability",
+    "SE": "Security",
+    "US": "Usability"
+  },
+  "processed": {
+    "binary_counts": {
+      "Functional": 444,
+      "Non-Functional": 524
+    },
+    "class_counts": {
+      "A": 31,
+      "F": 444,
+      "FT": 18,
+      "L": 15,
+      "LF": 49,
+      "MN": 24,
+      "O": 77,
+      "PE": 66,
+      "PO": 12,
+      "SC": 22,
+      "SE": 125,
+      "US": 85
+    },
+    "columns": [
+      "source_row",
+      "project_id",
+      "requirement_text",
+      "clean_text",
+      "original_label",
+      "label_name",
+      "binary_label"
+    ],
+    "projects": 47,
+    "projects_per_class": {
+      "A": 21,
+      "F": 27,
+      "FT": 10,
+      "L": 5,
+      "LF": 20,
+      "MN": 13,
+      "O": 23,
+      "PE": 22,
+      "PO": 9,
+      "SC": 8,
+      "SE": 33,
+      "US": 21
+    },
+    "requirements": 968,
+    "word_lengths": {
+      "maximum": 86,
+      "mean": 17.894628099173552,
+      "median": 15.0,
+      "minimum": 4
+    }
+  },
+  "raw": {
+    "binary_counts": {
+      "Functional": 444,
+      "Non-Functional": 525
+    },
+    "class_counts": {
+      "A": 31,
+      "F": 444,
+      "FT": 18,
+      "L": 15,
+      "LF": 49,
+      "MN": 24,
+      "O": 77,
+      "PE": 67,
+      "PO": 12,
+      "SC": 22,
+      "SE": 125,
+      "US": 85
+    },
+    "columns": [
+      "ProjectID",
+      "RequirementText",
+      "_class_"
+    ],
+    "exact_duplicate_text": {
+      "groups": 0,
+      "rows_beyond_first": 0
+    },
+    "missing_values": {
+      "ProjectID": 0,
+      "RequirementText": 0,
+      "_class_": 0
+    },
+    "projects": 47,
+    "requirements": 969,
+    "whitespace_normalized_duplicate_text": {
+      "groups": 1,
+      "rows_beyond_first": 1
+    },
+    "word_lengths": {
+      "maximum": 86,
+      "mean": 17.91434468524252,
+      "median": 15,
+      "minimum": 4
+    }
+  },
+  "source": {
+    "commit": "1f5dc4501a1956f21011083594d925bac49f198c",
+    "dataset": "PROMISE_exp",
+    "delimiter": ",",
+    "download_url": "https://raw.githubusercontent.com/AleksandarMitrevski/se-requirements-classification/1f5dc4501a1956f21011083594d925bac49f198c/1-exploratory-analysis/data/PROMISE_exp.csv",
+    "encoding": "UTF-8",
+    "label_reference": "https://github.com/AleksandarMitrevski/se-requirements-classification/blob/1f5dc4501a1956f21011083594d925bac49f198c/README.md#data-set-overview",
+    "path": "1-exploratory-analysis/data/PROMISE_exp.csv",
+    "repository": "https://github.com/AleksandarMitrevski/se-requirements-classification",
+    "sha256": "1b2cc33743588748ced7abd74a527e92f6f6d0dbe5342692cd2aa101e864f34f"
+  },
+  "splits": {
+    "project_aware": {
+      "clean_text_overlap": {
+        "train_vs_test": 0,
+        "train_vs_validation": 0,
+        "validation_vs_test": 0
+      },
+      "partitions": {
+        "test": {
+          "binary_counts": {
+            "Functional": 64,
+            "Non-Functional": 84
+          },
+          "class_counts": {
+            "A": 5,
+            "F": 64,
+            "FT": 4,
+            "L": 2,
+            "LF": 10,
+            "MN": 5,
+            "O": 8,
+            "PE": 7,
+            "PO": 1,
+            "SC": 3,
+            "SE": 20,
+            "US": 19
+          },
+          "percentage": 15.29,
+          "projects": 6,
+          "requirements": 148
+        },
+        "train": {
+          "binary_counts": {
+            "Functional": 304,
+            "Non-Functional": 373
+          },
+          "class_counts": {
+            "A": 22,
+            "F": 304,
+            "FT": 12,
+            "L": 10,
+            "LF": 36,
+            "MN": 18,
+            "O": 57,
+            "PE": 49,
+            "PO": 8,
+            "SC": 15,
+            "SE": 88,
+            "US": 58
+          },
+          "percentage": 69.94,
+          "projects": 33,
+          "requirements": 677
+        },
+        "validation": {
+          "binary_counts": {
+            "Functional": 76,
+            "Non-Functional": 67
+          },
+          "class_counts": {
+            "A": 4,
+            "F": 76,
+            "FT": 2,
+            "L": 3,
+            "LF": 3,
+            "MN": 1,
+            "O": 12,
+            "PE": 10,
+            "PO": 3,
+            "SC": 4,
+            "SE": 17,
+            "US": 8
+          },
+          "percentage": 14.77,
+          "projects": 8,
+          "requirements": 143
+        }
+      },
+      "project_overlap": {
+        "train_vs_test": 0,
+        "train_vs_validation": 0,
+        "validation_vs_test": 0
+      }
+    },
+    "project_aware_trials": 5000,
+    "row_stratified": {
+      "clean_text_overlap": {
+        "train_vs_test": 0,
+        "train_vs_validation": 0,
+        "validation_vs_test": 0
+      },
+      "partitions": {
+        "test": {
+          "binary_counts": {
+            "Functional": 66,
+            "Non-Functional": 77
+          },
+          "class_counts": {
+            "A": 4,
+            "F": 66,
+            "FT": 3,
+            "L": 2,
+            "LF": 7,
+            "MN": 3,
+            "O": 11,
+            "PE": 10,
+            "PO": 2,
+            "SC": 3,
+            "SE": 19,
+            "US": 13
+          },
+          "percentage": 14.77,
+          "projects": 37,
+          "requirements": 143
+        },
+        "train": {
+          "binary_counts": {
+            "Functional": 311,
+            "Non-Functional": 366
+          },
+          "class_counts": {
+            "A": 22,
+            "F": 311,
+            "FT": 12,
+            "L": 11,
+            "LF": 34,
+            "MN": 17,
+            "O": 54,
+            "PE": 46,
+            "PO": 8,
+            "SC": 16,
+            "SE": 87,
+            "US": 59
+          },
+          "percentage": 69.94,
+          "projects": 45,
+          "requirements": 677
+        },
+        "validation": {
+          "binary_counts": {
+            "Functional": 67,
+            "Non-Functional": 81
+          },
+          "class_counts": {
+            "A": 5,
+            "F": 67,
+            "FT": 3,
+            "L": 2,
+            "LF": 8,
+            "MN": 4,
+            "O": 12,
+            "PE": 10,
+            "PO": 2,
+            "SC": 3,
+            "SE": 19,
+            "US": 13
+          },
+          "percentage": 15.29,
+          "projects": 43,
+          "requirements": 148
+        }
+      },
+      "project_overlap": {
+        "train_vs_test": 37,
+        "train_vs_validation": 41,
+        "validation_vs_test": 35
+      }
+    },
+    "seed": 42,
+    "selected_method": "project_aware",
+    "target_percentages": {
+      "test": 15,
+      "train": 70,
+      "validation": 15
+    }
+  }
+}

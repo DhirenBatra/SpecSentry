@@ -53,6 +53,12 @@ model_weights/
 *.safetensors
 *.tflite
 
+# Local PROMISE_exp downloads and generated datasets
+/ml/data/raw/*
+!/ml/data/raw/.gitkeep
+/ml/data/processed/*
+!/ml/data/processed/.gitkeep
+
 # Temporary, editor, and OS-generated files
 tmp/
 temp/

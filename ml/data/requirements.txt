@@ -1,0 +1,14 @@
+# Matplotlib is used for the three report figures. CSV processing uses the standard library.
+matplotlib==3.11.2
+
+# Matplotlib dependencies resolved with Python 3.12
+contourpy==1.4.0
+cycler==0.12.1
+fonttools==4.69.1
+kiwisolver==1.5.1
+numpy==2.5.5
+packaging==26.4
+pillow==13.0.0
+pyparsing==3.3.3
+python-dateutil==4.0.0
+tzdata==2026.6

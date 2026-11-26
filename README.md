@@ -4,7 +4,17 @@ SpecSentry is a final-year Computational Linguistics and NLP lab project for rev
 
 ## Current status
 
-Phase 1 provides the local full-stack foundation. The React landing page calls the FastAPI health endpoint and displays the connection status. FastAPI serves interactive API documentation. Requirement analysis starts in Phase 2.
+- Phase 1 — Complete. The React landing page checks the local FastAPI service and links to its API documentation.
+- Phase 2 — Complete. The PROMISE_exp pipeline prepares and verifies the data for binary and multiclass requirement classification. Model training begins in Phase 3.
+
+## Dataset
+
+```text
+PROMISE_exp → download → validation → cleaning → processed dataset
+            → train / validation / test → Phase 3 model training
+```
+
+The pinned PROMISE_exp CSV contains 969 requirements from 47 project IDs. Conservative cleaning yields 968 requirements, and the split keeps each project in one partition. The [dataset documentation](ml/data/README.md) covers provenance, labels, split evaluation, and reproduction commands.
 
 ## Planned architecture
 
@@ -20,6 +30,7 @@ The NLP pipeline will detect ambiguous requirements, identify semantic duplicate
 - Frontend — React, Vite, Tailwind CSS 4 via the Vite plugin, and ESLint
 - Backend — Python, FastAPI, Pydantic, and Uvicorn
 - Tests — pytest, FastAPI TestClient, and HTTPX2
+- Dataset pipeline — Python standard library and Matplotlib for report figures
 
 ```text
 SpecSentry/
@@ -89,7 +100,7 @@ The default setup works without environment variables. To override the API URL, 
 
 ## Next phases
 
-1. Add SRS input and requirement extraction. Prepare annotated data and define evaluation metrics.
-2. Implement and evaluate ambiguity detection, semantic duplicate detection, contradiction detection, and type classification.
+1. Train and evaluate binary and multiclass requirement classifiers on the Phase 2 splits.
+2. Add SRS input and requirement extraction. Prepare separate datasets and evaluation plans for ambiguity, semantic duplicate, and contradiction detection.
 3. Add a requirement explorer and a quality report that links findings back to the SRS.
 4. Add optional LLM explanations and rewrite suggestions for findings from the NLP pipeline.
