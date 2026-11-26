@@ -11,6 +11,7 @@ SpecSentry is a final-year Computational Linguistics and NLP lab project for rev
 - Phase 5 — Complete. An interpretable rule-based ambiguity detector was evaluated on a separate curated set.
 - Phase 6 — Complete. TF-IDF and SBERT duplicate detectors were evaluated using development-only cutoffs.
 - Phase 7 — Complete. A frozen NLI contradiction detector was compared with conservative conflict rules.
+- Phase 8 — Complete. FastAPI exposes the unified analysis engine with per-requirement evidence and a document quality score.
 
 ## Dataset
 
@@ -89,6 +90,12 @@ A frozen `cross-encoder/nli-MiniLM2-L6-H768` model and a rule baseline were eval
 
 NLI found all 20 held-out contradictions and falsely flagged seven neutral pairs. The rules flagged five contradictions with zero false positives. [Dataset design](ml/data/contradictions/README.md) · [Experiment, error analysis, and figures](ml/experiments/CONTRADICTIONS.md)
 
+## Unified analysis API
+
+`POST /api/analyze` accepts 1–20 text requirements with unique IDs. It uses the saved Phase 3 classifiers, Phase 5 ambiguity rules, frozen SBERT cutoff, and forward NLI argmax. The response includes ambiguity spans, pair evidence, a 0–100 quality score, and its penalty breakdown.
+
+The real CPU demo returned HTTP 200 for 11 requirements in 20.243 seconds, including first-request model loading. It reported one ambiguous requirement, two potential duplicate pairs, and 17 potential contradiction pairs. [API setup, request examples, and scoring formula](backend/ANALYSIS_API.md) · [Recorded smoke result](research/results/analysis_api_smoke_results.json)
+
 ## Planned architecture
 
 ```text
@@ -114,11 +121,11 @@ SpecSentry/
 │   └── src/                 # Landing page, components, and API service
 ├── backend/
 │   ├── app/
-│   │   ├── api/             # HTTP routes
+│   │   ├── api/             # Health and analysis routes
 │   │   ├── core/            # Local configuration
 │   │   ├── nlp/             # Standalone ambiguity, duplicate, and contradiction detectors
 │   │   ├── schemas/         # Pydantic response models
-│   │   ├── services/        # Reserved for services such as SRS ingestion
+│   │   ├── services/        # Analysis orchestration and model loading
 │   │   └── main.py
 │   ├── tests/
 │   └── requirements.txt
@@ -132,6 +139,8 @@ SpecSentry/
 ## Run locally
 
 Use Python 3.12 and Node.js 24 LTS. Start each service in a separate terminal from the repository root.
+
+For `POST /api/analyze`, install the combined backend and ML dependencies and restore the original local Phase 3 artifacts. [Analysis API setup and demo](backend/ANALYSIS_API.md)
 
 ### Backend
 

@@ -1,0 +1,15 @@
+{
+  "requirements": [
+    {"id": "R01", "text": "The interface should load quickly and be intuitive."},
+    {"id": "R02", "text": "The system shall email a receipt to the customer after every successful payment."},
+    {"id": "R03", "text": "After each successful payment, the customer must receive a receipt by email."},
+    {"id": "R04", "text": "The system must retain each audit log for at least 90 days after creation."},
+    {"id": "R05", "text": "The system must permanently delete each audit log no later than 30 days after creation."},
+    {"id": "R06", "text": "The application shall return search results within 2 seconds for queries matching up to 100 records."},
+    {"id": "R07", "text": "The system shall encrypt all customer records stored in the database."},
+    {"id": "R08", "text": "The production service shall be available for 99.9 percent of each calendar month."},
+    {"id": "R09", "text": "If an export fails, the system shall record an error code and notify the operator."},
+    {"id": "R10", "text": "The search screen shall support keyboard navigation between every control."},
+    {"id": "R11", "text": "The application shall run without code changes on Windows 11 and Ubuntu 24.04."}
+  ]
+}

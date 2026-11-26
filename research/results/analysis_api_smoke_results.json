@@ -1,0 +1,25 @@
+{
+  "demo": "examples/analyze_demo.json",
+  "demo_sha256": "7b4a563b09c83380f5e9c872d0a6e1299176dc5129685fa814439f1fc3cd9a5c",
+  "http_status": 200,
+  "device": "cpu",
+  "cpu_threads": 4,
+  "elapsed_seconds": 20.243,
+  "timing": "First HTTP POST on a fresh local Uvicorn process, including model loading from local cache and inference.",
+  "summary": {
+    "total_requirements": 11,
+    "quality_score": 41.82,
+    "ambiguous_requirements": 1,
+    "potential_duplicate_pairs": 2,
+    "potential_contradiction_pairs": 17,
+    "requirements_in_duplicate_pairs": 4,
+    "requirements_in_contradiction_pairs": 10
+  },
+  "score_breakdown": {
+    "ambiguity_penalty": 1.82,
+    "duplicate_penalty": 10.91,
+    "contradiction_penalty": 45.45
+  },
+  "intended_duplicate_flagged": true,
+  "intended_contradiction_flagged": true
+}
