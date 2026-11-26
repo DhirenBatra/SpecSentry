@@ -5,7 +5,8 @@ SpecSentry is a final-year Computational Linguistics and NLP lab project for rev
 ## Current status
 
 - Phase 1 — Complete. The React landing page checks the local FastAPI service and links to its API documentation.
-- Phase 2 — Complete. The PROMISE_exp pipeline prepares and verifies the data for binary and multiclass requirement classification. Model training begins in Phase 3.
+- Phase 2 — Complete. The PROMISE_exp pipeline prepares and verifies the data for binary and multiclass requirement classification.
+- Phase 3 — Complete. Four classical classification pipelines were selected on validation and evaluated on the held-out test projects.
 
 ## Dataset
 
@@ -15,6 +16,25 @@ PROMISE_exp → download → validation → cleaning → processed dataset
 ```
 
 The pinned PROMISE_exp CSV contains 969 requirements from 47 project IDs. Conservative cleaning yields 968 requirements, and the split keeps each project in one partition. The [dataset documentation](ml/data/README.md) covers provenance, labels, split evaluation, and reproduction commands.
+
+## Classical classification baselines
+
+```text
+                         ┌─ Logistic Regression
+Requirement text → TF-IDF
+                         └─ Linear SVM
+```
+
+Each classifier was evaluated for Functional vs Non-Functional and for the original 12 PROMISE_exp categories. The pipelines fit on 677 training rows, used 143 validation rows for selection by macro F1, and reported final results on 148 test rows. Bold marks the validation winner for each task.
+
+| Task | Classifier | Validation macro F1 | Test accuracy | Test macro precision | Test macro recall | Test macro F1 | Test weighted F1 |
+| --- | --- | ---: | ---: | ---: | ---: | ---: | ---: |
+| Binary | **Logistic Regression** | 0.8094 | 0.8716 | 0.8750 | 0.8813 | 0.8713 | 0.8722 |
+| Binary | Linear SVM | 0.7864 | 0.8581 | 0.8549 | 0.8583 | 0.8562 | 0.8584 |
+| Multiclass | Logistic Regression | 0.6165 | 0.5946 | 0.3665 | 0.3469 | 0.3449 | 0.5786 |
+| Multiclass | **Linear SVM** | 0.6514 | 0.7230 | 0.4803 | 0.4484 | 0.4550 | 0.7037 |
+
+The test set has one Portability example, which both multiclass pipelines missed. See the [experiment guide](ml/experiments/README.md) for the rerun command, configurations, error analysis, and figures.
 
 ## Planned architecture
 
@@ -31,6 +51,7 @@ The NLP pipeline will detect ambiguous requirements, identify semantic duplicate
 - Backend — Python, FastAPI, Pydantic, and Uvicorn
 - Tests — pytest, FastAPI TestClient, and HTTPX2
 - Dataset pipeline — Python standard library and Matplotlib for report figures
+- Classical NLP baselines — scikit-learn and joblib
 
 ```text
 SpecSentry/
@@ -100,7 +121,6 @@ The default setup works without environment variables. To override the API URL, 
 
 ## Next phases
 
-1. Train and evaluate binary and multiclass requirement classifiers on the Phase 2 splits.
-2. Add SRS input and requirement extraction. Prepare separate datasets and evaluation plans for ambiguity, semantic duplicate, and contradiction detection.
-3. Add a requirement explorer and a quality report that links findings back to the SRS.
-4. Add optional LLM explanations and rewrite suggestions for findings from the NLP pipeline.
+1. Add SRS input and requirement extraction. Prepare separate datasets and evaluation plans for ambiguity, semantic duplicate, and contradiction detection.
+2. Add a requirement explorer and a quality report that links findings back to the SRS.
+3. Add optional LLM explanations and rewrite suggestions for findings from the NLP pipeline.

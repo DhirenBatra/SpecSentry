@@ -1,0 +1,2046 @@
+{
+  "seed": 42,
+  "compute_threads": 1,
+  "versions": {
+    "python": "3.12.10",
+    "scikit-learn": "1.9.1",
+    "scipy": "1.18.1",
+    "numpy": "2.5.5",
+    "joblib": "1.6.0",
+    "threadpoolctl": "3.8.0",
+    "matplotlib": "3.11.2"
+  },
+  "dataset": {
+    "name": "PROMISE_exp",
+    "phase2_commit": "9df2a9373b5481fec522f0b9a70781f4f0331741",
+    "splits": {
+      "train": {
+        "rows": 677,
+        "sha256": "353b6fc002713a08fbe503c592bf7d513767102f224901a2fa2fbc6ed2d82c10"
+      },
+      "validation": {
+        "rows": 143,
+        "sha256": "ce1a5f6c48900dd73813c66eb9a241742b4422ae1fff70ca52eab2ea65aeb2d1"
+      },
+      "test": {
+        "rows": 148,
+        "sha256": "363996f48f77606b8fa8dfb55eab98a2c21105586646a253f32e93fe4be4c039"
+      }
+    },
+    "test_projects": 6,
+    "portability_test_examples": 1
+  },
+  "selection": {
+    "metric": "macro_f1",
+    "fit_split": "train",
+    "selection_split": "validation",
+    "evaluation_split": "test",
+    "tie_break": "First candidate (or algorithm for task ranking) in the declared order.",
+    "validation_candidates_per_algorithm_task": 16
+  },
+  "error_records": "research/results/classification_test_errors.csv",
+  "tasks": {
+    "binary": {
+      "target_column": "binary_label",
+      "best_by_validation": "logistic_regression",
+      "models": {
+        "logistic_regression": {
+          "task": "binary",
+          "algorithm": "Logistic Regression",
+          "selected_hyperparameters": {
+            "tfidf__ngram_range": [
+              1,
+              2
+            ],
+            "tfidf__min_df": 2,
+            "tfidf__sublinear_tf": true,
+            "classifier__C": 1.0,
+            "classifier__class_weight": "balanced"
+          },
+          "fixed_parameters": {
+            "tfidf": {
+              "lowercase": false,
+              "strip_accents": null,
+              "token_pattern": "\\w+|[^\\w\\s]",
+              "stop_words": null,
+              "norm": "l2",
+              "use_idf": true,
+              "smooth_idf": true
+            },
+            "classifier": {
+              "solver": "lbfgs",
+              "max_iter": 1000,
+              "random_state": 42
+            }
+          },
+          "training_count": 677,
+          "labels": [
+            "Functional",
+            "Non-Functional"
+          ],
+          "label_names": {
+            "Functional": "Functional",
+            "Non-Functional": "Non-Functional"
+          },
+          "validation_macro_f1": 0.8093615760628055,
+          "test_metrics": {
+            "accuracy": 0.8716216216216216,
+            "macro_precision": 0.8749771355405158,
+            "macro_recall": 0.8813244047619048,
+            "macro_f1": 0.8713337908945322,
+            "weighted_f1": 0.872156164400502
+          },
+          "artifact": "ml/artifacts/binary_logistic_regression.joblib",
+          "artifact_bytes": 43870,
+          "artifact_sha256": "5b6ffcac3cd89298f6cbefac9d8badefd0062100b3d3ab2e9b96a44493510cad",
+          "dataset_train_sha256": "353b6fc002713a08fbe503c592bf7d513767102f224901a2fa2fbc6ed2d82c10",
+          "versions": {
+            "python": "3.12.10",
+            "scikit-learn": "1.9.1",
+            "scipy": "1.18.1",
+            "numpy": "2.5.5",
+            "joblib": "1.6.0",
+            "threadpoolctl": "3.8.0",
+            "matplotlib": "3.11.2"
+          },
+          "classification_report": {
+            "Functional": {
+              "precision": 0.7922077922077922,
+              "recall": 0.953125,
+              "f1-score": 0.8652482269503546,
+              "support": 64.0
+            },
+            "Non-Functional": {
+              "precision": 0.9577464788732394,
+              "recall": 0.8095238095238095,
+              "f1-score": 0.8774193548387097,
+              "support": 84.0
+            },
+            "accuracy": 0.8716216216216216,
+            "macro avg": {
+              "precision": 0.8749771355405158,
+              "recall": 0.8813244047619048,
+              "f1-score": 0.8713337908945322,
+              "support": 148.0
+            },
+            "weighted avg": {
+              "precision": 0.8861621819368299,
+              "recall": 0.8716216216216216,
+              "f1-score": 0.872156164400502,
+              "support": 148.0
+            }
+          },
+          "confusion_matrix": {
+            "label_order": [
+              "Functional",
+              "Non-Functional"
+            ],
+            "counts": [
+              [
+                61,
+                3
+              ],
+              [
+                16,
+                68
+              ]
+            ]
+          },
+          "error_summary": {
+            "incorrect_predictions": 19,
+            "most_frequent_confusions": [
+              {
+                "true_label": "Non-Functional",
+                "predicted_label": "Functional",
+                "count": 16
+              },
+              {
+                "true_label": "Functional",
+                "predicted_label": "Non-Functional",
+                "count": 3
+              }
+            ],
+            "worst_f1_classes": {
+              "Functional": {
+                "precision": 0.7922077922077922,
+                "recall": 0.953125,
+                "f1-score": 0.8652482269503546,
+                "support": 64.0
+              }
+            },
+            "classes_with_at_most_five_test_examples": {}
+          },
+          "metadata": "ml/artifacts/binary_logistic_regression.metadata.json",
+          "validation_search": [
+            {
+              "parameters": {
+                "tfidf__ngram_range": [
+                  1,
+                  1
+                ],
+                "tfidf__min_df": 1,
+                "tfidf__sublinear_tf": false,
+                "classifier__C": 1.0,
+                "classifier__class_weight": null
+              },
+              "validation_macro_f1": 0.6812833670243094
+            },
+            {
+              "parameters": {
+                "tfidf__ngram_range": [
+                  1,
+                  1
+                ],
+                "tfidf__min_df": 1,
+                "tfidf__sublinear_tf": false,
+                "classifier__C": 1.0,
+                "classifier__class_weight": "balanced"
+              },
+              "validation_macro_f1": 0.778891715297521
+            },
+            {
+              "parameters": {
+                "tfidf__ngram_range": [
+                  1,
+                  1
+                ],
+                "tfidf__min_df": 1,
+                "tfidf__sublinear_tf": false,
+                "classifier__C": 4.0,
+                "classifier__class_weight": null
+              },
+              "validation_macro_f1": 0.7082823337413301
+            },
+            {
+              "parameters": {
+                "tfidf__ngram_range": [
+                  1,
+                  1
+                ],
+                "tfidf__min_df": 1,
+                "tfidf__sublinear_tf": false,
+                "classifier__C": 4.0,
+                "classifier__class_weight": "balanced"
+              },
+              "validation_macro_f1": 0.7481507573089117
+            },
+            {
+              "parameters": {
+                "tfidf__ngram_range": [
+                  1,
+                  2
+                ],
+                "tfidf__min_df": 1,
+                "tfidf__sublinear_tf": false,
+                "classifier__C": 1.0,
+                "classifier__class_weight": null
+              },
+              "validation_macro_f1": 0.7468770545693623
+            },
+            {
+              "parameters": {
+                "tfidf__ngram_range": [
+                  1,
+                  2
+                ],
+                "tfidf__min_df": 1,
+                "tfidf__sublinear_tf": false,
+                "classifier__C": 1.0,
+                "classifier__class_weight": "balanced"
+              },
+              "validation_macro_f1": 0.8087951270242164
+            },
+            {
+              "parameters": {
+                "tfidf__ngram_range": [
+                  1,
+                  2
+                ],
+                "tfidf__min_df": 1,
+                "tfidf__sublinear_tf": false,
+                "classifier__C": 4.0,
+                "classifier__class_weight": null
+              },
+              "validation_macro_f1": 0.7636363636363637
+            },
+            {
+              "parameters": {
+                "tfidf__ngram_range": [
+                  1,
+                  2
+                ],
+                "tfidf__min_df": 1,
+                "tfidf__sublinear_tf": false,
+                "classifier__C": 4.0,
+                "classifier__class_weight": "balanced"
+              },
+              "validation_macro_f1": 0.8013888888888889
+            },
+            {
+              "parameters": {
+                "tfidf__ngram_range": [
+                  1,
+                  2
+                ],
+                "tfidf__min_df": 2,
+                "tfidf__sublinear_tf": false,
+                "classifier__C": 1.0,
+                "classifier__class_weight": null
+              },
+              "validation_macro_f1": 0.7324128862590401
+            },
+            {
+              "parameters": {
+                "tfidf__ngram_range": [
+                  1,
+                  2
+                ],
+                "tfidf__min_df": 2,
+                "tfidf__sublinear_tf": false,
+                "classifier__C": 1.0,
+                "classifier__class_weight": "balanced"
+              },
+              "validation_macro_f1": 0.8020174050632911
+            },
+            {
+              "parameters": {
+                "tfidf__ngram_range": [
+                  1,
+                  2
+                ],
+                "tfidf__min_df": 2,
+                "tfidf__sublinear_tf": false,
+                "classifier__C": 4.0,
+                "classifier__class_weight": null
+              },
+              "validation_macro_f1": 0.7481507573089117
+            },
+            {
+              "parameters": {
+                "tfidf__ngram_range": [
+                  1,
+                  2
+                ],
+                "tfidf__min_df": 2,
+                "tfidf__sublinear_tf": false,
+                "classifier__C": 4.0,
+                "classifier__class_weight": "balanced"
+              },
+              "validation_macro_f1": 0.7872023809523809
+            },
+            {
+              "parameters": {
+                "tfidf__ngram_range": [
+                  1,
+                  2
+                ],
+                "tfidf__min_df": 2,
+                "tfidf__sublinear_tf": true,
+                "classifier__C": 1.0,
+                "classifier__class_weight": null
+              },
+              "validation_macro_f1": 0.7403147699757869
+            },
+            {
+              "parameters": {
+                "tfidf__ngram_range": [
+                  1,
+                  2
+                ],
+                "tfidf__min_df": 2,
+                "tfidf__sublinear_tf": true,
+                "classifier__C": 1.0,
+                "classifier__class_weight": "balanced"
+              },
+              "validation_macro_f1": 0.8093615760628055
+            },
+            {
+              "parameters": {
+                "tfidf__ngram_range": [
+                  1,
+                  2
+                ],
+                "tfidf__min_df": 2,
+                "tfidf__sublinear_tf": true,
+                "classifier__C": 4.0,
+                "classifier__class_weight": null
+              },
+              "validation_macro_f1": 0.7415662650602409
+            },
+            {
+              "parameters": {
+                "tfidf__ngram_range": [
+                  1,
+                  2
+                ],
+                "tfidf__min_df": 2,
+                "tfidf__sublinear_tf": true,
+                "classifier__C": 4.0,
+                "classifier__class_weight": "balanced"
+              },
+              "validation_macro_f1": 0.7722023098367184
+            }
+          ]
+        },
+        "linear_svm": {
+          "task": "binary",
+          "algorithm": "Linear SVM",
+          "selected_hyperparameters": {
+            "tfidf__ngram_range": [
+              1,
+              2
+            ],
+            "tfidf__min_df": 1,
+            "tfidf__sublinear_tf": false,
+            "classifier__C": 0.5,
+            "classifier__class_weight": "balanced"
+          },
+          "fixed_parameters": {
+            "tfidf": {
+              "lowercase": false,
+              "strip_accents": null,
+              "token_pattern": "\\w+|[^\\w\\s]",
+              "stop_words": null,
+              "norm": "l2",
+              "use_idf": true,
+              "smooth_idf": true
+            },
+            "classifier": {
+              "dual": "auto",
+              "max_iter": 10000,
+              "random_state": 42
+            }
+          },
+          "training_count": 677,
+          "labels": [
+            "Functional",
+            "Non-Functional"
+          ],
+          "label_names": {
+            "Functional": "Functional",
+            "Non-Functional": "Non-Functional"
+          },
+          "validation_macro_f1": 0.7864396654719235,
+          "test_metrics": {
+            "accuracy": 0.8581081081081081,
+            "macro_precision": 0.8548922056384742,
+            "macro_recall": 0.8582589285714286,
+            "macro_f1": 0.8562109646079111,
+            "weighted_f1": 0.8584428981375546
+          },
+          "artifact": "ml/artifacts/binary_linear_svm.joblib",
+          "artifact_bytes": 115027,
+          "artifact_sha256": "47b8523cd02fc4ed503b3f7cc1fc16cc02e653938048069c9e7c34ff1c84b4d3",
+          "dataset_train_sha256": "353b6fc002713a08fbe503c592bf7d513767102f224901a2fa2fbc6ed2d82c10",
+          "versions": {
+            "python": "3.12.10",
+            "scikit-learn": "1.9.1",
+            "scipy": "1.18.1",
+            "numpy": "2.5.5",
+            "joblib": "1.6.0",
+            "threadpoolctl": "3.8.0",
+            "matplotlib": "3.11.2"
+          },
+          "classification_report": {
+            "Functional": {
+              "precision": 0.8208955223880597,
+              "recall": 0.859375,
+              "f1-score": 0.8396946564885496,
+              "support": 64.0
+            },
+            "Non-Functional": {
+              "precision": 0.8888888888888888,
+              "recall": 0.8571428571428571,
+              "f1-score": 0.8727272727272727,
+              "support": 84.0
+            },
+            "accuracy": 0.8581081081081081,
+            "macro avg": {
+              "precision": 0.8548922056384742,
+              "recall": 0.8582589285714286,
+              "f1-score": 0.8562109646079111,
+              "support": 148.0
+            },
+            "weighted avg": {
+              "precision": 0.8594863520236654,
+              "recall": 0.8581081081081081,
+              "f1-score": 0.8584428981375546,
+              "support": 148.0
+            }
+          },
+          "confusion_matrix": {
+            "label_order": [
+              "Functional",
+              "Non-Functional"
+            ],
+            "counts": [
+              [
+                55,
+                9
+              ],
+              [
+                12,
+                72
+              ]
+            ]
+          },
+          "error_summary": {
+            "incorrect_predictions": 21,
+            "most_frequent_confusions": [
+              {
+                "true_label": "Non-Functional",
+                "predicted_label": "Functional",
+                "count": 12
+              },
+              {
+                "true_label": "Functional",
+                "predicted_label": "Non-Functional",
+                "count": 9
+              }
+            ],
+            "worst_f1_classes": {
+              "Functional": {
+                "precision": 0.8208955223880597,
+                "recall": 0.859375,
+                "f1-score": 0.8396946564885496,
+                "support": 64.0
+              }
+            },
+            "classes_with_at_most_five_test_examples": {}
+          },
+          "metadata": "ml/artifacts/binary_linear_svm.metadata.json",
+          "validation_search": [
+            {
+              "parameters": {
+                "tfidf__ngram_range": [
+                  1,
+                  1
+                ],
+                "tfidf__min_df": 1,
+                "tfidf__sublinear_tf": false,
+                "classifier__C": 0.5,
+                "classifier__class_weight": null
+              },
+              "validation_macro_f1": 0.7000869609698706
+            },
+            {
+              "parameters": {
+                "tfidf__ngram_range": [
+                  1,
+                  1
+                ],
+                "tfidf__min_df": 1,
+                "tfidf__sublinear_tf": false,
+                "classifier__C": 0.5,
+                "classifier__class_weight": "balanced"
+              },
+              "validation_macro_f1": 0.7244421906693712
+            },
+            {
+              "parameters": {
+                "tfidf__ngram_range": [
+                  1,
+                  1
+                ],
+                "tfidf__min_df": 1,
+                "tfidf__sublinear_tf": false,
+                "classifier__C": 2.0,
+                "classifier__class_weight": null
+              },
+              "validation_macro_f1": 0.6936964504283966
+            },
+            {
+              "parameters": {
+                "tfidf__ngram_range": [
+                  1,
+                  1
+                ],
+                "tfidf__min_df": 1,
+                "tfidf__sublinear_tf": false,
+                "classifier__C": 2.0,
+                "classifier__class_weight": "balanced"
+              },
+              "validation_macro_f1": 0.70185608949911
+            },
+            {
+              "parameters": {
+                "tfidf__ngram_range": [
+                  1,
+                  2
+                ],
+                "tfidf__min_df": 1,
+                "tfidf__sublinear_tf": false,
+                "classifier__C": 0.5,
+                "classifier__class_weight": null
+              },
+              "validation_macro_f1": 0.7712914834066373
+            },
+            {
+              "parameters": {
+                "tfidf__ngram_range": [
+                  1,
+                  2
+                ],
+                "tfidf__min_df": 1,
+                "tfidf__sublinear_tf": false,
+                "classifier__C": 0.5,
+                "classifier__class_weight": "balanced"
+              },
+              "validation_macro_f1": 0.7864396654719235
+            },
+            {
+              "parameters": {
+                "tfidf__ngram_range": [
+                  1,
+                  2
+                ],
+                "tfidf__min_df": 1,
+                "tfidf__sublinear_tf": false,
+                "classifier__C": 2.0,
+                "classifier__class_weight": null
+              },
+              "validation_macro_f1": 0.7481507573089117
+            },
+            {
+              "parameters": {
+                "tfidf__ngram_range": [
+                  1,
+                  2
+                ],
+                "tfidf__min_df": 1,
+                "tfidf__sublinear_tf": false,
+                "classifier__C": 2.0,
+                "classifier__class_weight": "balanced"
+              },
+              "validation_macro_f1": 0.7415662650602409
+            },
+            {
+              "parameters": {
+                "tfidf__ngram_range": [
+                  1,
+                  2
+                ],
+                "tfidf__min_df": 2,
+                "tfidf__sublinear_tf": false,
+                "classifier__C": 0.5,
+                "classifier__class_weight": null
+              },
+              "validation_macro_f1": 0.7415662650602409
+            },
+            {
+              "parameters": {
+                "tfidf__ngram_range": [
+                  1,
+                  2
+                ],
+                "tfidf__min_df": 2,
+                "tfidf__sublinear_tf": false,
+                "classifier__C": 0.5,
+                "classifier__class_weight": "balanced"
+              },
+              "validation_macro_f1": 0.7722023098367184
+            },
+            {
+              "parameters": {
+                "tfidf__ngram_range": [
+                  1,
+                  2
+                ],
+                "tfidf__min_df": 2,
+                "tfidf__sublinear_tf": false,
+                "classifier__C": 2.0,
+                "classifier__class_weight": null
+              },
+              "validation_macro_f1": 0.7415662650602409
+            },
+            {
+              "parameters": {
+                "tfidf__ngram_range": [
+                  1,
+                  2
+                ],
+                "tfidf__min_df": 2,
+                "tfidf__sublinear_tf": false,
+                "classifier__C": 2.0,
+                "classifier__class_weight": "balanced"
+              },
+              "validation_macro_f1": 0.742702918832467
+            },
+            {
+              "parameters": {
+                "tfidf__ngram_range": [
+                  1,
+                  2
+                ],
+                "tfidf__min_df": 2,
+                "tfidf__sublinear_tf": true,
+                "classifier__C": 0.5,
+                "classifier__class_weight": null
+              },
+              "validation_macro_f1": 0.7258878127522195
+            },
+            {
+              "parameters": {
+                "tfidf__ngram_range": [
+                  1,
+                  2
+                ],
+                "tfidf__min_df": 2,
+                "tfidf__sublinear_tf": true,
+                "classifier__C": 0.5,
+                "classifier__class_weight": "balanced"
+              },
+              "validation_macro_f1": 0.7415662650602409
+            },
+            {
+              "parameters": {
+                "tfidf__ngram_range": [
+                  1,
+                  2
+                ],
+                "tfidf__min_df": 2,
+                "tfidf__sublinear_tf": true,
+                "classifier__C": 2.0,
+                "classifier__class_weight": null
+              },
+              "validation_macro_f1": 0.7493112947658402
+            },
+            {
+              "parameters": {
+                "tfidf__ngram_range": [
+                  1,
+                  2
+                ],
+                "tfidf__min_df": 2,
+                "tfidf__sublinear_tf": true,
+                "classifier__C": 2.0,
+                "classifier__class_weight": "balanced"
+              },
+              "validation_macro_f1": 0.7569972011195523
+            }
+          ]
+        }
+      },
+      "figures": [
+        "binary_logistic_regression_confusion_matrix.png",
+        "binary_linear_svm_confusion_matrix.png",
+        "binary_model_comparison.png"
+      ]
+    },
+    "multiclass": {
+      "target_column": "original_label",
+      "best_by_validation": "linear_svm",
+      "models": {
+        "logistic_regression": {
+          "task": "multiclass",
+          "algorithm": "Logistic Regression",
+          "selected_hyperparameters": {
+            "tfidf__ngram_range": [
+              1,
+              1
+            ],
+            "tfidf__min_df": 1,
+            "tfidf__sublinear_tf": false,
+            "classifier__C": 4.0,
+            "classifier__class_weight": "balanced"
+          },
+          "fixed_parameters": {
+            "tfidf": {
+              "lowercase": false,
+              "strip_accents": null,
+              "token_pattern": "\\w+|[^\\w\\s]",
+              "stop_words": null,
+              "norm": "l2",
+              "use_idf": true,
+              "smooth_idf": true
+            },
+            "classifier": {
+              "solver": "lbfgs",
+              "max_iter": 1000,
+              "random_state": 42
+            }
+          },
+          "training_count": 677,
+          "labels": [
+            "A",
+            "F",
+            "FT",
+            "L",
+            "LF",
+            "MN",
+            "O",
+            "PE",
+            "PO",
+            "SC",
+            "SE",
+            "US"
+          ],
+          "label_names": {
+            "A": "Availability",
+            "F": "Functional Requirement",
+            "FT": "Fault Tolerance",
+            "L": "Legal",
+            "LF": "Look-and-feel",
+            "MN": "Maintainability",
+            "O": "Operability",
+            "PE": "Performance",
+            "PO": "Portability",
+            "SC": "Scalability",
+            "SE": "Security",
+            "US": "Usability"
+          },
+          "validation_macro_f1": 0.616514134389388,
+          "test_metrics": {
+            "accuracy": 0.5945945945945946,
+            "macro_precision": 0.3665283312342136,
+            "macro_recall": 0.34687695802005014,
+            "macro_f1": 0.3449243331915966,
+            "weighted_f1": 0.5785609380273098
+          },
+          "artifact": "ml/artifacts/multiclass_logistic_regression.joblib",
+          "artifact_bytes": 173712,
+          "artifact_sha256": "9022e466536ec036f0b52718de426b44293ac5418178ab7c75e69886bf9546cc",
+          "dataset_train_sha256": "353b6fc002713a08fbe503c592bf7d513767102f224901a2fa2fbc6ed2d82c10",
+          "versions": {
+            "python": "3.12.10",
+            "scikit-learn": "1.9.1",
+            "scipy": "1.18.1",
+            "numpy": "2.5.5",
+            "joblib": "1.6.0",
+            "threadpoolctl": "3.8.0",
+            "matplotlib": "3.11.2"
+          },
+          "classification_report": {
+            "A": {
+              "precision": 0.5714285714285714,
+              "recall": 0.8,
+              "f1-score": 0.6666666666666666,
+              "support": 5.0
+            },
+            "F": {
+              "precision": 0.7162162162162162,
+              "recall": 0.828125,
+              "f1-score": 0.7681159420289855,
+              "support": 64.0
+            },
+            "FT": {
+              "precision": 0.25,
+              "recall": 0.25,
+              "f1-score": 0.25,
+              "support": 4.0
+            },
+            "L": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1-score": 0.0,
+              "support": 2.0
+            },
+            "LF": {
+              "precision": 0.36363636363636365,
+              "recall": 0.4,
+              "f1-score": 0.38095238095238093,
+              "support": 10.0
+            },
+            "MN": {
+              "precision": 0.5,
+              "recall": 0.2,
+              "f1-score": 0.2857142857142857,
+              "support": 5.0
+            },
+            "O": {
+              "precision": 0.25,
+              "recall": 0.375,
+              "f1-score": 0.3,
+              "support": 8.0
+            },
+            "PE": {
+              "precision": 0.5,
+              "recall": 0.2857142857142857,
+              "f1-score": 0.36363636363636365,
+              "support": 7.0
+            },
+            "PO": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1-score": 0.0,
+              "support": 1.0
+            },
+            "SC": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1-score": 0.0,
+              "support": 3.0
+            },
+            "SE": {
+              "precision": 0.6470588235294118,
+              "recall": 0.55,
+              "f1-score": 0.5945945945945946,
+              "support": 20.0
+            },
+            "US": {
+              "precision": 0.6,
+              "recall": 0.47368421052631576,
+              "f1-score": 0.5294117647058824,
+              "support": 19.0
+            },
+            "accuracy": 0.5945945945945946,
+            "macro avg": {
+              "precision": 0.3665283312342136,
+              "recall": 0.34687695802005014,
+              "f1-score": 0.3449243331915966,
+              "support": 148.0
+            },
+            "weighted avg": {
+              "precision": 0.5788683837968417,
+              "recall": 0.5945945945945946,
+              "f1-score": 0.5785609380273098,
+              "support": 148.0
+            }
+          },
+          "confusion_matrix": {
+            "label_order": [
+              "A",
+              "F",
+              "FT",
+              "L",
+              "LF",
+              "MN",
+              "O",
+              "PE",
+              "PO",
+              "SC",
+              "SE",
+              "US"
+            ],
+            "counts": [
+              [
+                4,
+                1,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                3,
+                53,
+                1,
+                0,
+                1,
+                0,
+                0,
+                0,
+                0,
+                0,
+                2,
+                4
+              ],
+              [
+                0,
+                0,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0,
+                0,
+                0,
+                0,
+                1
+              ],
+              [
+                0,
+                1,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                1,
+                0
+              ],
+              [
+                0,
+                4,
+                0,
+                0,
+                4,
+                0,
+                2,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                1,
+                2,
+                0,
+                0,
+                1,
+                0,
+                0,
+                0,
+                0,
+                1,
+                0
+              ],
+              [
+                0,
+                1,
+                0,
+                0,
+                1,
+                1,
+                3,
+                1,
+                0,
+                0,
+                0,
+                1
+              ],
+              [
+                0,
+                3,
+                0,
+                0,
+                0,
+                0,
+                1,
+                2,
+                0,
+                1,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                1,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                2,
+                0,
+                0,
+                0,
+                0,
+                1,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                5,
+                0,
+                0,
+                2,
+                0,
+                1,
+                1,
+                0,
+                0,
+                11,
+                0
+              ],
+              [
+                0,
+                3,
+                0,
+                0,
+                2,
+                0,
+                2,
+                0,
+                0,
+                1,
+                2,
+                9
+              ]
+            ]
+          },
+          "error_summary": {
+            "incorrect_predictions": 60,
+            "most_frequent_confusions": [
+              {
+                "true_label": "SE",
+                "predicted_label": "F",
+                "count": 5
+              },
+              {
+                "true_label": "F",
+                "predicted_label": "US",
+                "count": 4
+              },
+              {
+                "true_label": "LF",
+                "predicted_label": "F",
+                "count": 4
+              },
+              {
+                "true_label": "F",
+                "predicted_label": "A",
+                "count": 3
+              },
+              {
+                "true_label": "PE",
+                "predicted_label": "F",
+                "count": 3
+              }
+            ],
+            "worst_f1_classes": {
+              "L": {
+                "precision": 0.0,
+                "recall": 0.0,
+                "f1-score": 0.0,
+                "support": 2.0
+              },
+              "PO": {
+                "precision": 0.0,
+                "recall": 0.0,
+                "f1-score": 0.0,
+                "support": 1.0
+              },
+              "SC": {
+                "precision": 0.0,
+                "recall": 0.0,
+                "f1-score": 0.0,
+                "support": 3.0
+              }
+            },
+            "classes_with_at_most_five_test_examples": {
+              "A": {
+                "precision": 0.5714285714285714,
+                "recall": 0.8,
+                "f1-score": 0.6666666666666666,
+                "support": 5.0
+              },
+              "FT": {
+                "precision": 0.25,
+                "recall": 0.25,
+                "f1-score": 0.25,
+                "support": 4.0
+              },
+              "L": {
+                "precision": 0.0,
+                "recall": 0.0,
+                "f1-score": 0.0,
+                "support": 2.0
+              },
+              "MN": {
+                "precision": 0.5,
+                "recall": 0.2,
+                "f1-score": 0.2857142857142857,
+                "support": 5.0
+              },
+              "PO": {
+                "precision": 0.0,
+                "recall": 0.0,
+                "f1-score": 0.0,
+                "support": 1.0
+              },
+              "SC": {
+                "precision": 0.0,
+                "recall": 0.0,
+                "f1-score": 0.0,
+                "support": 3.0
+              }
+            }
+          },
+          "metadata": "ml/artifacts/multiclass_logistic_regression.metadata.json",
+          "validation_search": [
+            {
+              "parameters": {
+                "tfidf__ngram_range": [
+                  1,
+                  1
+                ],
+                "tfidf__min_df": 1,
+                "tfidf__sublinear_tf": false,
+                "classifier__C": 1.0,
+                "classifier__class_weight": null
+              },
+              "validation_macro_f1": 0.24618850065278633
+            },
+            {
+              "parameters": {
+                "tfidf__ngram_range": [
+                  1,
+                  1
+                ],
+                "tfidf__min_df": 1,
+                "tfidf__sublinear_tf": false,
+                "classifier__C": 1.0,
+                "classifier__class_weight": "balanced"
+              },
+              "validation_macro_f1": 0.5397313228711381
+            },
+            {
+              "parameters": {
+                "tfidf__ngram_range": [
+                  1,
+                  1
+                ],
+                "tfidf__min_df": 1,
+                "tfidf__sublinear_tf": false,
+                "classifier__C": 4.0,
+                "classifier__class_weight": null
+              },
+              "validation_macro_f1": 0.4404627387678235
+            },
+            {
+              "parameters": {
+                "tfidf__ngram_range": [
+                  1,
+                  1
+                ],
+                "tfidf__min_df": 1,
+                "tfidf__sublinear_tf": false,
+                "classifier__C": 4.0,
+                "classifier__class_weight": "balanced"
+              },
+              "validation_macro_f1": 0.616514134389388
+            },
+            {
+              "parameters": {
+                "tfidf__ngram_range": [
+                  1,
+                  2
+                ],
+                "tfidf__min_df": 1,
+                "tfidf__sublinear_tf": false,
+                "classifier__C": 1.0,
+                "classifier__class_weight": null
+              },
+              "validation_macro_f1": 0.221197556900381
+            },
+            {
+              "parameters": {
+                "tfidf__ngram_range": [
+                  1,
+                  2
+                ],
+                "tfidf__min_df": 1,
+                "tfidf__sublinear_tf": false,
+                "classifier__C": 1.0,
+                "classifier__class_weight": "balanced"
+              },
+              "validation_macro_f1": 0.5609535834535835
+            },
+            {
+              "parameters": {
+                "tfidf__ngram_range": [
+                  1,
+                  2
+                ],
+                "tfidf__min_df": 1,
+                "tfidf__sublinear_tf": false,
+                "classifier__C": 4.0,
+                "classifier__class_weight": null
+              },
+              "validation_macro_f1": 0.3718802165788935
+            },
+            {
+              "parameters": {
+                "tfidf__ngram_range": [
+                  1,
+                  2
+                ],
+                "tfidf__min_df": 1,
+                "tfidf__sublinear_tf": false,
+                "classifier__C": 4.0,
+                "classifier__class_weight": "balanced"
+              },
+              "validation_macro_f1": 0.575638528138528
+            },
+            {
+              "parameters": {
+                "tfidf__ngram_range": [
+                  1,
+                  2
+                ],
+                "tfidf__min_df": 2,
+                "tfidf__sublinear_tf": false,
+                "classifier__C": 1.0,
+                "classifier__class_weight": null
+              },
+              "validation_macro_f1": 0.2473577147490191
+            },
+            {
+              "parameters": {
+                "tfidf__ngram_range": [
+                  1,
+                  2
+                ],
+                "tfidf__min_df": 2,
+                "tfidf__sublinear_tf": false,
+                "classifier__C": 1.0,
+                "classifier__class_weight": "balanced"
+              },
+              "validation_macro_f1": 0.5243524792437836
+            },
+            {
+              "parameters": {
+                "tfidf__ngram_range": [
+                  1,
+                  2
+                ],
+                "tfidf__min_df": 2,
+                "tfidf__sublinear_tf": false,
+                "classifier__C": 4.0,
+                "classifier__class_weight": null
+              },
+              "validation_macro_f1": 0.4231027760973314
+            },
+            {
+              "parameters": {
+                "tfidf__ngram_range": [
+                  1,
+                  2
+                ],
+                "tfidf__min_df": 2,
+                "tfidf__sublinear_tf": false,
+                "classifier__C": 4.0,
+                "classifier__class_weight": "balanced"
+              },
+              "validation_macro_f1": 0.4569453399240633
+            },
+            {
+              "parameters": {
+                "tfidf__ngram_range": [
+                  1,
+                  2
+                ],
+                "tfidf__min_df": 2,
+                "tfidf__sublinear_tf": true,
+                "classifier__C": 1.0,
+                "classifier__class_weight": null
+              },
+              "validation_macro_f1": 0.2473577147490191
+            },
+            {
+              "parameters": {
+                "tfidf__ngram_range": [
+                  1,
+                  2
+                ],
+                "tfidf__min_df": 2,
+                "tfidf__sublinear_tf": true,
+                "classifier__C": 1.0,
+                "classifier__class_weight": "balanced"
+              },
+              "validation_macro_f1": 0.47457081953484836
+            },
+            {
+              "parameters": {
+                "tfidf__ngram_range": [
+                  1,
+                  2
+                ],
+                "tfidf__min_df": 2,
+                "tfidf__sublinear_tf": true,
+                "classifier__C": 4.0,
+                "classifier__class_weight": null
+              },
+              "validation_macro_f1": 0.418066536867914
+            },
+            {
+              "parameters": {
+                "tfidf__ngram_range": [
+                  1,
+                  2
+                ],
+                "tfidf__min_df": 2,
+                "tfidf__sublinear_tf": true,
+                "classifier__C": 4.0,
+                "classifier__class_weight": "balanced"
+              },
+              "validation_macro_f1": 0.4519541756937688
+            }
+          ]
+        },
+        "linear_svm": {
+          "task": "multiclass",
+          "algorithm": "Linear SVM",
+          "selected_hyperparameters": {
+            "tfidf__ngram_range": [
+              1,
+              2
+            ],
+            "tfidf__min_df": 1,
+            "tfidf__sublinear_tf": false,
+            "classifier__C": 0.5,
+            "classifier__class_weight": "balanced"
+          },
+          "fixed_parameters": {
+            "tfidf": {
+              "lowercase": false,
+              "strip_accents": null,
+              "token_pattern": "\\w+|[^\\w\\s]",
+              "stop_words": null,
+              "norm": "l2",
+              "use_idf": true,
+              "smooth_idf": true
+            },
+            "classifier": {
+              "dual": "auto",
+              "max_iter": 10000,
+              "random_state": 42
+            }
+          },
+          "training_count": 677,
+          "labels": [
+            "A",
+            "F",
+            "FT",
+            "L",
+            "LF",
+            "MN",
+            "O",
+            "PE",
+            "PO",
+            "SC",
+            "SE",
+            "US"
+          ],
+          "label_names": {
+            "A": "Availability",
+            "F": "Functional Requirement",
+            "FT": "Fault Tolerance",
+            "L": "Legal",
+            "LF": "Look-and-feel",
+            "MN": "Maintainability",
+            "O": "Operability",
+            "PE": "Performance",
+            "PO": "Portability",
+            "SC": "Scalability",
+            "SE": "Security",
+            "US": "Usability"
+          },
+          "validation_macro_f1": 0.6513854763854764,
+          "test_metrics": {
+            "accuracy": 0.722972972972973,
+            "macro_precision": 0.48027632090132083,
+            "macro_recall": 0.44837419068504597,
+            "macro_f1": 0.4550270522657476,
+            "weighted_f1": 0.7037177502707526
+          },
+          "artifact": "ml/artifacts/multiclass_linear_svm.joblib",
+          "artifact_bytes": 596294,
+          "artifact_sha256": "0f36b7311336e32287faf81d5e10ef914e4ed2de48da0de26773a9949ce4c33c",
+          "dataset_train_sha256": "353b6fc002713a08fbe503c592bf7d513767102f224901a2fa2fbc6ed2d82c10",
+          "versions": {
+            "python": "3.12.10",
+            "scikit-learn": "1.9.1",
+            "scipy": "1.18.1",
+            "numpy": "2.5.5",
+            "joblib": "1.6.0",
+            "threadpoolctl": "3.8.0",
+            "matplotlib": "3.11.2"
+          },
+          "classification_report": {
+            "A": {
+              "precision": 0.8333333333333334,
+              "recall": 1.0,
+              "f1-score": 0.9090909090909091,
+              "support": 5.0
+            },
+            "F": {
+              "precision": 0.8076923076923077,
+              "recall": 0.984375,
+              "f1-score": 0.8873239436619719,
+              "support": 64.0
+            },
+            "FT": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1-score": 0.0,
+              "support": 4.0
+            },
+            "L": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1-score": 0.0,
+              "support": 2.0
+            },
+            "LF": {
+              "precision": 0.5,
+              "recall": 0.5,
+              "f1-score": 0.5,
+              "support": 10.0
+            },
+            "MN": {
+              "precision": 0.6666666666666666,
+              "recall": 0.4,
+              "f1-score": 0.5,
+              "support": 5.0
+            },
+            "O": {
+              "precision": 0.36363636363636365,
+              "recall": 0.5,
+              "f1-score": 0.42105263157894735,
+              "support": 8.0
+            },
+            "PE": {
+              "precision": 0.6,
+              "recall": 0.42857142857142855,
+              "f1-score": 0.5,
+              "support": 7.0
+            },
+            "PO": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1-score": 0.0,
+              "support": 1.0
+            },
+            "SC": {
+              "precision": 0.3333333333333333,
+              "recall": 0.3333333333333333,
+              "f1-score": 0.3333333333333333,
+              "support": 3.0
+            },
+            "SE": {
+              "precision": 0.8461538461538461,
+              "recall": 0.55,
+              "f1-score": 0.6666666666666666,
+              "support": 20.0
+            },
+            "US": {
+              "precision": 0.8125,
+              "recall": 0.6842105263157895,
+              "f1-score": 0.7428571428571429,
+              "support": 19.0
+            },
+            "accuracy": 0.722972972972973,
+            "macro avg": {
+              "precision": 0.48027632090132083,
+              "recall": 0.44837419068504597,
+              "f1-score": 0.4550270522657476,
+              "support": 148.0
+            },
+            "weighted avg": {
+              "precision": 0.7071755103005103,
+              "recall": 0.722972972972973,
+              "f1-score": 0.7037177502707526,
+              "support": 148.0
+            }
+          },
+          "confusion_matrix": {
+            "label_order": [
+              "A",
+              "F",
+              "FT",
+              "L",
+              "LF",
+              "MN",
+              "O",
+              "PE",
+              "PO",
+              "SC",
+              "SE",
+              "US"
+            ],
+            "counts": [
+              [
+                5,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                63,
+                0,
+                0,
+                1,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                1,
+                0,
+                1,
+                0,
+                0,
+                1,
+                0,
+                1
+              ],
+              [
+                0,
+                1,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                1,
+                0
+              ],
+              [
+                0,
+                3,
+                0,
+                0,
+                5,
+                0,
+                2,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                1,
+                0,
+                2,
+                0,
+                0,
+                2,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                1,
+                0,
+                0,
+                0,
+                1,
+                4,
+                1,
+                0,
+                0,
+                0,
+                1
+              ],
+              [
+                0,
+                1,
+                1,
+                0,
+                0,
+                0,
+                1,
+                3,
+                0,
+                0,
+                0,
+                1
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                1,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                2,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                1,
+                0,
+                0
+              ],
+              [
+                0,
+                4,
+                0,
+                0,
+                3,
+                0,
+                1,
+                1,
+                0,
+                0,
+                11,
+                0
+              ],
+              [
+                0,
+                3,
+                0,
+                0,
+                0,
+                0,
+                1,
+                0,
+                0,
+                1,
+                1,
+                13
+              ]
+            ]
+          },
+          "error_summary": {
+            "incorrect_predictions": 41,
+            "most_frequent_confusions": [
+              {
+                "true_label": "SE",
+                "predicted_label": "F",
+                "count": 4
+              },
+              {
+                "true_label": "LF",
+                "predicted_label": "F",
+                "count": 3
+              },
+              {
+                "true_label": "SE",
+                "predicted_label": "LF",
+                "count": 3
+              },
+              {
+                "true_label": "US",
+                "predicted_label": "F",
+                "count": 3
+              },
+              {
+                "true_label": "LF",
+                "predicted_label": "O",
+                "count": 2
+              }
+            ],
+            "worst_f1_classes": {
+              "FT": {
+                "precision": 0.0,
+                "recall": 0.0,
+                "f1-score": 0.0,
+                "support": 4.0
+              },
+              "L": {
+                "precision": 0.0,
+                "recall": 0.0,
+                "f1-score": 0.0,
+                "support": 2.0
+              },
+              "PO": {
+                "precision": 0.0,
+                "recall": 0.0,
+                "f1-score": 0.0,
+                "support": 1.0
+              }
+            },
+            "classes_with_at_most_five_test_examples": {
+              "A": {
+                "precision": 0.8333333333333334,
+                "recall": 1.0,
+                "f1-score": 0.9090909090909091,
+                "support": 5.0
+              },
+              "FT": {
+                "precision": 0.0,
+                "recall": 0.0,
+                "f1-score": 0.0,
+                "support": 4.0
+              },
+              "L": {
+                "precision": 0.0,
+                "recall": 0.0,
+                "f1-score": 0.0,
+                "support": 2.0
+              },
+              "MN": {
+                "precision": 0.6666666666666666,
+                "recall": 0.4,
+                "f1-score": 0.5,
+                "support": 5.0
+              },
+              "PO": {
+                "precision": 0.0,
+                "recall": 0.0,
+                "f1-score": 0.0,
+                "support": 1.0
+              },
+              "SC": {
+                "precision": 0.3333333333333333,
+                "recall": 0.3333333333333333,
+                "f1-score": 0.3333333333333333,
+                "support": 3.0
+              }
+            }
+          },
+          "metadata": "ml/artifacts/multiclass_linear_svm.metadata.json",
+          "validation_search": [
+            {
+              "parameters": {
+                "tfidf__ngram_range": [
+                  1,
+                  1
+                ],
+                "tfidf__min_df": 1,
+                "tfidf__sublinear_tf": false,
+                "classifier__C": 0.5,
+                "classifier__class_weight": null
+              },
+              "validation_macro_f1": 0.5227934616823505
+            },
+            {
+              "parameters": {
+                "tfidf__ngram_range": [
+                  1,
+                  1
+                ],
+                "tfidf__min_df": 1,
+                "tfidf__sublinear_tf": false,
+                "classifier__C": 0.5,
+                "classifier__class_weight": "balanced"
+              },
+              "validation_macro_f1": 0.5891601653741941
+            },
+            {
+              "parameters": {
+                "tfidf__ngram_range": [
+                  1,
+                  1
+                ],
+                "tfidf__min_df": 1,
+                "tfidf__sublinear_tf": false,
+                "classifier__C": 2.0,
+                "classifier__class_weight": null
+              },
+              "validation_macro_f1": 0.5618127267307186
+            },
+            {
+              "parameters": {
+                "tfidf__ngram_range": [
+                  1,
+                  1
+                ],
+                "tfidf__min_df": 1,
+                "tfidf__sublinear_tf": false,
+                "classifier__C": 2.0,
+                "classifier__class_weight": "balanced"
+              },
+              "validation_macro_f1": 0.5657902785620177
+            },
+            {
+              "parameters": {
+                "tfidf__ngram_range": [
+                  1,
+                  2
+                ],
+                "tfidf__min_df": 1,
+                "tfidf__sublinear_tf": false,
+                "classifier__C": 0.5,
+                "classifier__class_weight": null
+              },
+              "validation_macro_f1": 0.44389916785427624
+            },
+            {
+              "parameters": {
+                "tfidf__ngram_range": [
+                  1,
+                  2
+                ],
+                "tfidf__min_df": 1,
+                "tfidf__sublinear_tf": false,
+                "classifier__C": 0.5,
+                "classifier__class_weight": "balanced"
+              },
+              "validation_macro_f1": 0.6513854763854764
+            },
+            {
+              "parameters": {
+                "tfidf__ngram_range": [
+                  1,
+                  2
+                ],
+                "tfidf__min_df": 1,
+                "tfidf__sublinear_tf": false,
+                "classifier__C": 2.0,
+                "classifier__class_weight": null
+              },
+              "validation_macro_f1": 0.5115622954679693
+            },
+            {
+              "parameters": {
+                "tfidf__ngram_range": [
+                  1,
+                  2
+                ],
+                "tfidf__min_df": 1,
+                "tfidf__sublinear_tf": false,
+                "classifier__C": 2.0,
+                "classifier__class_weight": "balanced"
+              },
+              "validation_macro_f1": 0.6148217982845312
+            },
+            {
+              "parameters": {
+                "tfidf__ngram_range": [
+                  1,
+                  2
+                ],
+                "tfidf__min_df": 2,
+                "tfidf__sublinear_tf": false,
+                "classifier__C": 0.5,
+                "classifier__class_weight": null
+              },
+              "validation_macro_f1": 0.5390325969697787
+            },
+            {
+              "parameters": {
+                "tfidf__ngram_range": [
+                  1,
+                  2
+                ],
+                "tfidf__min_df": 2,
+                "tfidf__sublinear_tf": false,
+                "classifier__C": 0.5,
+                "classifier__class_weight": "balanced"
+              },
+              "validation_macro_f1": 0.5214343225212791
+            },
+            {
+              "parameters": {
+                "tfidf__ngram_range": [
+                  1,
+                  2
+                ],
+                "tfidf__min_df": 2,
+                "tfidf__sublinear_tf": false,
+                "classifier__C": 2.0,
+                "classifier__class_weight": null
+              },
+              "validation_macro_f1": 0.5242420881396037
+            },
+            {
+              "parameters": {
+                "tfidf__ngram_range": [
+                  1,
+                  2
+                ],
+                "tfidf__min_df": 2,
+                "tfidf__sublinear_tf": false,
+                "classifier__C": 2.0,
+                "classifier__class_weight": "balanced"
+              },
+              "validation_macro_f1": 0.5007320394911635
+            },
+            {
+              "parameters": {
+                "tfidf__ngram_range": [
+                  1,
+                  2
+                ],
+                "tfidf__min_df": 2,
+                "tfidf__sublinear_tf": true,
+                "classifier__C": 0.5,
+                "classifier__class_weight": null
+              },
+              "validation_macro_f1": 0.5314961501138983
+            },
+            {
+              "parameters": {
+                "tfidf__ngram_range": [
+                  1,
+                  2
+                ],
+                "tfidf__min_df": 2,
+                "tfidf__sublinear_tf": true,
+                "classifier__C": 0.5,
+                "classifier__class_weight": "balanced"
+              },
+              "validation_macro_f1": 0.5420878496326066
+            },
+            {
+              "parameters": {
+                "tfidf__ngram_range": [
+                  1,
+                  2
+                ],
+                "tfidf__min_df": 2,
+                "tfidf__sublinear_tf": true,
+                "classifier__C": 2.0,
+                "classifier__class_weight": null
+              },
+              "validation_macro_f1": 0.5128620856881727
+            },
+            {
+              "parameters": {
+                "tfidf__ngram_range": [
+                  1,
+                  2
+                ],
+                "tfidf__min_df": 2,
+                "tfidf__sublinear_tf": true,
+                "classifier__C": 2.0,
+                "classifier__class_weight": "balanced"
+              },
+              "validation_macro_f1": 0.5140838509316771
+            }
+          ]
+        }
+      },
+      "figures": [
+        "multiclass_logistic_regression_confusion_matrix.png",
+        "multiclass_linear_svm_confusion_matrix.png",
+        "multiclass_model_comparison.png"
+      ]
+    }
+  }
+}
