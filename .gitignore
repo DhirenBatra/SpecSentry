@@ -59,8 +59,9 @@ model_weights/
 /ml/data/processed/*
 !/ml/data/processed/.gitkeep
 
-# Phase 3 error records contain the original requirement text
+# Error records contain the original requirement text
 /research/results/classification_test_errors.csv
+/research/results/transformer_classification_test_errors.csv
 
 # Temporary, editor, and OS-generated files
 tmp/

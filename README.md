@@ -7,6 +7,7 @@ SpecSentry is a final-year Computational Linguistics and NLP lab project for rev
 - Phase 1 — Complete. The React landing page checks the local FastAPI service and links to its API documentation.
 - Phase 2 — Complete. The PROMISE_exp pipeline prepares and verifies the data for binary and multiclass requirement classification.
 - Phase 3 — Complete. Four classical classification pipelines were selected on validation and evaluated on the held-out test projects.
+- Phase 4 — Complete. Binary and 12-class DistilBERT checkpoints were evaluated against the Phase 3 baselines.
 
 ## Dataset
 
@@ -36,6 +37,22 @@ Each classifier was evaluated for Functional vs Non-Functional and for the origi
 
 The test set has one Portability example, which both multiclass pipelines missed. See the [experiment guide](ml/experiments/README.md) for the rerun command, configurations, error analysis, and figures.
 
+## DistilBERT classification
+
+```text
+PROMISE_exp → DistilBERT → Binary ───┐
+                        → 12-class ─┴→ Held-out evaluation → Phase 3 comparison
+```
+
+Both models selected epoch 3 by validation macro F1. The test metrics use the same 148 rows as Phase 3.
+
+| Task | Validation macro F1 | Test accuracy | Test macro precision | Test macro recall | Test macro F1 | Test weighted F1 |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: |
+| Binary | 0.7588 | 0.6486 | 0.6895 | 0.6049 | 0.5795 | 0.6026 |
+| Multiclass | 0.0759 | 0.4392 | 0.1196 | 0.0875 | 0.0585 | 0.2752 |
+
+DistilBERT underperformed both classical baselines. Binary test macro F1 was 0.5795 versus 0.8713 for Logistic Regression. Multiclass test macro F1 was 0.0585 versus 0.4550 for Linear SVM. The multiclass model predicted Functional for 147 of 148 test rows, including the only Portability example. See the [DistilBERT experiment guide](ml/experiments/TRANSFORMER.md) for the rerun command, configuration, errors, and figures.
+
 ## Planned architecture
 
 ```text
@@ -52,6 +69,7 @@ The NLP pipeline will detect ambiguous requirements, identify semantic duplicate
 - Tests — pytest, FastAPI TestClient, and HTTPX2
 - Dataset pipeline — Python standard library and Matplotlib for report figures
 - Classical NLP baselines — scikit-learn and joblib
+- Transformer experiments — PyTorch and Hugging Face Transformers
 
 ```text
 SpecSentry/
