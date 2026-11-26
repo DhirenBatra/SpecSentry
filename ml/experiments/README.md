@@ -58,5 +58,5 @@ Both multiclass pipelines predicted Operability for the only Portability test ro
 After generating the outputs, run the Phase 3 tests from the repository root:
 
 ```powershell
-.\ml\.venv\Scripts\python.exe -B -m unittest discover -s ml/experiments/tests -v
+.\ml\.venv\Scripts\python.exe -B -m unittest discover -s ml/experiments/tests -p "test_classification_baselines.py" -v
 ```

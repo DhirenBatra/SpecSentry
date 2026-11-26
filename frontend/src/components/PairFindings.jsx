@@ -20,7 +20,10 @@ function PairCard({ pair, requirementsById, isContradiction }) {
       <div className="pair-meta">
         {isContradiction ? (
           <>
-            <span className="finding-badge finding-review">Review recommended</span>
+            <div className="flex flex-wrap items-center gap-2">
+              <span className="text-sm font-semibold">Potential Contradiction</span>
+              <span className="finding-badge finding-review">Review Recommended</span>
+            </div>
             <span className="pair-method">NLI · forward A → B</span>
           </>
         ) : (
@@ -68,7 +71,7 @@ export default function PairFindings({ pairs, requirementsById, kind }) {
         <h2 id={`${kind}-title`}>{title}</h2>
       </div>
       {isContradiction && pairs.length > 0 && (
-        <p className="section-note">NLI flags can include unrelated pairs. Compare the requirements’ actors, scope, and conditions when reviewing.</p>
+        <p className="section-note">Potential contradictions are model-generated review candidates and may include false positives.</p>
       )}
       {pairs.length
         ? <div className="finding-list">

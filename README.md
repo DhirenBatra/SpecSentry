@@ -1,6 +1,8 @@
 # SpecSentry
 
-SpecSentry is a final-year Computational Linguistics and NLP lab project for reviewing natural-language software requirements in a Software Requirements Specification (SRS). It classifies pasted requirements and flags ambiguous wording, potential duplicates, and potential contradictions for review.
+**SpecSentry MVP / Lab Project — Complete**
+
+Ambiguous wording, repeated requirements, and conflicting obligations are easy to miss when reviewing a Software Requirements Specification (SRS) by hand. SpecSentry is a final-year Computational Linguistics and NLP lab project that classifies pasted requirements and surfaces findings for review.
 
 ## Current status
 
@@ -14,6 +16,7 @@ SpecSentry is a final-year Computational Linguistics and NLP lab project for rev
 - Phase 8 — Complete. FastAPI exposes the unified analysis engine with per-requirement evidence and a document quality score.
 - Phase 9 — Complete. A separate endpoint provides optional, user-triggered assistance for selected ambiguity and contradiction findings.
 - Phase 10 — Complete. The React workspace connects paste input and the demo to the analysis dashboard and optional assistance.
+- Phase 11 — Complete. Final QA verified the local demo flow and clarified how to review potential contradictions.
 
 ## Dataset
 
@@ -96,7 +99,7 @@ NLI found all 20 held-out contradictions and falsely flagged seven neutral pairs
 
 `POST /api/analyze` accepts 1–20 text requirements with unique IDs. It uses the saved Phase 3 classifiers, Phase 5 ambiguity rules, frozen SBERT cutoff, and forward NLI argmax. The response includes ambiguity spans, pair evidence, a 0–100 quality score, and its penalty breakdown.
 
-The real CPU demo returned HTTP 200 for 11 requirements in 20.243 seconds, including first-request model loading. It reported one ambiguous requirement, two potential duplicate pairs, and 17 potential contradiction pairs. [API setup, request examples, and scoring formula](backend/ANALYSIS_API.md) · [Recorded smoke result](research/results/analysis_api_smoke_results.json)
+The Phase 8 API smoke measurement is recorded separately from the final browser demo. [API setup, request examples, and scoring formula](backend/ANALYSIS_API.md) · [Phase 8 smoke result](research/results/analysis_api_smoke_results.json)
 
 ## Optional AI assistance
 
@@ -157,22 +160,29 @@ Use Python 3.12 and Node.js 24 LTS. Start each service in a separate terminal fr
 
 ### Backend
 
-Use the existing ML virtual environment or create one with Python 3.12. The backend needs the original Phase 3 `binary_logistic_regression.joblib` and `multiclass_linear_svm.joblib` files in `ml/artifacts/`. Use the PyTorch build for your device. On the first valid analysis, the pretrained loaders use their local caches or download the pinned checkpoints. [Analysis setup and artifacts](backend/ANALYSIS_API.md) · [PyTorch setup](ml/experiments/TRANSFORMER.md)
+The backend needs the original Phase 3 `binary_logistic_regression.joblib` and `multiclass_linear_svm.joblib` files in `ml/artifacts/`. Restore them from your Phase 3 run before starting the demo. The commands below install the pinned CPU build of PyTorch. Use the existing ML environment if it already has the packages for your device. The first analysis downloads the pinned SBERT and NLI checkpoints if their local caches are empty. [Analysis setup and artifacts](backend/ANALYSIS_API.md) · [PyTorch setup](ml/experiments/TRANSFORMER.md)
 
 Windows PowerShell
 
 ```powershell
+# Create the environment once.
+py -3.12 -m venv ml/.venv
+.\ml\.venv\Scripts\python.exe -m pip install --index-url https://download.pytorch.org/whl/cpu torch==2.15.0
 .\ml\.venv\Scripts\python.exe -m pip install -r backend/requirements-analysis.txt
 Set-Location backend
+$env:OMP_NUM_THREADS = "4"
 ..\ml\.venv\Scripts\python.exe -m uvicorn app.main:app --host 127.0.0.1 --port 8000
 ```
 
 macOS or Linux
 
 ```bash
+# Create the environment once.
+python3.12 -m venv ml/.venv
+./ml/.venv/bin/python -m pip install --index-url https://download.pytorch.org/whl/cpu torch==2.15.0
 ./ml/.venv/bin/python -m pip install -r backend/requirements-analysis.txt
 cd backend
-../ml/.venv/bin/python -m uvicorn app.main:app --host 127.0.0.1 --port 8000
+OMP_NUM_THREADS=4 ../ml/.venv/bin/python -m uvicorn app.main:app --host 127.0.0.1 --port 8000
 ```
 
 - API base — `http://localhost:8000`
@@ -203,10 +213,14 @@ Install `backend/requirements-ai.txt` in the backend's Python environment and se
 4. With optional AI configured, click **Suggest Rewrite** or **Explain Conflict** on one finding. The suggestions appear beside the original text for review.
 5. Click **Analyze New Requirements** to return to a blank editor.
 
+The final local Edge smoke test took about 43 seconds on the first CPU analysis, including model loading from the local cache. The 11 requirements scored 41.82/100, with one ambiguous requirement, two potential duplicate pairs, and 17 potential contradiction pairs.
+
 ### Known limitations
 
 - The editor accepts 1–20 nonblank requirements, with up to 500 characters per requirement.
-- Classification labels and pair scores are predictions. NLI can flag unrelated pairs, and SBERT can flag requirements that share wording while differing in meaning. Review the surrounding context before using the findings or the heuristic quality score.
+- PROMISE_exp is small and imbalanced. Its held-out split has only one Portability example. The curated ambiguity, duplicate, and contradiction datasets lack independent annotation.
+- SBERT can flag requirements that share wording while differing in meaning, and NLI can flag unrelated pairs. Review findings in context before interpreting the heuristic quality score.
+- CPU analysis can take tens of seconds on the first request, which loads the models. Contradiction inference checks every pair, so runtime also increases with the number of requirements.
 - Optional AI assistance sends the selected text and evidence to the configured provider on request. Treat suggestions as drafts for review.
 
 ### Checks
