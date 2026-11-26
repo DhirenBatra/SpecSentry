@@ -1,0 +1,97 @@
+{
+  "tfidf": {
+    "false_positive": {
+      "count": 27,
+      "counts_by_subtype": {
+        "unrelated": 2,
+        "actor": 5,
+        "action": 5,
+        "negation": 5,
+        "numeric": 5,
+        "intent": 5
+      },
+      "pair_ids": [
+        "DUP-043-non_duplicate",
+        "DUP-058-non_duplicate",
+        "DUP-126-non_duplicate",
+        "DUP-453-non_duplicate",
+        "DUP-840-non_duplicate",
+        "DUP-839-non_duplicate",
+        "DUP-452-non_duplicate",
+        "DUP-323-non_duplicate",
+        "DUP-450-non_duplicate",
+        "DUP-507-non_duplicate",
+        "DUP-576-non_duplicate",
+        "DUP-680-non_duplicate",
+        "DUP-505-non_duplicate",
+        "DUP-358-non_duplicate",
+        "DUP-740-non_duplicate",
+        "DUP-638-non_duplicate",
+        "DUP-625-non_duplicate",
+        "DUP-154-non_duplicate",
+        "DUP-040-non_duplicate",
+        "DUP-217-non_duplicate",
+        "DUP-351-non_duplicate",
+        "DUP-601-non_duplicate",
+        "DUP-053-non_duplicate",
+        "DUP-660-non_duplicate",
+        "DUP-467-non_duplicate",
+        "DUP-633-non_duplicate",
+        "DUP-359-non_duplicate"
+      ]
+    },
+    "false_negative": {
+      "count": 1,
+      "counts_by_subtype": {
+        "paraphrase": 1
+      },
+      "pair_ids": [
+        "DUP-058-duplicate"
+      ]
+    }
+  },
+  "sbert": {
+    "false_positive": {
+      "count": 25,
+      "counts_by_subtype": {
+        "actor": 5,
+        "action": 5,
+        "negation": 5,
+        "numeric": 5,
+        "intent": 5
+      },
+      "pair_ids": [
+        "DUP-126-non_duplicate",
+        "DUP-453-non_duplicate",
+        "DUP-840-non_duplicate",
+        "DUP-839-non_duplicate",
+        "DUP-452-non_duplicate",
+        "DUP-323-non_duplicate",
+        "DUP-450-non_duplicate",
+        "DUP-507-non_duplicate",
+        "DUP-576-non_duplicate",
+        "DUP-680-non_duplicate",
+        "DUP-505-non_duplicate",
+        "DUP-358-non_duplicate",
+        "DUP-740-non_duplicate",
+        "DUP-638-non_duplicate",
+        "DUP-625-non_duplicate",
+        "DUP-154-non_duplicate",
+        "DUP-040-non_duplicate",
+        "DUP-217-non_duplicate",
+        "DUP-351-non_duplicate",
+        "DUP-601-non_duplicate",
+        "DUP-053-non_duplicate",
+        "DUP-660-non_duplicate",
+        "DUP-467-non_duplicate",
+        "DUP-633-non_duplicate",
+        "DUP-359-non_duplicate"
+      ]
+    },
+    "false_negative": {
+      "count": 0,
+      "counts_by_subtype": {},
+      "pair_ids": []
+    }
+  }
+}

@@ -1,0 +1,328 @@
+{
+  "dataset": "SpecSentry curated requirement-pair evaluation set",
+  "source_sha256": "adc438d0e8ab5e66e9fa946b2c668df26d9d9d324a22cb3a5a2b4f4b52773884",
+  "split_seed": 42,
+  "groups": {
+    "unrelated": [
+      {
+        "row": 1,
+        "paraphrase": [["The system shall refresh the display every 60 seconds", "Once per minute, the system must update what is shown on screen"]],
+        "donor_row": 745
+      },
+      {
+        "row": 19,
+        "paraphrase": [["The system shall display data from the Sync Matrix 1.0 and Exercise Management Tool 1.0 applications", "Data supplied by Sync Matrix version 1.0 and Exercise Management Tool version 1.0 must be visible on screen"]],
+        "donor_row": 697
+      },
+      {
+        "row": 38,
+        "base": [["no later 30", "no later than 30"]],
+        "paraphrase": [["The search results shall be returned no later than 30 seconds after the user has entered the search criteria", "After entering their criteria, a user must receive the search results within half a minute"]],
+        "donor_row": 836
+      },
+      {
+        "row": 43,
+        "paraphrase": [["shall be available for use 24 hours per day 365 days per year", "must be usable around the clock on 365 days of the year"]],
+        "donor_row": 362
+      },
+      {
+        "row": 48,
+        "paraphrase": [["100% of saved user preferences shall be restored when system comes back online", "When the system returns online it must recover every stored user preference"]],
+        "donor_row": 632
+      },
+      {
+        "row": 58,
+        "paraphrase": [["The system shall allow a real estate agent to query MLS information", "Real estate agents must be able to search MLS data through the system"]],
+        "donor_row": 747
+      },
+      {
+        "row": 80,
+        "paraphrase": [["shall achieve 95% up time", "must meet a 95% availability target"]],
+        "donor_row": 10
+      },
+      {
+        "row": 261,
+        "paraphrase": [["shall generate an audit report based on the available recycled parts and the collision estimate", "must use the list of recycled parts on hand and the collision estimate to produce a report for auditing"]],
+        "donor_row": 509
+      },
+      {
+        "row": 496,
+        "paraphrase": [["shall be available 24 hours per day seven days per week", "must remain available without interruption throughout the week"]],
+        "donor_row": 434
+      },
+      {
+        "row": 689,
+        "paraphrase": [["The system shall utilise periodic 30-second keep-alive messages between tablets and the server to monitor tablet operational status", "To check whether tablets are operational, the system must use heartbeat messages between the server and tablets once every half minute"]],
+        "donor_row": 875
+      }
+    ],
+    "actor": [
+      {
+        "row": 126,
+        "paraphrase": [["The system shall allow a Program Administrator or Nursing staff member to remove a student from a clinical lab section", "Program Administrators and Nursing staff must be able to take a student out of a clinical lab section using the system"]],
+        "negative": [["a Program Administrator or Nursing staff member", "a student advisor"]]
+      },
+      {
+        "row": 127,
+        "paraphrase": [["The system shall allow a Program Administrator/Nursing Staff Member to move a student from one clinical lab section to another clinical lab section corresponding to the same clinical class", "A Program Administrator or Nursing staff member must be able to reassign a student between clinical lab sections of the same clinical class"]],
+        "negative": [["a Program Administrator/Nursing Staff Member", "a Registrar staff member"]]
+      },
+      {
+        "row": 67,
+        "paraphrase": [["The system shall notify the realtor when a seller or buyer responds to an appointment request", "Whenever a buyer or seller replies to an appointment request, the realtor must receive an alert from the system"]],
+        "negative": [["notify the realtor", "notify the office manager"]]
+      },
+      {
+        "row": 373,
+        "paraphrase": [["Administrator shall be able to activate a pre-paid card via the Administration section in under 5 seconds", "Using the Administration section, an administrator must be able to enable a prepaid card in less than five seconds"]],
+        "negative": [["Administrator shall", "A support agent shall"]]
+      },
+      {
+        "row": 374,
+        "paraphrase": [["Customer shall be able to check the status of their prepaid card by entering in the PIN number in under 5 seconds", "By supplying their PIN, a customer must be able to find out the state of their prepaid card in less than five seconds"]],
+        "negative": [["Customer shall", "An administrator shall"], ["their prepaid card", "a customer's prepaid card"]]
+      },
+      {
+        "row": 453,
+        "paraphrase": [["Website shall allow the Izogn administrator to approve a review posted by a customer", "The Izogn administrator must be able to sign off on a customer's submitted review on the website"]],
+        "negative": [["the Izogn administrator", "a content moderator"]]
+      },
+      {
+        "row": 840,
+        "paraphrase": [["shall give the mediator privileges to schedule location and equipment resources", "must authorize the mediator to arrange when locations and equipment are used"]],
+        "negative": [["the mediator", "the event organizer"]]
+      },
+      {
+        "row": 839,
+        "paraphrase": [["The system shall allow administrators to define negotiation rules for the organization", "System administrators must be able to set the organization's rules for negotiating"]],
+        "negative": [["allow administrators", "allow mediators"]]
+      },
+      {
+        "row": 451,
+        "paraphrase": [["Website shall allow customers to view reviews of selected movies by other customers", "For a chosen film, customers must be able to read reviews written by other customers on the website"]],
+        "negative": [["shall allow customers", "shall allow moderators"], ["by other customers", "by customers"]]
+      },
+      {
+        "row": 452,
+        "paraphrase": [["Website shall allow customers to add their own movie review for a selected movie", "For a film they select, customers must be able to submit a review of their own on the website"]],
+        "negative": [["shall allow customers", "shall allow moderators"]]
+      }
+    ],
+    "action": [
+      {
+        "row": 11,
+        "paraphrase": [["shall display the Events in a graph by time", "must plot events in a chart organized by time"]],
+        "negative": [["shall display", "shall print"]]
+      },
+      {
+        "row": 219,
+        "base": [[" The save shall occur within 5 seconds.", ""]],
+        "paraphrase": [["The preferred repair facility ratings shall be saved within 5 seconds", "The software must store the ratings for the preferred repair facility in at most five seconds"]],
+        "negative": [["be saved", "be displayed"]]
+      },
+      {
+        "row": 323,
+        "paraphrase": [["shall record meeting entries", "must capture entries made for meetings"]],
+        "negative": [["shall record", "shall display"]]
+      },
+      {
+        "row": 450,
+        "paraphrase": [["Website shall allow customers to browse movies by categories entered in by izogn administrator", "Customers must be able to look through the website's films by the categories set by the Izogn administrator"]],
+        "negative": [["browse movies by categories", "export movie listings grouped by categories"]]
+      },
+      {
+        "row": 507,
+        "paraphrase": [["The product shall allow a user to remove himself or herself from the list of players at any time", "At any time, users must be able to take themselves off the player roster"]],
+        "negative": [["remove himself or herself from", "add himself or herself to"]]
+      },
+      {
+        "row": 576,
+        "base": [["The product shall have audit capabilities.", ""]],
+        "paraphrase": [["shall store messages for a minimum of one year for audit and transaction tracking purposes", "must retain messages for at least twelve months so transactions can be tracked and audited"]],
+        "negative": [["store messages", "make messages available for export"]]
+      },
+      {
+        "row": 837,
+        "paraphrase": [["The system shall allow the administrator to install additional distributed location templates", "An administrator must be able to install more templates for distributed locations"]],
+        "negative": [["to install", "to preview"]]
+      },
+      {
+        "row": 838,
+        "paraphrase": [["The system shall allow the administrator to remove physical locations", "An administrator must be able to delete physical locations from the system"]],
+        "negative": [["to remove", "to rename"]]
+      },
+      {
+        "row": 680,
+        "paraphrase": [["The system shall allow the user to scroll the campus map from the campus map tab", "From the campus map tab, users must be able to move the map view by scrolling"]],
+        "negative": [["to scroll", "to print"]]
+      },
+      {
+        "row": 746,
+        "paraphrase": [["The system shall allow user to choose their preferable topping", "Users must be able to pick the topping they want"]],
+        "negative": [["to choose", "to preview"]]
+      }
+    ],
+    "negation": [
+      {
+        "row": 192,
+        "paraphrase": [["shall prevent the creation of duplicate dispute requests 100% of the time", "must always block attempts to open repeat dispute requests"]],
+        "negative": [["shall prevent the creation of duplicate dispute requests 100% of the time", "shall not prevent the creation of duplicate dispute requests"]]
+      },
+      {
+        "row": 505,
+        "paraphrase": [["The product shall allow a user to identify himself or herself as a player", "Users must be able to identify themselves as players in the product"]],
+        "negative": [["shall allow", "shall not allow"]]
+      },
+      {
+        "row": 358,
+        "paraphrase": [["The System shall allow generation of Inventory Quantity Adjustment documents on demand", "When requested, the system must be able to produce Inventory Quantity Adjustment documents"]],
+        "negative": [["shall allow", "shall not allow"]]
+      },
+      {
+        "row": 562,
+        "base": [["The product shall have a maximum message processing time of 2 seconds.", ""]],
+        "paraphrase": [["shall process messages within 2 seconds", "must finish handling a message in no more than two seconds"]],
+        "negative": [["shall process", "shall not process"]]
+      },
+      {
+        "row": 740,
+        "paraphrase": [["Logout must be automatic after 1 hour of inactivity", "Idle users must be signed out automatically after sixty minutes"]],
+        "negative": [["must be automatic", "must not be automatic"]]
+      },
+      {
+        "row": 286,
+        "paraphrase": [["The product shall allow the user to select a chosen language from one of the target market countries", "Users must be able to pick a language used in the product's target markets"]],
+        "negative": [["shall allow", "shall not allow"]]
+      },
+      {
+        "row": 748,
+        "base": [["an opportunity for the user to choose the selection of doughnut provided", "an opportunity to choose from the doughnuts provided"]],
+        "paraphrase": [["The system shall give the user an opportunity to choose from the doughnuts provided", "Users must be able to pick which of the available doughnuts to receive"]],
+        "negative": [["shall give", "shall not give"]]
+      },
+      {
+        "row": 638,
+        "paraphrase": [["The system shall validate the amount is available in the user's account before releasing funds to the user", "Before dispensing funds, the system must check that the user's account covers the requested amount"]],
+        "negative": [["shall validate", "shall not validate"]]
+      },
+      {
+        "row": 491,
+        "paraphrase": [["The product shall display each type of ship in a grid using an image of the specific type of ship", "In the grid, every ship type must be represented by its own corresponding picture"]],
+        "negative": [["shall display", "shall not display"]]
+      },
+      {
+        "row": 625,
+        "paraphrase": [["The system shall be evoked by typing \"pine\" into a command or shell prompt", "Entering \"pine\" at a command or shell prompt must start the system"]],
+        "negative": [["shall be evoked", "shall not be evoked"]]
+      }
+    ],
+    "numeric": [
+      {
+        "row": 154,
+        "paraphrase": [["The maximum wait time for a user navigating from one screen to another within the Disputes application shall be no more than 5 seconds", "Users must be able to switch between screens in the Disputes application with a delay of at most five seconds"]],
+        "negative": [["5 seconds", "8 seconds"]]
+      },
+      {
+        "row": 40,
+        "paraphrase": [["The CMA report shall be returned no later 60 seconds after the user has entered the CMA report criteria", "Once the user supplies the criteria for a CMA report, the system must return it within one minute"]],
+        "negative": [["60 seconds", "90 seconds"]]
+      },
+      {
+        "row": 217,
+        "base": [[" The preferred repair facility is returned within 8 seconds.", ""]],
+        "paraphrase": [["The search for the preferred repair facility shall take no longer than 8 seconds", "Finding the preferred repair facility must take eight seconds or less"]],
+        "negative": [["8 seconds", "6 seconds"]]
+      },
+      {
+        "row": 308,
+        "paraphrase": [["Maintenance releases will be offered to customers once a year. The releases shall take no longer than 5 minutes for 80% of the customer base to install.", "Customers will be offered maintenance updates annually. Installing an update must take at most five minutes for 80% of customers."]],
+        "negative": [["80%", "95%"]]
+      },
+      {
+        "row": 402,
+        "paraphrase": [["shall achieve 99.5% up time", "must meet a 99.5% availability target"]],
+        "negative": [["99.5%", "95.5%"]]
+      },
+      {
+        "row": 351,
+        "paraphrase": [["The System shall allow for a minimum of 6 users to work at the same time", "The system must support at least six concurrent users"]],
+        "negative": [["minimum of 6 users", "minimum of 8 users"]]
+      },
+      {
+        "row": 606,
+        "paraphrase": [["The application shall have a downtime of at most 10 minutes per year", "Annual downtime for the application must stay within a ten-minute limit"]],
+        "negative": [["10 minutes", "60 minutes"]]
+      },
+      {
+        "row": 662,
+        "paraphrase": [["The system shall display confirmation messages to users within 4 seconds after the user submits information to the system", "Once users send information to the system, a confirmation must appear on screen within four seconds"]],
+        "negative": [["4 seconds", "12 seconds"]]
+      },
+      {
+        "row": 639,
+        "paraphrase": [["shall validate the amount is a multiple of $20", "must check that the amount consists of whole increments of twenty dollars"]],
+        "negative": [["$20", "$50"]]
+      },
+      {
+        "row": 601,
+        "paraphrase": [["A new user shall be able to navigate through the league and team pages within 30 seconds of reaching the start-up page", "After arriving at the start-up page, a new user must be able to browse the league and team pages in half a minute or less"]],
+        "negative": [["30 seconds", "120 seconds"]]
+      }
+    ],
+    "intent": [
+      {
+        "row": 46,
+        "base": [["previously downloaded search results CMA reports and appointments", "search results, CMA reports, and appointments that were downloaded previously"]],
+        "paraphrase": [["The product shall allow the user to view search results, CMA reports, and appointments that were downloaded previously", "Users must be able to open search results, CMA reports, and appointments they have already downloaded"]],
+        "negative": [["appointments", "invoices"]]
+      },
+      {
+        "row": 53,
+        "paraphrase": [["90% of untrained realtors shall be able to install the product on their device without printed instructions", "Nine out of ten realtors with no training must be able to set up the product on their device without consulting instructions on paper"]],
+        "negative": [["without printed instructions", "using the printed installation guide"]]
+      },
+      {
+        "row": 216,
+        "base": [[" The search results shall be returned in under 15 seconds.", ""]],
+        "paraphrase": [["The search for recycled parts shall take no longer than 15 seconds", "Looking up recycled parts must finish in at most fifteen seconds"]],
+        "negative": [["recycled parts", "new parts"]]
+      },
+      {
+        "row": 218,
+        "base": [[" The audit report shall be returned within 10 seconds.", ""]],
+        "paraphrase": [["The recycled parts audit report shall be returned to the user within 10 seconds", "The user must receive the audit report for recycled parts in ten seconds or less"]],
+        "negative": [["audit report", "inventory report"]]
+      },
+      {
+        "row": 377,
+        "paraphrase": [["System shall let existing customers log into the website with their email address and password in under 5 seconds", "Existing customers must be able to sign in to the site in less than five seconds using their email address and password"]],
+        "negative": [["email address", "account number"]]
+      },
+      {
+        "row": 661,
+        "paraphrase": [["Responses to queries shall take no longer than 7 seconds to load onto the screen after the user submits the query", "After the user sends a query, its response must appear on the display within seven seconds"]],
+        "negative": [["after the user submits the query", "after the server starts executing the query"]]
+      },
+      {
+        "row": 660,
+        "paraphrase": [["All Web pages generated by the system shall be fully downloadable in no more than 10 seconds over a 40KBps modem connection", "On a modem connection running at 40 KBps, it must take at most ten seconds to download any page produced by the system in full"]],
+        "negative": [["All Web pages generated by the system", "The home page generated by the system"]]
+      },
+      {
+        "row": 467,
+        "paraphrase": [["For leads that process longer than 25 seconds the system will record the event and duration", "The system will log each lead whose processing exceeds twenty-five seconds, including how long it took"]],
+        "negative": [["longer than", "less than"]]
+      },
+      {
+        "row": 633,
+        "paraphrase": [["The system shall allow a text search that users may use to find mail messages", "Users must be able to locate mail messages through a text query"]],
+        "negative": [["find mail messages", "find address book entries"]]
+      },
+      {
+        "row": 359,
+        "paraphrase": [["The System shall allow on demand generation of all Inventory Quantity Adjustment documents since certain point of time", "On request, the system must produce every Inventory Quantity Adjustment document from a specified time onward"]],
+        "negative": [["since certain point of time", "up to a specified point in time"]]
+      }
+    ]
+  }
+}

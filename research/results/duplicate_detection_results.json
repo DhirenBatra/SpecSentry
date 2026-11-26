@@ -1,0 +1,145 @@
+{
+  "dataset": {
+    "name": "SpecSentry curated requirement-pair evaluation set",
+    "source_url": "https://raw.githubusercontent.com/AleksandarMitrevski/se-requirements-classification/1f5dc4501a1956f21011083594d925bac49f198c/1-exploratory-analysis/data/PROMISE_exp.csv",
+    "source_corpus_sha256": "adc438d0e8ab5e66e9fa946b2c668df26d9d9d324a22cb3a5a2b4f4b52773884",
+    "recipe_sha256": "97adf70370b6905549073654f7359cb12666ef0290b92030ce012655e1c6cc8c",
+    "split_seed": 42,
+    "development": {
+      "pairs": 60,
+      "class_counts": {
+        "duplicate": 30,
+        "non_duplicate": 30
+      },
+      "subtype_counts": {
+        "paraphrase": 30,
+        "unrelated": 5,
+        "actor": 5,
+        "action": 5,
+        "negation": 5,
+        "numeric": 5,
+        "intent": 5
+      },
+      "sha256": "b399c2c7c56d40951e9a2c8aa14bff0bc28d1cbf8043c83a35bbcaabbf815729"
+    },
+    "evaluation": {
+      "pairs": 60,
+      "class_counts": {
+        "duplicate": 30,
+        "non_duplicate": 30
+      },
+      "subtype_counts": {
+        "paraphrase": 30,
+        "unrelated": 5,
+        "actor": 5,
+        "action": 5,
+        "negation": 5,
+        "numeric": 5,
+        "intent": 5
+      },
+      "sha256": "63c40ff870807b390d9277ade82b4b65283488bf7ea948a071a6e8c72e0818e6"
+    },
+    "projects": 21,
+    "shared_projects": 14
+  },
+  "threshold_selection": {
+    "metric": "development F1 for duplicate",
+    "candidates": "distinct development cosine scores",
+    "ties": "higher threshold",
+    "positive_when": "similarity >= threshold"
+  },
+  "configuration": {
+    "tfidf": {
+      "parameters": {
+        "ngram_range": [
+          1,
+          1
+        ],
+        "token_pattern": "(?u)\\b\\w+\\b",
+        "norm": "l2"
+      },
+      "fit_text_count": 90
+    },
+    "sbert": {
+      "model": "sentence-transformers/all-MiniLM-L6-v2",
+      "revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+      "device": "cpu",
+      "max_tokens": 256,
+      "batch_size": 32
+    },
+    "python": "3.12.10",
+    "versions": {
+      "numpy": "2.5.5",
+      "scipy": "1.18.1",
+      "scikit-learn": "1.9.1",
+      "sentence-transformers": "6.3.0",
+      "transformers": "5.24.1",
+      "torch": "2.15.0+cpu",
+      "matplotlib": "3.11.2"
+    }
+  },
+  "methods": {
+    "tfidf": {
+      "threshold": 0.1406493258547858,
+      "accuracy": 0.5333333333333333,
+      "precision": 0.5178571428571429,
+      "recall": 0.9666666666666667,
+      "f1": 0.6744186046511628,
+      "confusion_matrix": {
+        "label_order": [
+          "non_duplicate",
+          "duplicate"
+        ],
+        "counts": [
+          [
+            3,
+            27
+          ],
+          [
+            1,
+            29
+          ]
+        ]
+      },
+      "development_f1": 0.6823529411764706
+    },
+    "sbert": {
+      "threshold": 0.5158489942550659,
+      "accuracy": 0.5833333333333334,
+      "precision": 0.5454545454545454,
+      "recall": 1.0,
+      "f1": 0.7058823529411765,
+      "confusion_matrix": {
+        "label_order": [
+          "non_duplicate",
+          "duplicate"
+        ],
+        "counts": [
+          [
+            5,
+            25
+          ],
+          [
+            0,
+            30
+          ]
+        ]
+      },
+      "development_f1": 0.7058823529411765
+    }
+  },
+  "comparison": {
+    "sbert_minus_tfidf": {
+      "accuracy": 0.050000000000000044,
+      "precision": 0.02759740259740251,
+      "recall": 0.033333333333333326,
+      "f1": 0.03146374829001375
+    },
+    "absolute_difference": {
+      "accuracy": 0.050000000000000044,
+      "precision": 0.02759740259740251,
+      "recall": 0.033333333333333326,
+      "f1": 0.03146374829001375
+    }
+  }
+}

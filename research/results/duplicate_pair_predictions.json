@@ -1,0 +1,902 @@
+[
+  {
+    "pair_id": "DUP-038-duplicate",
+    "true_label": "duplicate",
+    "subtype": "paraphrase",
+    "methods": {
+      "tfidf": {
+        "prediction": "duplicate",
+        "similarity": 0.3936751022091734
+      },
+      "sbert": {
+        "prediction": "duplicate",
+        "similarity": 0.844862163066864
+      }
+    }
+  },
+  {
+    "pair_id": "DUP-038-non_duplicate",
+    "true_label": "non_duplicate",
+    "subtype": "unrelated",
+    "methods": {
+      "tfidf": {
+        "prediction": "non_duplicate",
+        "similarity": 0.09568478719037676
+      },
+      "sbert": {
+        "prediction": "non_duplicate",
+        "similarity": 0.08332452178001404
+      }
+    }
+  },
+  {
+    "pair_id": "DUP-043-duplicate",
+    "true_label": "duplicate",
+    "subtype": "paraphrase",
+    "methods": {
+      "tfidf": {
+        "prediction": "duplicate",
+        "similarity": 0.33280735141726653
+      },
+      "sbert": {
+        "prediction": "duplicate",
+        "similarity": 0.7814083099365234
+      }
+    }
+  },
+  {
+    "pair_id": "DUP-043-non_duplicate",
+    "true_label": "non_duplicate",
+    "subtype": "unrelated",
+    "methods": {
+      "tfidf": {
+        "prediction": "duplicate",
+        "similarity": 0.23982870342290774
+      },
+      "sbert": {
+        "prediction": "non_duplicate",
+        "similarity": 0.36363619565963745
+      }
+    }
+  },
+  {
+    "pair_id": "DUP-058-duplicate",
+    "true_label": "duplicate",
+    "subtype": "paraphrase",
+    "methods": {
+      "tfidf": {
+        "prediction": "non_duplicate",
+        "similarity": 0.10515979362160241
+      },
+      "sbert": {
+        "prediction": "duplicate",
+        "similarity": 0.9123702049255371
+      }
+    }
+  },
+  {
+    "pair_id": "DUP-058-non_duplicate",
+    "true_label": "non_duplicate",
+    "subtype": "unrelated",
+    "methods": {
+      "tfidf": {
+        "prediction": "duplicate",
+        "similarity": 0.31801276013433094
+      },
+      "sbert": {
+        "prediction": "non_duplicate",
+        "similarity": 0.16780099272727966
+      }
+    }
+  },
+  {
+    "pair_id": "DUP-261-duplicate",
+    "true_label": "duplicate",
+    "subtype": "paraphrase",
+    "methods": {
+      "tfidf": {
+        "prediction": "duplicate",
+        "similarity": 0.6105824628066462
+      },
+      "sbert": {
+        "prediction": "duplicate",
+        "similarity": 0.903899073600769
+      }
+    }
+  },
+  {
+    "pair_id": "DUP-261-non_duplicate",
+    "true_label": "non_duplicate",
+    "subtype": "unrelated",
+    "methods": {
+      "tfidf": {
+        "prediction": "non_duplicate",
+        "similarity": 0.0885517672713177
+      },
+      "sbert": {
+        "prediction": "non_duplicate",
+        "similarity": 0.0386752150952816
+      }
+    }
+  },
+  {
+    "pair_id": "DUP-496-duplicate",
+    "true_label": "duplicate",
+    "subtype": "paraphrase",
+    "methods": {
+      "tfidf": {
+        "prediction": "duplicate",
+        "similarity": 0.4736670628521005
+      },
+      "sbert": {
+        "prediction": "duplicate",
+        "similarity": 0.6419772505760193
+      }
+    }
+  },
+  {
+    "pair_id": "DUP-496-non_duplicate",
+    "true_label": "non_duplicate",
+    "subtype": "unrelated",
+    "methods": {
+      "tfidf": {
+        "prediction": "non_duplicate",
+        "similarity": 0.03078728329342894
+      },
+      "sbert": {
+        "prediction": "non_duplicate",
+        "similarity": 0.12471000105142593
+      }
+    }
+  },
+  {
+    "pair_id": "DUP-126-duplicate",
+    "true_label": "duplicate",
+    "subtype": "paraphrase",
+    "methods": {
+      "tfidf": {
+        "prediction": "duplicate",
+        "similarity": 0.6441633929708658
+      },
+      "sbert": {
+        "prediction": "duplicate",
+        "similarity": 0.8753689527511597
+      }
+    }
+  },
+  {
+    "pair_id": "DUP-126-non_duplicate",
+    "true_label": "non_duplicate",
+    "subtype": "actor",
+    "methods": {
+      "tfidf": {
+        "prediction": "duplicate",
+        "similarity": 0.7491360645300502
+      },
+      "sbert": {
+        "prediction": "duplicate",
+        "similarity": 0.9059487581253052
+      }
+    }
+  },
+  {
+    "pair_id": "DUP-453-duplicate",
+    "true_label": "duplicate",
+    "subtype": "paraphrase",
+    "methods": {
+      "tfidf": {
+        "prediction": "duplicate",
+        "similarity": 0.4366111273981106
+      },
+      "sbert": {
+        "prediction": "duplicate",
+        "similarity": 0.7089683413505554
+      }
+    }
+  },
+  {
+    "pair_id": "DUP-453-non_duplicate",
+    "true_label": "non_duplicate",
+    "subtype": "actor",
+    "methods": {
+      "tfidf": {
+        "prediction": "duplicate",
+        "similarity": 0.9073029241678907
+      },
+      "sbert": {
+        "prediction": "duplicate",
+        "similarity": 0.8723471164703369
+      }
+    }
+  },
+  {
+    "pair_id": "DUP-840-duplicate",
+    "true_label": "duplicate",
+    "subtype": "paraphrase",
+    "methods": {
+      "tfidf": {
+        "prediction": "duplicate",
+        "similarity": 0.250095712385625
+      },
+      "sbert": {
+        "prediction": "duplicate",
+        "similarity": 0.7936656475067139
+      }
+    }
+  },
+  {
+    "pair_id": "DUP-840-non_duplicate",
+    "true_label": "non_duplicate",
+    "subtype": "actor",
+    "methods": {
+      "tfidf": {
+        "prediction": "duplicate",
+        "similarity": 0.9999999999999998
+      },
+      "sbert": {
+        "prediction": "duplicate",
+        "similarity": 0.806719183921814
+      }
+    }
+  },
+  {
+    "pair_id": "DUP-839-duplicate",
+    "true_label": "duplicate",
+    "subtype": "paraphrase",
+    "methods": {
+      "tfidf": {
+        "prediction": "duplicate",
+        "similarity": 0.45092796912819355
+      },
+      "sbert": {
+        "prediction": "duplicate",
+        "similarity": 0.8839848041534424
+      }
+    }
+  },
+  {
+    "pair_id": "DUP-839-non_duplicate",
+    "true_label": "non_duplicate",
+    "subtype": "actor",
+    "methods": {
+      "tfidf": {
+        "prediction": "duplicate",
+        "similarity": 1.0
+      },
+      "sbert": {
+        "prediction": "duplicate",
+        "similarity": 0.8528726100921631
+      }
+    }
+  },
+  {
+    "pair_id": "DUP-452-duplicate",
+    "true_label": "duplicate",
+    "subtype": "paraphrase",
+    "methods": {
+      "tfidf": {
+        "prediction": "duplicate",
+        "similarity": 0.562552393576402
+      },
+      "sbert": {
+        "prediction": "duplicate",
+        "similarity": 0.8296047449111938
+      }
+    }
+  },
+  {
+    "pair_id": "DUP-452-non_duplicate",
+    "true_label": "non_duplicate",
+    "subtype": "actor",
+    "methods": {
+      "tfidf": {
+        "prediction": "duplicate",
+        "similarity": 0.845938773930953
+      },
+      "sbert": {
+        "prediction": "duplicate",
+        "similarity": 0.8959323167800903
+      }
+    }
+  },
+  {
+    "pair_id": "DUP-323-duplicate",
+    "true_label": "duplicate",
+    "subtype": "paraphrase",
+    "methods": {
+      "tfidf": {
+        "prediction": "duplicate",
+        "similarity": 0.6092706286376391
+      },
+      "sbert": {
+        "prediction": "duplicate",
+        "similarity": 0.8646382689476013
+      }
+    }
+  },
+  {
+    "pair_id": "DUP-323-non_duplicate",
+    "true_label": "non_duplicate",
+    "subtype": "action",
+    "methods": {
+      "tfidf": {
+        "prediction": "duplicate",
+        "similarity": 0.7643900442946463
+      },
+      "sbert": {
+        "prediction": "duplicate",
+        "similarity": 0.8978419303894043
+      }
+    }
+  },
+  {
+    "pair_id": "DUP-450-duplicate",
+    "true_label": "duplicate",
+    "subtype": "paraphrase",
+    "methods": {
+      "tfidf": {
+        "prediction": "duplicate",
+        "similarity": 0.6254862023068033
+      },
+      "sbert": {
+        "prediction": "duplicate",
+        "similarity": 0.8332028985023499
+      }
+    }
+  },
+  {
+    "pair_id": "DUP-450-non_duplicate",
+    "true_label": "non_duplicate",
+    "subtype": "action",
+    "methods": {
+      "tfidf": {
+        "prediction": "duplicate",
+        "similarity": 0.8996585180640219
+      },
+      "sbert": {
+        "prediction": "duplicate",
+        "similarity": 0.7766956686973572
+      }
+    }
+  },
+  {
+    "pair_id": "DUP-507-duplicate",
+    "true_label": "duplicate",
+    "subtype": "paraphrase",
+    "methods": {
+      "tfidf": {
+        "prediction": "duplicate",
+        "similarity": 0.3365951419855512
+      },
+      "sbert": {
+        "prediction": "duplicate",
+        "similarity": 0.7737852931022644
+      }
+    }
+  },
+  {
+    "pair_id": "DUP-507-non_duplicate",
+    "true_label": "non_duplicate",
+    "subtype": "action",
+    "methods": {
+      "tfidf": {
+        "prediction": "duplicate",
+        "similarity": 0.8286105407777276
+      },
+      "sbert": {
+        "prediction": "duplicate",
+        "similarity": 0.8234704732894897
+      }
+    }
+  },
+  {
+    "pair_id": "DUP-576-duplicate",
+    "true_label": "duplicate",
+    "subtype": "paraphrase",
+    "methods": {
+      "tfidf": {
+        "prediction": "duplicate",
+        "similarity": 0.4414382580267347
+      },
+      "sbert": {
+        "prediction": "duplicate",
+        "similarity": 0.8487339019775391
+      }
+    }
+  },
+  {
+    "pair_id": "DUP-576-non_duplicate",
+    "true_label": "non_duplicate",
+    "subtype": "action",
+    "methods": {
+      "tfidf": {
+        "prediction": "duplicate",
+        "similarity": 0.8515099923871556
+      },
+      "sbert": {
+        "prediction": "duplicate",
+        "similarity": 0.8565160632133484
+      }
+    }
+  },
+  {
+    "pair_id": "DUP-680-duplicate",
+    "true_label": "duplicate",
+    "subtype": "paraphrase",
+    "methods": {
+      "tfidf": {
+        "prediction": "duplicate",
+        "similarity": 0.3340869551398744
+      },
+      "sbert": {
+        "prediction": "duplicate",
+        "similarity": 0.8702768087387085
+      }
+    }
+  },
+  {
+    "pair_id": "DUP-680-non_duplicate",
+    "true_label": "non_duplicate",
+    "subtype": "action",
+    "methods": {
+      "tfidf": {
+        "prediction": "duplicate",
+        "similarity": 0.829877988358128
+      },
+      "sbert": {
+        "prediction": "duplicate",
+        "similarity": 0.7892645001411438
+      }
+    }
+  },
+  {
+    "pair_id": "DUP-505-duplicate",
+    "true_label": "duplicate",
+    "subtype": "paraphrase",
+    "methods": {
+      "tfidf": {
+        "prediction": "duplicate",
+        "similarity": 0.25787339209717497
+      },
+      "sbert": {
+        "prediction": "duplicate",
+        "similarity": 0.8736535906791687
+      }
+    }
+  },
+  {
+    "pair_id": "DUP-505-non_duplicate",
+    "true_label": "non_duplicate",
+    "subtype": "negation",
+    "methods": {
+      "tfidf": {
+        "prediction": "duplicate",
+        "similarity": 0.8985859949504345
+      },
+      "sbert": {
+        "prediction": "duplicate",
+        "similarity": 0.8563559055328369
+      }
+    }
+  },
+  {
+    "pair_id": "DUP-358-duplicate",
+    "true_label": "duplicate",
+    "subtype": "paraphrase",
+    "methods": {
+      "tfidf": {
+        "prediction": "duplicate",
+        "similarity": 0.47148288667660043
+      },
+      "sbert": {
+        "prediction": "duplicate",
+        "similarity": 0.9215883016586304
+      }
+    }
+  },
+  {
+    "pair_id": "DUP-358-non_duplicate",
+    "true_label": "non_duplicate",
+    "subtype": "negation",
+    "methods": {
+      "tfidf": {
+        "prediction": "duplicate",
+        "similarity": 0.8959858418700575
+      },
+      "sbert": {
+        "prediction": "duplicate",
+        "similarity": 0.7532780766487122
+      }
+    }
+  },
+  {
+    "pair_id": "DUP-740-duplicate",
+    "true_label": "duplicate",
+    "subtype": "paraphrase",
+    "methods": {
+      "tfidf": {
+        "prediction": "duplicate",
+        "similarity": 0.39263054651874596
+      },
+      "sbert": {
+        "prediction": "duplicate",
+        "similarity": 0.7273827791213989
+      }
+    }
+  },
+  {
+    "pair_id": "DUP-740-non_duplicate",
+    "true_label": "non_duplicate",
+    "subtype": "negation",
+    "methods": {
+      "tfidf": {
+        "prediction": "duplicate",
+        "similarity": 0.8809998862120558
+      },
+      "sbert": {
+        "prediction": "duplicate",
+        "similarity": 0.9909496307373047
+      }
+    }
+  },
+  {
+    "pair_id": "DUP-638-duplicate",
+    "true_label": "duplicate",
+    "subtype": "paraphrase",
+    "methods": {
+      "tfidf": {
+        "prediction": "duplicate",
+        "similarity": 0.6351560670014369
+      },
+      "sbert": {
+        "prediction": "duplicate",
+        "similarity": 0.790115475654602
+      }
+    }
+  },
+  {
+    "pair_id": "DUP-638-non_duplicate",
+    "true_label": "non_duplicate",
+    "subtype": "negation",
+    "methods": {
+      "tfidf": {
+        "prediction": "duplicate",
+        "similarity": 0.9631481581845487
+      },
+      "sbert": {
+        "prediction": "duplicate",
+        "similarity": 0.9469286203384399
+      }
+    }
+  },
+  {
+    "pair_id": "DUP-625-duplicate",
+    "true_label": "duplicate",
+    "subtype": "paraphrase",
+    "methods": {
+      "tfidf": {
+        "prediction": "duplicate",
+        "similarity": 0.37640336122044377
+      },
+      "sbert": {
+        "prediction": "duplicate",
+        "similarity": 0.8444592952728271
+      }
+    }
+  },
+  {
+    "pair_id": "DUP-625-non_duplicate",
+    "true_label": "non_duplicate",
+    "subtype": "negation",
+    "methods": {
+      "tfidf": {
+        "prediction": "duplicate",
+        "similarity": 0.8969447348204521
+      },
+      "sbert": {
+        "prediction": "duplicate",
+        "similarity": 0.9562579989433289
+      }
+    }
+  },
+  {
+    "pair_id": "DUP-154-duplicate",
+    "true_label": "duplicate",
+    "subtype": "paraphrase",
+    "methods": {
+      "tfidf": {
+        "prediction": "duplicate",
+        "similarity": 0.28858523416394216
+      },
+      "sbert": {
+        "prediction": "duplicate",
+        "similarity": 0.8020135760307312
+      }
+    }
+  },
+  {
+    "pair_id": "DUP-154-non_duplicate",
+    "true_label": "non_duplicate",
+    "subtype": "numeric",
+    "methods": {
+      "tfidf": {
+        "prediction": "duplicate",
+        "similarity": 0.9792533872420779
+      },
+      "sbert": {
+        "prediction": "duplicate",
+        "similarity": 0.984444797039032
+      }
+    }
+  },
+  {
+    "pair_id": "DUP-040-duplicate",
+    "true_label": "duplicate",
+    "subtype": "paraphrase",
+    "methods": {
+      "tfidf": {
+        "prediction": "duplicate",
+        "similarity": 0.45914860447271155
+      },
+      "sbert": {
+        "prediction": "duplicate",
+        "similarity": 0.8953883051872253
+      }
+    }
+  },
+  {
+    "pair_id": "DUP-040-non_duplicate",
+    "true_label": "non_duplicate",
+    "subtype": "numeric",
+    "methods": {
+      "tfidf": {
+        "prediction": "duplicate",
+        "similarity": 0.9566266692196422
+      },
+      "sbert": {
+        "prediction": "duplicate",
+        "similarity": 0.985507071018219
+      }
+    }
+  },
+  {
+    "pair_id": "DUP-217-duplicate",
+    "true_label": "duplicate",
+    "subtype": "paraphrase",
+    "methods": {
+      "tfidf": {
+        "prediction": "duplicate",
+        "similarity": 0.6020906923012512
+      },
+      "sbert": {
+        "prediction": "duplicate",
+        "similarity": 0.866870641708374
+      }
+    }
+  },
+  {
+    "pair_id": "DUP-217-non_duplicate",
+    "true_label": "non_duplicate",
+    "subtype": "numeric",
+    "methods": {
+      "tfidf": {
+        "prediction": "duplicate",
+        "similarity": 1.0
+      },
+      "sbert": {
+        "prediction": "duplicate",
+        "similarity": 0.9887577891349792
+      }
+    }
+  },
+  {
+    "pair_id": "DUP-351-duplicate",
+    "true_label": "duplicate",
+    "subtype": "paraphrase",
+    "methods": {
+      "tfidf": {
+        "prediction": "duplicate",
+        "similarity": 0.4275738153748488
+      },
+      "sbert": {
+        "prediction": "duplicate",
+        "similarity": 0.8265706896781921
+      }
+    }
+  },
+  {
+    "pair_id": "DUP-351-non_duplicate",
+    "true_label": "non_duplicate",
+    "subtype": "numeric",
+    "methods": {
+      "tfidf": {
+        "prediction": "duplicate",
+        "similarity": 0.9999999999999999
+      },
+      "sbert": {
+        "prediction": "duplicate",
+        "similarity": 0.9146010279655457
+      }
+    }
+  },
+  {
+    "pair_id": "DUP-601-duplicate",
+    "true_label": "duplicate",
+    "subtype": "paraphrase",
+    "methods": {
+      "tfidf": {
+        "prediction": "duplicate",
+        "similarity": 0.5250511733870915
+      },
+      "sbert": {
+        "prediction": "duplicate",
+        "similarity": 0.9138045310974121
+      }
+    }
+  },
+  {
+    "pair_id": "DUP-601-non_duplicate",
+    "true_label": "non_duplicate",
+    "subtype": "numeric",
+    "methods": {
+      "tfidf": {
+        "prediction": "duplicate",
+        "similarity": 0.8993532876876407
+      },
+      "sbert": {
+        "prediction": "duplicate",
+        "similarity": 0.9926916360855103
+      }
+    }
+  },
+  {
+    "pair_id": "DUP-053-duplicate",
+    "true_label": "duplicate",
+    "subtype": "paraphrase",
+    "methods": {
+      "tfidf": {
+        "prediction": "duplicate",
+        "similarity": 0.5935440046886761
+      },
+      "sbert": {
+        "prediction": "duplicate",
+        "similarity": 0.7393773198127747
+      }
+    }
+  },
+  {
+    "pair_id": "DUP-053-non_duplicate",
+    "true_label": "non_duplicate",
+    "subtype": "intent",
+    "methods": {
+      "tfidf": {
+        "prediction": "duplicate",
+        "similarity": 0.914332996369886
+      },
+      "sbert": {
+        "prediction": "duplicate",
+        "similarity": 0.9110163450241089
+      }
+    }
+  },
+  {
+    "pair_id": "DUP-660-duplicate",
+    "true_label": "duplicate",
+    "subtype": "paraphrase",
+    "methods": {
+      "tfidf": {
+        "prediction": "duplicate",
+        "similarity": 0.19112180724918568
+      },
+      "sbert": {
+        "prediction": "duplicate",
+        "similarity": 0.8621222972869873
+      }
+    }
+  },
+  {
+    "pair_id": "DUP-660-non_duplicate",
+    "true_label": "non_duplicate",
+    "subtype": "intent",
+    "methods": {
+      "tfidf": {
+        "prediction": "duplicate",
+        "similarity": 0.8875646364385976
+      },
+      "sbert": {
+        "prediction": "duplicate",
+        "similarity": 0.9225746393203735
+      }
+    }
+  },
+  {
+    "pair_id": "DUP-467-duplicate",
+    "true_label": "duplicate",
+    "subtype": "paraphrase",
+    "methods": {
+      "tfidf": {
+        "prediction": "duplicate",
+        "similarity": 0.24349059688766414
+      },
+      "sbert": {
+        "prediction": "duplicate",
+        "similarity": 0.7215796709060669
+      }
+    }
+  },
+  {
+    "pair_id": "DUP-467-non_duplicate",
+    "true_label": "non_duplicate",
+    "subtype": "intent",
+    "methods": {
+      "tfidf": {
+        "prediction": "duplicate",
+        "similarity": 0.86700110193306
+      },
+      "sbert": {
+        "prediction": "duplicate",
+        "similarity": 0.9948508739471436
+      }
+    }
+  },
+  {
+    "pair_id": "DUP-633-duplicate",
+    "true_label": "duplicate",
+    "subtype": "paraphrase",
+    "methods": {
+      "tfidf": {
+        "prediction": "duplicate",
+        "similarity": 0.35205271147380623
+      },
+      "sbert": {
+        "prediction": "duplicate",
+        "similarity": 0.8643324375152588
+      }
+    }
+  },
+  {
+    "pair_id": "DUP-633-non_duplicate",
+    "true_label": "non_duplicate",
+    "subtype": "intent",
+    "methods": {
+      "tfidf": {
+        "prediction": "duplicate",
+        "similarity": 0.868573496124129
+      },
+      "sbert": {
+        "prediction": "duplicate",
+        "similarity": 0.6586512327194214
+      }
+    }
+  },
+  {
+    "pair_id": "DUP-359-duplicate",
+    "true_label": "duplicate",
+    "subtype": "paraphrase",
+    "methods": {
+      "tfidf": {
+        "prediction": "duplicate",
+        "similarity": 0.49956250043635186
+      },
+      "sbert": {
+        "prediction": "duplicate",
+        "similarity": 0.870060920715332
+      }
+    }
+  },
+  {
+    "pair_id": "DUP-359-non_duplicate",
+    "true_label": "non_duplicate",
+    "subtype": "intent",
+    "methods": {
+      "tfidf": {
+        "prediction": "duplicate",
+        "similarity": 0.8563486699435963
+      },
+      "sbert": {
+        "prediction": "duplicate",
+        "similarity": 0.9840035438537598
+      }
+    }
+  }
+]

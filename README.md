@@ -9,6 +9,7 @@ SpecSentry is a final-year Computational Linguistics and NLP lab project for rev
 - Phase 3 — Complete. Four classical classification pipelines were selected on validation and evaluated on the held-out test projects.
 - Phase 4 — Complete. Binary and 12-class DistilBERT checkpoints were evaluated against the Phase 3 baselines.
 - Phase 5 — Complete. An interpretable rule-based ambiguity detector was evaluated on a separate curated set.
+- Phase 6 — Complete. TF-IDF and SBERT duplicate detectors were evaluated using development-only cutoffs.
 
 ## Dataset
 
@@ -65,6 +66,17 @@ The detector returns matched spans, explanations, and a 0–10 heuristic severit
 
 The additional rules caught 30 more ambiguous cases while the false-positive count stayed at two. These scores describe the curated pairs. The [ambiguity experiment guide](ml/experiments/AMBIGUITY.md) documents the scoring, error cases, figures, and reproduction command.
 
+## Semantic duplicate detection
+
+The curated set has 120 PROMISE_exp-derived pairs with 60 paraphrases and 60 non-duplicates. Both methods use cosine similarity. TF-IDF fits only on development texts, while SBERT uses frozen `all-MiniLM-L6-v2` embeddings. Each cutoff maximizes duplicate-class F1 on 60 development pairs. The remaining 60 pairs give the following results.
+
+| Method | Threshold | Accuracy | Precision | Recall | F1 |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| TF-IDF + cosine | 0.1406 | 0.5333 | 0.5179 | 0.9667 | 0.6744 |
+| SBERT + cosine | 0.5158 | 0.5833 | 0.5455 | 1.0000 | 0.7059 |
+
+SBERT recovered one more paraphrase and rejected two more unrelated pairs. Both methods flagged all 25 hard negatives despite changes in roles, actions, negation, numeric limits, or intent. [Dataset design](ml/data/duplicates/README.md) · [Experiment, error analysis, and figures](ml/experiments/DUPLICATES.md)
+
 ## Planned architecture
 
 ```text
@@ -82,6 +94,7 @@ The NLP pipeline will detect ambiguous requirements, identify semantic duplicate
 - Dataset pipeline — Python standard library and Matplotlib for report figures
 - Classical NLP baselines — scikit-learn and joblib
 - Transformer experiments — PyTorch and Hugging Face Transformers
+- Semantic duplicate detection — Sentence Transformers and scikit-learn
 
 ```text
 SpecSentry/
@@ -91,7 +104,7 @@ SpecSentry/
 │   ├── app/
 │   │   ├── api/             # HTTP routes
 │   │   ├── core/            # Local configuration
-│   │   ├── nlp/             # Interpretable ambiguity rules
+│   │   ├── nlp/             # Ambiguity and duplicate detectors
 │   │   ├── schemas/         # Pydantic response models
 │   │   ├── services/        # Reserved for services such as SRS ingestion
 │   │   └── main.py
@@ -151,6 +164,6 @@ The default setup works without environment variables. To override the API URL, 
 
 ## Next phases
 
-1. Add SRS input and requirement extraction. Prepare separate datasets and evaluation plans for semantic duplicate and contradiction detection.
+1. Add SRS input and requirement extraction. Prepare a dataset and evaluation plan for contradiction detection.
 2. Add a requirement explorer and a quality report that links findings back to the SRS.
 3. Add optional LLM explanations and rewrite suggestions for findings from the NLP pipeline.

@@ -59,11 +59,13 @@ model_weights/
 /ml/data/processed/*
 !/ml/data/processed/.gitkeep
 /ml/data/ambiguity/curated_ambiguity_evaluation.csv
+/ml/data/duplicates/curated_duplicate_pairs*.csv
 
 # Error records contain the original requirement text
 /research/results/classification_test_errors.csv
 /research/results/transformer_classification_test_errors.csv
 /research/results/ambiguity_error_records.csv
+/research/results/duplicate_error_records.csv
 
 # Temporary, editor, and OS-generated files
 tmp/
