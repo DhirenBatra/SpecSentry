@@ -1,0 +1,660 @@
+{
+  "full": {
+    "false_positive": {
+      "counts_by_case_design": {
+        "explicit definition in clear variant": 2
+      },
+      "cases": [
+        {
+          "id": "AMB-048-clear",
+          "pair_id": "AMB-048",
+          "source_row": 351,
+          "project_id": "7",
+          "focus": "vague_term",
+          "challenge": "explicit definition in clear variant",
+          "label": "clear",
+          "prediction": "ambiguous",
+          "score": 2,
+          "issues": [
+            {
+              "text": "sufficient",
+              "category": "vague_term",
+              "explanation": "The requirement leaves this quality judgment without a testable acceptance criterion.",
+              "start": 22,
+              "end": 32,
+              "weight": 2
+            }
+          ]
+        },
+        {
+          "id": "AMB-049-clear",
+          "pair_id": "AMB-049",
+          "source_row": 680,
+          "project_id": "25",
+          "focus": "vague_term",
+          "challenge": "explicit definition in clear variant",
+          "label": "clear",
+          "prediction": "ambiguous",
+          "score": 2,
+          "issues": [
+            {
+              "text": "appropriate",
+              "category": "vague_term",
+              "explanation": "The requirement leaves this quality judgment without a testable acceptance criterion.",
+              "start": 64,
+              "end": 75,
+              "weight": 2
+            }
+          ]
+        }
+      ]
+    },
+    "false_negative": {
+      "counts_by_case_design": {
+        "unlisted wording": 4,
+        "missing value": 2,
+        "later competing antecedents": 1
+      },
+      "cases": [
+        {
+          "id": "AMB-005-ambiguous",
+          "pair_id": "AMB-005",
+          "source_row": 374,
+          "project_id": "8",
+          "focus": "vague_term",
+          "challenge": "unlisted wording",
+          "label": "ambiguous",
+          "prediction": "clear",
+          "score": 0,
+          "issues": []
+        },
+        {
+          "id": "AMB-006-ambiguous",
+          "pair_id": "AMB-006",
+          "source_row": 377,
+          "project_id": "8",
+          "focus": "vague_term",
+          "challenge": "unlisted wording",
+          "label": "ambiguous",
+          "prediction": "clear",
+          "score": 0,
+          "issues": []
+        },
+        {
+          "id": "AMB-016-ambiguous",
+          "pair_id": "AMB-016",
+          "source_row": 1,
+          "project_id": "1",
+          "focus": "weak_quantifier",
+          "challenge": "unlisted wording",
+          "label": "ambiguous",
+          "prediction": "clear",
+          "score": 0,
+          "issues": []
+        },
+        {
+          "id": "AMB-017-ambiguous",
+          "pair_id": "AMB-017",
+          "source_row": 689,
+          "project_id": "27",
+          "focus": "weak_quantifier",
+          "challenge": "missing value",
+          "label": "ambiguous",
+          "prediction": "clear",
+          "score": 0,
+          "issues": []
+        },
+        {
+          "id": "AMB-024-ambiguous",
+          "pair_id": "AMB-024",
+          "source_row": 639,
+          "project_id": "17",
+          "focus": "missing_units",
+          "challenge": "missing value",
+          "label": "ambiguous",
+          "prediction": "clear",
+          "score": 0,
+          "issues": []
+        },
+        {
+          "id": "AMB-041-ambiguous",
+          "pair_id": "AMB-041",
+          "source_row": 361,
+          "project_id": "7",
+          "focus": "unclear_reference",
+          "challenge": "later competing antecedents",
+          "label": "ambiguous",
+          "prediction": "clear",
+          "score": 0,
+          "issues": []
+        },
+        {
+          "id": "AMB-050-ambiguous",
+          "pair_id": "AMB-050",
+          "source_row": 358,
+          "project_id": "7",
+          "focus": "open_ended_phrase",
+          "challenge": "unlisted wording",
+          "label": "ambiguous",
+          "prediction": "clear",
+          "score": 0,
+          "issues": []
+        }
+      ]
+    }
+  },
+  "vague_only": {
+    "false_positive": {
+      "counts_by_case_design": {
+        "explicit definition in clear variant": 2
+      },
+      "cases": [
+        {
+          "id": "AMB-048-clear",
+          "pair_id": "AMB-048",
+          "source_row": 351,
+          "project_id": "7",
+          "focus": "vague_term",
+          "challenge": "explicit definition in clear variant",
+          "label": "clear",
+          "prediction": "ambiguous",
+          "score": 2,
+          "issues": [
+            {
+              "text": "sufficient",
+              "category": "vague_term",
+              "explanation": "The requirement leaves this quality judgment without a testable acceptance criterion.",
+              "start": 22,
+              "end": 32,
+              "weight": 2
+            }
+          ]
+        },
+        {
+          "id": "AMB-049-clear",
+          "pair_id": "AMB-049",
+          "source_row": 680,
+          "project_id": "25",
+          "focus": "vague_term",
+          "challenge": "explicit definition in clear variant",
+          "label": "clear",
+          "prediction": "ambiguous",
+          "score": 2,
+          "issues": [
+            {
+              "text": "appropriate",
+              "category": "vague_term",
+              "explanation": "The requirement leaves this quality judgment without a testable acceptance criterion.",
+              "start": 64,
+              "end": 75,
+              "weight": 2
+            }
+          ]
+        }
+      ]
+    },
+    "false_negative": {
+      "counts_by_case_design": {
+        "unlisted wording": 4,
+        "weak_quantifier": 5,
+        "missing value": 2,
+        "weak_obligation": 6,
+        "undefined_comparative": 4,
+        "open_ended_phrase": 5,
+        "explicit reference in clear variant": 1,
+        "unclear_reference": 5,
+        "later competing antecedents": 1,
+        "explicit tolerance in clear variant": 1,
+        "measured comparison in clear variant": 1,
+        "explicit permission in clear variant": 1,
+        "quoted literal in clear variant": 1
+      },
+      "cases": [
+        {
+          "id": "AMB-005-ambiguous",
+          "pair_id": "AMB-005",
+          "source_row": 374,
+          "project_id": "8",
+          "focus": "vague_term",
+          "challenge": "unlisted wording",
+          "label": "ambiguous",
+          "prediction": "clear",
+          "score": 0,
+          "issues": []
+        },
+        {
+          "id": "AMB-006-ambiguous",
+          "pair_id": "AMB-006",
+          "source_row": 377,
+          "project_id": "8",
+          "focus": "vague_term",
+          "challenge": "unlisted wording",
+          "label": "ambiguous",
+          "prediction": "clear",
+          "score": 0,
+          "issues": []
+        },
+        {
+          "id": "AMB-010-ambiguous",
+          "pair_id": "AMB-010",
+          "source_row": 53,
+          "project_id": "2",
+          "focus": "weak_quantifier",
+          "challenge": "",
+          "label": "ambiguous",
+          "prediction": "clear",
+          "score": 0,
+          "issues": []
+        },
+        {
+          "id": "AMB-011-ambiguous",
+          "pair_id": "AMB-011",
+          "source_row": 48,
+          "project_id": "2",
+          "focus": "weak_quantifier",
+          "challenge": "",
+          "label": "ambiguous",
+          "prediction": "clear",
+          "score": 0,
+          "issues": []
+        },
+        {
+          "id": "AMB-013-ambiguous",
+          "pair_id": "AMB-013",
+          "source_row": 402,
+          "project_id": "8",
+          "focus": "weak_quantifier",
+          "challenge": "",
+          "label": "ambiguous",
+          "prediction": "clear",
+          "score": 0,
+          "issues": []
+        },
+        {
+          "id": "AMB-014-ambiguous",
+          "pair_id": "AMB-014",
+          "source_row": 43,
+          "project_id": "2",
+          "focus": "weak_quantifier",
+          "challenge": "",
+          "label": "ambiguous",
+          "prediction": "clear",
+          "score": 0,
+          "issues": []
+        },
+        {
+          "id": "AMB-015-ambiguous",
+          "pair_id": "AMB-015",
+          "source_row": 192,
+          "project_id": "4",
+          "focus": "weak_quantifier",
+          "challenge": "",
+          "label": "ambiguous",
+          "prediction": "clear",
+          "score": 0,
+          "issues": []
+        },
+        {
+          "id": "AMB-016-ambiguous",
+          "pair_id": "AMB-016",
+          "source_row": 1,
+          "project_id": "1",
+          "focus": "weak_quantifier",
+          "challenge": "unlisted wording",
+          "label": "ambiguous",
+          "prediction": "clear",
+          "score": 0,
+          "issues": []
+        },
+        {
+          "id": "AMB-017-ambiguous",
+          "pair_id": "AMB-017",
+          "source_row": 689,
+          "project_id": "27",
+          "focus": "weak_quantifier",
+          "challenge": "missing value",
+          "label": "ambiguous",
+          "prediction": "clear",
+          "score": 0,
+          "issues": []
+        },
+        {
+          "id": "AMB-018-ambiguous",
+          "pair_id": "AMB-018",
+          "source_row": 11,
+          "project_id": "1",
+          "focus": "weak_obligation",
+          "challenge": "",
+          "label": "ambiguous",
+          "prediction": "clear",
+          "score": 0,
+          "issues": []
+        },
+        {
+          "id": "AMB-019-ambiguous",
+          "pair_id": "AMB-019",
+          "source_row": 67,
+          "project_id": "2",
+          "focus": "weak_obligation",
+          "challenge": "",
+          "label": "ambiguous",
+          "prediction": "clear",
+          "score": 0,
+          "issues": []
+        },
+        {
+          "id": "AMB-020-ambiguous",
+          "pair_id": "AMB-020",
+          "source_row": 697,
+          "project_id": "27",
+          "focus": "weak_obligation",
+          "challenge": "",
+          "label": "ambiguous",
+          "prediction": "clear",
+          "score": 0,
+          "issues": []
+        },
+        {
+          "id": "AMB-021-ambiguous",
+          "pair_id": "AMB-021",
+          "source_row": 837,
+          "project_id": "45",
+          "focus": "weak_obligation",
+          "challenge": "",
+          "label": "ambiguous",
+          "prediction": "clear",
+          "score": 0,
+          "issues": []
+        },
+        {
+          "id": "AMB-022-ambiguous",
+          "pair_id": "AMB-022",
+          "source_row": 434,
+          "project_id": "8",
+          "focus": "weak_obligation",
+          "challenge": "",
+          "label": "ambiguous",
+          "prediction": "clear",
+          "score": 0,
+          "issues": []
+        },
+        {
+          "id": "AMB-023-ambiguous",
+          "pair_id": "AMB-023",
+          "source_row": 453,
+          "project_id": "8",
+          "focus": "weak_obligation",
+          "challenge": "",
+          "label": "ambiguous",
+          "prediction": "clear",
+          "score": 0,
+          "issues": []
+        },
+        {
+          "id": "AMB-024-ambiguous",
+          "pair_id": "AMB-024",
+          "source_row": 639,
+          "project_id": "17",
+          "focus": "missing_units",
+          "challenge": "missing value",
+          "label": "ambiguous",
+          "prediction": "clear",
+          "score": 0,
+          "issues": []
+        },
+        {
+          "id": "AMB-025-ambiguous",
+          "pair_id": "AMB-025",
+          "source_row": 606,
+          "project_id": "14",
+          "focus": "undefined_comparative",
+          "challenge": "",
+          "label": "ambiguous",
+          "prediction": "clear",
+          "score": 0,
+          "issues": []
+        },
+        {
+          "id": "AMB-026-ambiguous",
+          "pair_id": "AMB-026",
+          "source_row": 601,
+          "project_id": "14",
+          "focus": "undefined_comparative",
+          "challenge": "",
+          "label": "ambiguous",
+          "prediction": "clear",
+          "score": 0,
+          "issues": []
+        },
+        {
+          "id": "AMB-027-ambiguous",
+          "pair_id": "AMB-027",
+          "source_row": 740,
+          "project_id": "32",
+          "focus": "open_ended_phrase",
+          "challenge": "",
+          "label": "ambiguous",
+          "prediction": "clear",
+          "score": 0,
+          "issues": []
+        },
+        {
+          "id": "AMB-029-ambiguous",
+          "pair_id": "AMB-029",
+          "source_row": 308,
+          "project_id": "6",
+          "focus": "undefined_comparative",
+          "challenge": "",
+          "label": "ambiguous",
+          "prediction": "clear",
+          "score": 0,
+          "issues": []
+        },
+        {
+          "id": "AMB-030-ambiguous",
+          "pair_id": "AMB-030",
+          "source_row": 868,
+          "project_id": "45",
+          "focus": "undefined_comparative",
+          "challenge": "",
+          "label": "ambiguous",
+          "prediction": "clear",
+          "score": 0,
+          "issues": []
+        },
+        {
+          "id": "AMB-031-ambiguous",
+          "pair_id": "AMB-031",
+          "source_row": 261,
+          "project_id": "5",
+          "focus": "open_ended_phrase",
+          "challenge": "",
+          "label": "ambiguous",
+          "prediction": "clear",
+          "score": 0,
+          "issues": []
+        },
+        {
+          "id": "AMB-032-ambiguous",
+          "pair_id": "AMB-032",
+          "source_row": 490,
+          "project_id": "10",
+          "focus": "open_ended_phrase",
+          "challenge": "",
+          "label": "ambiguous",
+          "prediction": "clear",
+          "score": 0,
+          "issues": []
+        },
+        {
+          "id": "AMB-033-ambiguous",
+          "pair_id": "AMB-033",
+          "source_row": 491,
+          "project_id": "10",
+          "focus": "open_ended_phrase",
+          "challenge": "explicit reference in clear variant",
+          "label": "ambiguous",
+          "prediction": "clear",
+          "score": 0,
+          "issues": []
+        },
+        {
+          "id": "AMB-034-ambiguous",
+          "pair_id": "AMB-034",
+          "source_row": 323,
+          "project_id": "6",
+          "focus": "open_ended_phrase",
+          "challenge": "",
+          "label": "ambiguous",
+          "prediction": "clear",
+          "score": 0,
+          "issues": []
+        },
+        {
+          "id": "AMB-035-ambiguous",
+          "pair_id": "AMB-035",
+          "source_row": 632,
+          "project_id": "16",
+          "focus": "open_ended_phrase",
+          "challenge": "",
+          "label": "ambiguous",
+          "prediction": "clear",
+          "score": 0,
+          "issues": []
+        },
+        {
+          "id": "AMB-036-ambiguous",
+          "pair_id": "AMB-036",
+          "source_row": 19,
+          "project_id": "1",
+          "focus": "unclear_reference",
+          "challenge": "",
+          "label": "ambiguous",
+          "prediction": "clear",
+          "score": 0,
+          "issues": []
+        },
+        {
+          "id": "AMB-037-ambiguous",
+          "pair_id": "AMB-037",
+          "source_row": 452,
+          "project_id": "8",
+          "focus": "unclear_reference",
+          "challenge": "",
+          "label": "ambiguous",
+          "prediction": "clear",
+          "score": 0,
+          "issues": []
+        },
+        {
+          "id": "AMB-038-ambiguous",
+          "pair_id": "AMB-038",
+          "source_row": 450,
+          "project_id": "8",
+          "focus": "unclear_reference",
+          "challenge": "",
+          "label": "ambiguous",
+          "prediction": "clear",
+          "score": 0,
+          "issues": []
+        },
+        {
+          "id": "AMB-039-ambiguous",
+          "pair_id": "AMB-039",
+          "source_row": 836,
+          "project_id": "45",
+          "focus": "unclear_reference",
+          "challenge": "",
+          "label": "ambiguous",
+          "prediction": "clear",
+          "score": 0,
+          "issues": []
+        },
+        {
+          "id": "AMB-040-ambiguous",
+          "pair_id": "AMB-040",
+          "source_row": 507,
+          "project_id": "10",
+          "focus": "unclear_reference",
+          "challenge": "",
+          "label": "ambiguous",
+          "prediction": "clear",
+          "score": 0,
+          "issues": []
+        },
+        {
+          "id": "AMB-041-ambiguous",
+          "pair_id": "AMB-041",
+          "source_row": 361,
+          "project_id": "7",
+          "focus": "unclear_reference",
+          "challenge": "later competing antecedents",
+          "label": "ambiguous",
+          "prediction": "clear",
+          "score": 0,
+          "issues": []
+        },
+        {
+          "id": "AMB-042-ambiguous",
+          "pair_id": "AMB-042",
+          "source_row": 496,
+          "project_id": "10",
+          "focus": "weak_quantifier",
+          "challenge": "explicit tolerance in clear variant",
+          "label": "ambiguous",
+          "prediction": "clear",
+          "score": 0,
+          "issues": []
+        },
+        {
+          "id": "AMB-043-ambiguous",
+          "pair_id": "AMB-043",
+          "source_row": 545,
+          "project_id": "11",
+          "focus": "undefined_comparative",
+          "challenge": "measured comparison in clear variant",
+          "label": "ambiguous",
+          "prediction": "clear",
+          "score": 0,
+          "issues": []
+        },
+        {
+          "id": "AMB-045-ambiguous",
+          "pair_id": "AMB-045",
+          "source_row": 451,
+          "project_id": "8",
+          "focus": "weak_obligation",
+          "challenge": "explicit permission in clear variant",
+          "label": "ambiguous",
+          "prediction": "clear",
+          "score": 0,
+          "issues": []
+        },
+        {
+          "id": "AMB-047-ambiguous",
+          "pair_id": "AMB-047",
+          "source_row": 625,
+          "project_id": "16",
+          "focus": "open_ended_phrase",
+          "challenge": "quoted literal in clear variant",
+          "label": "ambiguous",
+          "prediction": "clear",
+          "score": 0,
+          "issues": []
+        },
+        {
+          "id": "AMB-050-ambiguous",
+          "pair_id": "AMB-050",
+          "source_row": 358,
+          "project_id": "7",
+          "focus": "open_ended_phrase",
+          "challenge": "unlisted wording",
+          "label": "ambiguous",
+          "prediction": "clear",
+          "score": 0,
+          "issues": []
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,85 @@
+{
+  "dataset": {
+    "name": "SpecSentry Curated Ambiguity Evaluation Set",
+    "cases": 100,
+    "pairs": 50,
+    "distinct_projects": 19,
+    "class_counts": {
+      "clear": 50,
+      "ambiguous": 50
+    },
+    "challenge_pair_count": 16,
+    "dataset_sha256": "68586792cd2e9c77deed90db7815d6adced0a5d1782b7990a4b199fc38bd3ba9",
+    "recipe_sha256": "7555c0bde298a8cda24e588f8a07129c9e5b3ba0f6fd98b5f6c596ac4dc0a105",
+    "source_commit": "9df2a9373b5481fec522f0b9a70781f4f0331741",
+    "source_sha256": "adc438d0e8ab5e66e9fa946b2c668df26d9d9d324a22cb3a5a2b4f4b52773884"
+  },
+  "positive_label": "ambiguous",
+  "signal_weights": {
+    "vague_term": 2,
+    "weak_quantifier": 1,
+    "weak_obligation": 1,
+    "undefined_comparative": 2,
+    "unclear_reference": 2,
+    "open_ended_phrase": 3
+  },
+  "methods": {
+    "full": {
+      "accuracy": 0.91,
+      "precision": 0.9555555555555556,
+      "recall": 0.86,
+      "f1": 0.9052631578947369,
+      "confusion_matrix": {
+        "label_order": [
+          "clear",
+          "ambiguous"
+        ],
+        "counts": [
+          [
+            48,
+            2
+          ],
+          [
+            7,
+            43
+          ]
+        ]
+      },
+      "false_positives": 2,
+      "false_negatives": 7
+    },
+    "vague_only": {
+      "accuracy": 0.61,
+      "precision": 0.8666666666666667,
+      "recall": 0.26,
+      "f1": 0.4,
+      "confusion_matrix": {
+        "label_order": [
+          "clear",
+          "ambiguous"
+        ],
+        "counts": [
+          [
+            48,
+            2
+          ],
+          [
+            37,
+            13
+          ]
+        ]
+      },
+      "false_positives": 2,
+      "false_negatives": 37
+    }
+  },
+  "ablation": {
+    "full_minus_vague_only": {
+      "precision": 0.0888888888888889,
+      "recall": 0.6,
+      "f1": 0.5052631578947369
+    },
+    "additional_true_positives": 30,
+    "additional_false_positives": 0
+  }
+}

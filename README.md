@@ -8,6 +8,7 @@ SpecSentry is a final-year Computational Linguistics and NLP lab project for rev
 - Phase 2 — Complete. The PROMISE_exp pipeline prepares and verifies the data for binary and multiclass requirement classification.
 - Phase 3 — Complete. Four classical classification pipelines were selected on validation and evaluated on the held-out test projects.
 - Phase 4 — Complete. Binary and 12-class DistilBERT checkpoints were evaluated against the Phase 3 baselines.
+- Phase 5 — Complete. An interpretable rule-based ambiguity detector was evaluated on a separate curated set.
 
 ## Dataset
 
@@ -53,6 +54,17 @@ Both models selected epoch 3 by validation macro F1. The test metrics use the sa
 
 DistilBERT underperformed both classical baselines. Binary test macro F1 was 0.5795 versus 0.8713 for Logistic Regression. Multiclass test macro F1 was 0.0585 versus 0.4550 for Linear SVM. The multiclass model predicted Functional for 147 of 148 test rows, including the only Portability example. See the [DistilBERT experiment guide](ml/experiments/TRANSFORMER.md) for the rerun command, configuration, errors, and figures.
 
+## Interpretable ambiguity detection
+
+The detector returns matched spans, explanations, and a 0–10 heuristic severity score. It checks vague terms, weak quantifiers, weak obligations, undefined comparisons, unresolved opening references, and open-ended phrases. The evaluation uses a separately labeled, 100-case curated set with 50 ambiguous and 50 clear cases.
+
+| Method | Accuracy | Precision | Recall | F1 | False positives | False negatives |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: |
+| Full detector | 0.9100 | 0.9556 | 0.8600 | 0.9053 | 2 | 7 |
+| Vague terms only | 0.6100 | 0.8667 | 0.2600 | 0.4000 | 2 | 37 |
+
+The additional rules caught 30 more ambiguous cases while the false-positive count stayed at two. These scores describe the curated pairs. The [ambiguity experiment guide](ml/experiments/AMBIGUITY.md) documents the scoring, error cases, figures, and reproduction command.
+
 ## Planned architecture
 
 ```text
@@ -79,7 +91,7 @@ SpecSentry/
 │   ├── app/
 │   │   ├── api/             # HTTP routes
 │   │   ├── core/            # Local configuration
-│   │   ├── nlp/             # Reserved for NLP analysis
+│   │   ├── nlp/             # Interpretable ambiguity rules
 │   │   ├── schemas/         # Pydantic response models
 │   │   ├── services/        # Reserved for services such as SRS ingestion
 │   │   └── main.py
@@ -139,6 +151,6 @@ The default setup works without environment variables. To override the API URL, 
 
 ## Next phases
 
-1. Add SRS input and requirement extraction. Prepare separate datasets and evaluation plans for ambiguity, semantic duplicate, and contradiction detection.
+1. Add SRS input and requirement extraction. Prepare separate datasets and evaluation plans for semantic duplicate and contradiction detection.
 2. Add a requirement explorer and a quality report that links findings back to the SRS.
 3. Add optional LLM explanations and rewrite suggestions for findings from the NLP pipeline.
