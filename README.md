@@ -1,10 +1,10 @@
 # SpecSentry
 
-SpecSentry is a final-year Computational Linguistics and NLP lab project for reviewing natural-language software requirements in a Software Requirements Specification (SRS). Ambiguous wording, repeated requirements, and conflicts can be hard to catch by hand, especially as an SRS grows. The planned system will flag these issues and point reviewers to the relevant requirements.
+SpecSentry is a final-year Computational Linguistics and NLP lab project for reviewing natural-language software requirements in a Software Requirements Specification (SRS). It classifies pasted requirements and flags ambiguous wording, potential duplicates, and potential contradictions for review.
 
 ## Current status
 
-- Phase 1 — Complete. The React landing page checks the local FastAPI service and links to its API documentation.
+- Phase 1 — Complete. The initial React landing page verified the local FastAPI connection and linked to its API documentation.
 - Phase 2 — Complete. The PROMISE_exp pipeline prepares and verifies the data for binary and multiclass requirement classification.
 - Phase 3 — Complete. Four classical classification pipelines were selected on validation and evaluated on the held-out test projects.
 - Phase 4 — Complete. Binary and 12-class DistilBERT checkpoints were evaluated against the Phase 3 baselines.
@@ -13,6 +13,7 @@ SpecSentry is a final-year Computational Linguistics and NLP lab project for rev
 - Phase 7 — Complete. A frozen NLI contradiction detector was compared with conservative conflict rules.
 - Phase 8 — Complete. FastAPI exposes the unified analysis engine with per-requirement evidence and a document quality score.
 - Phase 9 — Complete. A separate endpoint provides optional, user-triggered assistance for selected ambiguity and contradiction findings.
+- Phase 10 — Complete. The React workspace connects paste input and the demo to the analysis dashboard and optional assistance.
 
 ## Dataset
 
@@ -104,12 +105,20 @@ The real CPU demo returned HTTP 200 for 11 requirements in 20.243 seconds, inclu
 ## Architecture
 
 ```text
-React landing page → GET /api/health
-Requirements → POST /api/analyze → NLP findings and quality score
-Selected finding → explicit POST /api/ai/assist → Optional LLM explanation and suggestion
+React workspace ── GET /api/health ───────────→ FastAPI connection status
+                ├─ POST /api/analyze ────────→ Local NLP → Findings and quality dashboard
+                └─ explicit POST /api/ai/assist → OpenAI → Explanation and suggestion
 ```
 
 The NLP pipeline detects ambiguity, potential duplicates, and potential contradictions, classifies requirements, and computes the quality score independently of the optional assistance provider.
+
+## Final workspace
+
+- Paste one requirement per line or load the Phase 8 demo. The editor assigns IDs, tracks the count, and checks the local backend connection.
+- Review the quality score and penalty breakdown, finding counts, and predicted category distribution.
+- Filter the requirement explorer by ambiguity status and inspect the matched phrases, severity, and rule explanations.
+- Compare potential duplicate and contradiction pairs side by side. Expand the pair list for longer results and inspect the returned cosine and NLI scores.
+- Request a rewrite or conflict explanation for a selected finding, then start a fresh analysis when ready.
 
 ## Stack and layout
 
@@ -124,10 +133,10 @@ The NLP pipeline detects ambiguity, potential duplicates, and potential contradi
 ```text
 SpecSentry/
 ├── frontend/
-│   └── src/                 # Landing page, components, and API service
+│   └── src/                 # Requirements editor, analysis dashboard, and API service
 ├── backend/
 │   ├── app/
-│   │   ├── api/             # Health and analysis routes
+│   │   ├── api/             # Health, analysis, and optional assistance routes
 │   │   ├── core/            # Local configuration
 │   │   ├── nlp/             # Standalone ambiguity, duplicate, and contradiction detectors
 │   │   ├── schemas/         # Pydantic response models
@@ -146,26 +155,24 @@ SpecSentry/
 
 Use Python 3.12 and Node.js 24 LTS. Start each service in a separate terminal from the repository root.
 
-For `POST /api/analyze`, install the combined backend and ML dependencies and restore the original local Phase 3 artifacts. [Analysis API setup and demo](backend/ANALYSIS_API.md)
-
 ### Backend
+
+Use the existing ML virtual environment or create one with Python 3.12. The backend needs the original Phase 3 `binary_logistic_regression.joblib` and `multiclass_linear_svm.joblib` files in `ml/artifacts/`. Use the PyTorch build for your device. On the first valid analysis, the pretrained loaders use their local caches or download the pinned checkpoints. [Analysis setup and artifacts](backend/ANALYSIS_API.md) · [PyTorch setup](ml/experiments/TRANSFORMER.md)
 
 Windows PowerShell
 
 ```powershell
-cd backend
-py -3.12 -m venv .venv
-.\.venv\Scripts\python.exe -m pip install -r requirements.txt
-.\.venv\Scripts\python.exe -m uvicorn app.main:app --reload --port 8000
+.\ml\.venv\Scripts\python.exe -m pip install -r backend/requirements-analysis.txt
+Set-Location backend
+..\ml\.venv\Scripts\python.exe -m uvicorn app.main:app --host 127.0.0.1 --port 8000
 ```
 
 macOS or Linux
 
 ```bash
+./ml/.venv/bin/python -m pip install -r backend/requirements-analysis.txt
 cd backend
-python3.12 -m venv .venv
-.venv/bin/python -m pip install -r requirements.txt
-.venv/bin/python -m uvicorn app.main:app --reload --port 8000
+../ml/.venv/bin/python -m uvicorn app.main:app --host 127.0.0.1 --port 8000
 ```
 
 - API base — `http://localhost:8000`
@@ -180,16 +187,29 @@ npm ci
 npm run dev
 ```
 
-In Windows PowerShell, use `npm.cmd` in place of `npm` if script execution is disabled. Open [http://localhost:5173](http://localhost:5173) and look for **Connected** under Backend Status.
+In Windows PowerShell, use `npm.cmd` in place of `npm` if script execution is disabled. Open the workspace and look for **Backend connected** in the header. [Local frontend](http://localhost:5173)
 
-The default setup works without environment variables. To override the API URL, copy `.env.example` to `.env.local` at the repository root, set `VITE_API_BASE_URL`, and restart Vite. Vite includes this value in the browser bundle. Keep credentials out of `VITE_` variables.
+To override the public API URL, set `VITE_API_BASE_URL` in a root `.env.local` file and restart Vite.
+
+### Optional OpenAI assistance
+
+Install `backend/requirements-ai.txt` in the backend's Python environment and set `OPENAI_API_KEY` in the backend process environment before starting Uvicorn. `SPECSENTRY_LLM_MODEL` overrides the default `gpt-4.1-mini`, and `SPECSENTRY_LLM_PROVIDER=disabled` turns assistance off. The health and analysis flows run without these settings. [Configuration and examples](backend/AI_ASSISTANCE.md)
+
+### Demo workflow
+
+1. Click **Load Demo Requirements** to load the 11-requirement sample. [Demo input](examples/analyze_demo.json)
+2. Click **Analyze Requirements**. The loading state stays visible during analysis. The first CPU request can take tens of seconds while the models load.
+3. Review the quality score and chart. Choose **Ambiguous** in the explorer to inspect evidence, then review potential duplicates and contradictions. Use **Show more** to inspect additional pairs.
+4. With optional AI configured, click **Suggest Rewrite** or **Explain Conflict** on one finding. The suggestions appear beside the original text for review.
+5. Click **Analyze New Requirements** to return to a blank editor.
+
+### Known limitations
+
+- The editor accepts 1–20 nonblank requirements, with up to 500 characters per requirement.
+- Classification labels and pair scores are predictions. NLI can flag unrelated pairs, and SBERT can flag requirements that share wording while differing in meaning. Review the surrounding context before using the findings or the heuristic quality score.
+- Optional AI assistance sends the selected text and evidence to the configured provider on request. Treat suggestions as drafts for review.
 
 ### Checks
 
-- From `backend/`, run `python -m pytest` with the virtual environment active or use its Python executable from the setup commands.
+- From `backend/`, run `python -m pytest` with the backend's Python environment active.
 - From `frontend/`, run `npm run lint` and `npm run build`.
-
-## Next phases
-
-1. Add SRS input and requirement extraction.
-2. Add a requirement explorer and a quality report that links findings back to the SRS.
