@@ -1,0 +1,902 @@
+[
+  {
+    "pair_id": "NLI-205-contradiction",
+    "true_label": "contradiction",
+    "family": "obligation",
+    "design": "incompatible",
+    "nli_label": "contradiction",
+    "nli_binary_label": "contradiction",
+    "nli_scores": {
+      "contradiction": 0.9973384737968445,
+      "neutral": 0.0022708973847329617,
+      "entailment": 0.000390517117921263
+    },
+    "rule_binary_label": "contradiction",
+    "rule_match": "opposite_obligations"
+  },
+  {
+    "pair_id": "NLI-205-entailment",
+    "true_label": "entailment",
+    "family": "obligation",
+    "design": "paraphrase",
+    "nli_label": "entailment",
+    "nli_binary_label": "not_contradiction",
+    "nli_scores": {
+      "contradiction": 0.0007753355312161148,
+      "neutral": 0.036247748881578445,
+      "entailment": 0.96297687292099
+    },
+    "rule_binary_label": "not_contradiction",
+    "rule_match": null
+  },
+  {
+    "pair_id": "NLI-205-neutral",
+    "true_label": "neutral",
+    "family": "obligation",
+    "design": "related",
+    "nli_label": "neutral",
+    "nli_binary_label": "not_contradiction",
+    "nli_scores": {
+      "contradiction": 0.03191440552473068,
+      "neutral": 0.9537959694862366,
+      "entailment": 0.014289559796452522
+    },
+    "rule_binary_label": "not_contradiction",
+    "rule_match": null
+  },
+  {
+    "pair_id": "NLI-325-contradiction",
+    "true_label": "contradiction",
+    "family": "obligation",
+    "design": "incompatible",
+    "nli_label": "contradiction",
+    "nli_binary_label": "contradiction",
+    "nli_scores": {
+      "contradiction": 0.998198926448822,
+      "neutral": 0.0012612713035196066,
+      "entailment": 0.0005398790817707777
+    },
+    "rule_binary_label": "contradiction",
+    "rule_match": "opposite_obligations"
+  },
+  {
+    "pair_id": "NLI-325-entailment",
+    "true_label": "entailment",
+    "family": "obligation",
+    "design": "paraphrase",
+    "nli_label": "entailment",
+    "nli_binary_label": "not_contradiction",
+    "nli_scores": {
+      "contradiction": 0.006973429583013058,
+      "neutral": 0.11949460208415985,
+      "entailment": 0.8735319972038269
+    },
+    "rule_binary_label": "not_contradiction",
+    "rule_match": null
+  },
+  {
+    "pair_id": "NLI-325-neutral",
+    "true_label": "neutral",
+    "family": "obligation",
+    "design": "related",
+    "nli_label": "contradiction",
+    "nli_binary_label": "contradiction",
+    "nli_scores": {
+      "contradiction": 0.7239841222763062,
+      "neutral": 0.09268058836460114,
+      "entailment": 0.1833353042602539
+    },
+    "rule_binary_label": "not_contradiction",
+    "rule_match": null
+  },
+  {
+    "pair_id": "NLI-663-contradiction",
+    "true_label": "contradiction",
+    "family": "obligation",
+    "design": "incompatible",
+    "nli_label": "contradiction",
+    "nli_binary_label": "contradiction",
+    "nli_scores": {
+      "contradiction": 0.9986857771873474,
+      "neutral": 0.0009917122079059482,
+      "entailment": 0.00032248362549580634
+    },
+    "rule_binary_label": "contradiction",
+    "rule_match": "opposite_obligations"
+  },
+  {
+    "pair_id": "NLI-663-entailment",
+    "true_label": "entailment",
+    "family": "obligation",
+    "design": "paraphrase",
+    "nli_label": "entailment",
+    "nli_binary_label": "not_contradiction",
+    "nli_scores": {
+      "contradiction": 0.0058439080603420734,
+      "neutral": 0.3174412250518799,
+      "entailment": 0.6767147779464722
+    },
+    "rule_binary_label": "not_contradiction",
+    "rule_match": null
+  },
+  {
+    "pair_id": "NLI-663-neutral",
+    "true_label": "neutral",
+    "family": "obligation",
+    "design": "related",
+    "nli_label": "contradiction",
+    "nli_binary_label": "contradiction",
+    "nli_scores": {
+      "contradiction": 0.9896397590637207,
+      "neutral": 0.00902878399938345,
+      "entailment": 0.0013313996605575085
+    },
+    "rule_binary_label": "not_contradiction",
+    "rule_match": null
+  },
+  {
+    "pair_id": "NLI-858-contradiction",
+    "true_label": "contradiction",
+    "family": "obligation",
+    "design": "incompatible",
+    "nli_label": "contradiction",
+    "nli_binary_label": "contradiction",
+    "nli_scores": {
+      "contradiction": 0.9979321956634521,
+      "neutral": 0.0017465424025431275,
+      "entailment": 0.00032137203379534185
+    },
+    "rule_binary_label": "not_contradiction",
+    "rule_match": null
+  },
+  {
+    "pair_id": "NLI-858-entailment",
+    "true_label": "entailment",
+    "family": "obligation",
+    "design": "paraphrase",
+    "nli_label": "entailment",
+    "nli_binary_label": "not_contradiction",
+    "nli_scores": {
+      "contradiction": 0.0011169312056154013,
+      "neutral": 0.13583283126354218,
+      "entailment": 0.8630502820014954
+    },
+    "rule_binary_label": "not_contradiction",
+    "rule_match": null
+  },
+  {
+    "pair_id": "NLI-858-neutral",
+    "true_label": "neutral",
+    "family": "obligation",
+    "design": "related",
+    "nli_label": "neutral",
+    "nli_binary_label": "not_contradiction",
+    "nli_scores": {
+      "contradiction": 0.007105723023414612,
+      "neutral": 0.9861787557601929,
+      "entailment": 0.006715486291795969
+    },
+    "rule_binary_label": "not_contradiction",
+    "rule_match": null
+  },
+  {
+    "pair_id": "NLI-163-contradiction",
+    "true_label": "contradiction",
+    "family": "role",
+    "design": "incompatible",
+    "nli_label": "contradiction",
+    "nli_binary_label": "contradiction",
+    "nli_scores": {
+      "contradiction": 0.7711139917373657,
+      "neutral": 0.12995551526546478,
+      "entailment": 0.09893050044775009
+    },
+    "rule_binary_label": "not_contradiction",
+    "rule_match": null
+  },
+  {
+    "pair_id": "NLI-163-entailment",
+    "true_label": "entailment",
+    "family": "role",
+    "design": "paraphrase",
+    "nli_label": "entailment",
+    "nli_binary_label": "not_contradiction",
+    "nli_scores": {
+      "contradiction": 0.004233236890286207,
+      "neutral": 0.00935584306716919,
+      "entailment": 0.986410915851593
+    },
+    "rule_binary_label": "not_contradiction",
+    "rule_match": null
+  },
+  {
+    "pair_id": "NLI-163-neutral",
+    "true_label": "neutral",
+    "family": "role",
+    "design": "related",
+    "nli_label": "neutral",
+    "nli_binary_label": "not_contradiction",
+    "nli_scores": {
+      "contradiction": 0.4274545907974243,
+      "neutral": 0.4519113600254059,
+      "entailment": 0.12063407897949219
+    },
+    "rule_binary_label": "not_contradiction",
+    "rule_match": null
+  },
+  {
+    "pair_id": "NLI-425-contradiction",
+    "true_label": "contradiction",
+    "family": "role",
+    "design": "incompatible",
+    "nli_label": "contradiction",
+    "nli_binary_label": "contradiction",
+    "nli_scores": {
+      "contradiction": 0.9931869506835938,
+      "neutral": 0.0029799044132232666,
+      "entailment": 0.003833058988675475
+    },
+    "rule_binary_label": "not_contradiction",
+    "rule_match": null
+  },
+  {
+    "pair_id": "NLI-425-entailment",
+    "true_label": "entailment",
+    "family": "role",
+    "design": "paraphrase",
+    "nli_label": "entailment",
+    "nli_binary_label": "not_contradiction",
+    "nli_scores": {
+      "contradiction": 0.0026678619906306267,
+      "neutral": 0.008280516602098942,
+      "entailment": 0.9890516400337219
+    },
+    "rule_binary_label": "not_contradiction",
+    "rule_match": null
+  },
+  {
+    "pair_id": "NLI-425-neutral",
+    "true_label": "neutral",
+    "family": "role",
+    "design": "related",
+    "nli_label": "contradiction",
+    "nli_binary_label": "contradiction",
+    "nli_scores": {
+      "contradiction": 0.9304346442222595,
+      "neutral": 0.05321868509054184,
+      "entailment": 0.016346627846360207
+    },
+    "rule_binary_label": "not_contradiction",
+    "rule_match": null
+  },
+  {
+    "pair_id": "NLI-429-contradiction",
+    "true_label": "contradiction",
+    "family": "role",
+    "design": "incompatible",
+    "nli_label": "contradiction",
+    "nli_binary_label": "contradiction",
+    "nli_scores": {
+      "contradiction": 0.9778801798820496,
+      "neutral": 0.012253053486347198,
+      "entailment": 0.009866857901215553
+    },
+    "rule_binary_label": "not_contradiction",
+    "rule_match": null
+  },
+  {
+    "pair_id": "NLI-429-entailment",
+    "true_label": "entailment",
+    "family": "role",
+    "design": "paraphrase",
+    "nli_label": "entailment",
+    "nli_binary_label": "not_contradiction",
+    "nli_scores": {
+      "contradiction": 0.0014538473915308714,
+      "neutral": 0.013971412554383278,
+      "entailment": 0.9845747351646423
+    },
+    "rule_binary_label": "not_contradiction",
+    "rule_match": null
+  },
+  {
+    "pair_id": "NLI-429-neutral",
+    "true_label": "neutral",
+    "family": "role",
+    "design": "unrelated",
+    "nli_label": "neutral",
+    "nli_binary_label": "not_contradiction",
+    "nli_scores": {
+      "contradiction": 0.04670947417616844,
+      "neutral": 0.946483850479126,
+      "entailment": 0.006806612946093082
+    },
+    "rule_binary_label": "not_contradiction",
+    "rule_match": null
+  },
+  {
+    "pair_id": "NLI-667-contradiction",
+    "true_label": "contradiction",
+    "family": "role",
+    "design": "incompatible",
+    "nli_label": "contradiction",
+    "nli_binary_label": "contradiction",
+    "nli_scores": {
+      "contradiction": 0.9034756422042847,
+      "neutral": 0.03754083067178726,
+      "entailment": 0.05898343771696091
+    },
+    "rule_binary_label": "not_contradiction",
+    "rule_match": null
+  },
+  {
+    "pair_id": "NLI-667-entailment",
+    "true_label": "entailment",
+    "family": "role",
+    "design": "paraphrase",
+    "nli_label": "entailment",
+    "nli_binary_label": "not_contradiction",
+    "nli_scores": {
+      "contradiction": 0.004116417374461889,
+      "neutral": 0.0059339506551623344,
+      "entailment": 0.9899495840072632
+    },
+    "rule_binary_label": "not_contradiction",
+    "rule_match": null
+  },
+  {
+    "pair_id": "NLI-667-neutral",
+    "true_label": "neutral",
+    "family": "role",
+    "design": "related",
+    "nli_label": "neutral",
+    "nli_binary_label": "not_contradiction",
+    "nli_scores": {
+      "contradiction": 0.15916554629802704,
+      "neutral": 0.8272820711135864,
+      "entailment": 0.01355237141251564
+    },
+    "rule_binary_label": "not_contradiction",
+    "rule_match": null
+  },
+  {
+    "pair_id": "NLI-297-contradiction",
+    "true_label": "contradiction",
+    "family": "numeric",
+    "design": "incompatible",
+    "nli_label": "contradiction",
+    "nli_binary_label": "contradiction",
+    "nli_scores": {
+      "contradiction": 0.9765104055404663,
+      "neutral": 0.022796712815761566,
+      "entailment": 0.000692923495080322
+    },
+    "rule_binary_label": "not_contradiction",
+    "rule_match": null
+  },
+  {
+    "pair_id": "NLI-297-entailment",
+    "true_label": "entailment",
+    "family": "numeric",
+    "design": "paraphrase",
+    "nli_label": "entailment",
+    "nli_binary_label": "not_contradiction",
+    "nli_scores": {
+      "contradiction": 0.0012405302841216326,
+      "neutral": 0.017142944037914276,
+      "entailment": 0.9816164970397949
+    },
+    "rule_binary_label": "not_contradiction",
+    "rule_match": null
+  },
+  {
+    "pair_id": "NLI-297-neutral",
+    "true_label": "neutral",
+    "family": "numeric",
+    "design": "unrelated",
+    "nli_label": "neutral",
+    "nli_binary_label": "not_contradiction",
+    "nli_scores": {
+      "contradiction": 0.051603466272354126,
+      "neutral": 0.9450540542602539,
+      "entailment": 0.0033424217253923416
+    },
+    "rule_binary_label": "not_contradiction",
+    "rule_match": null
+  },
+  {
+    "pair_id": "NLI-419-contradiction",
+    "true_label": "contradiction",
+    "family": "numeric",
+    "design": "incompatible",
+    "nli_label": "contradiction",
+    "nli_binary_label": "contradiction",
+    "nli_scores": {
+      "contradiction": 0.9813111424446106,
+      "neutral": 0.014778334647417068,
+      "entailment": 0.0039105042815208435
+    },
+    "rule_binary_label": "contradiction",
+    "rule_match": "disjoint_numeric_bounds"
+  },
+  {
+    "pair_id": "NLI-419-entailment",
+    "true_label": "entailment",
+    "family": "numeric",
+    "design": "paraphrase",
+    "nli_label": "entailment",
+    "nli_binary_label": "not_contradiction",
+    "nli_scores": {
+      "contradiction": 0.006249007768929005,
+      "neutral": 0.0187684316188097,
+      "entailment": 0.974982500076294
+    },
+    "rule_binary_label": "not_contradiction",
+    "rule_match": null
+  },
+  {
+    "pair_id": "NLI-419-neutral",
+    "true_label": "neutral",
+    "family": "numeric",
+    "design": "unrelated",
+    "nli_label": "neutral",
+    "nli_binary_label": "not_contradiction",
+    "nli_scores": {
+      "contradiction": 0.05662256106734276,
+      "neutral": 0.9398982524871826,
+      "entailment": 0.0034791810903698206
+    },
+    "rule_binary_label": "not_contradiction",
+    "rule_match": null
+  },
+  {
+    "pair_id": "NLI-605-contradiction",
+    "true_label": "contradiction",
+    "family": "numeric",
+    "design": "incompatible",
+    "nli_label": "contradiction",
+    "nli_binary_label": "contradiction",
+    "nli_scores": {
+      "contradiction": 0.9068942666053772,
+      "neutral": 0.047047022730112076,
+      "entailment": 0.04605874419212341
+    },
+    "rule_binary_label": "not_contradiction",
+    "rule_match": null
+  },
+  {
+    "pair_id": "NLI-605-entailment",
+    "true_label": "entailment",
+    "family": "numeric",
+    "design": "paraphrase",
+    "nli_label": "entailment",
+    "nli_binary_label": "not_contradiction",
+    "nli_scores": {
+      "contradiction": 0.03525061532855034,
+      "neutral": 0.038620322942733765,
+      "entailment": 0.9261289834976196
+    },
+    "rule_binary_label": "not_contradiction",
+    "rule_match": null
+  },
+  {
+    "pair_id": "NLI-605-neutral",
+    "true_label": "neutral",
+    "family": "numeric",
+    "design": "related",
+    "nli_label": "neutral",
+    "nli_binary_label": "not_contradiction",
+    "nli_scores": {
+      "contradiction": 0.10389695316553116,
+      "neutral": 0.8490421175956726,
+      "entailment": 0.047061000019311905
+    },
+    "rule_binary_label": "not_contradiction",
+    "rule_match": null
+  },
+  {
+    "pair_id": "NLI-691-contradiction",
+    "true_label": "contradiction",
+    "family": "numeric",
+    "design": "incompatible",
+    "nli_label": "contradiction",
+    "nli_binary_label": "contradiction",
+    "nli_scores": {
+      "contradiction": 0.9875449538230896,
+      "neutral": 0.00988275557756424,
+      "entailment": 0.0025723252911120653
+    },
+    "rule_binary_label": "contradiction",
+    "rule_match": "disjoint_numeric_bounds"
+  },
+  {
+    "pair_id": "NLI-691-entailment",
+    "true_label": "entailment",
+    "family": "numeric",
+    "design": "paraphrase",
+    "nli_label": "entailment",
+    "nli_binary_label": "not_contradiction",
+    "nli_scores": {
+      "contradiction": 0.0014836641494184732,
+      "neutral": 0.016099801287055016,
+      "entailment": 0.9824165105819702
+    },
+    "rule_binary_label": "not_contradiction",
+    "rule_match": null
+  },
+  {
+    "pair_id": "NLI-691-neutral",
+    "true_label": "neutral",
+    "family": "numeric",
+    "design": "related",
+    "nli_label": "contradiction",
+    "nli_binary_label": "contradiction",
+    "nli_scores": {
+      "contradiction": 0.6349374651908875,
+      "neutral": 0.3619350492954254,
+      "entailment": 0.0031274703796952963
+    },
+    "rule_binary_label": "not_contradiction",
+    "rule_match": null
+  },
+  {
+    "pair_id": "NLI-247-contradiction",
+    "true_label": "contradiction",
+    "family": "action",
+    "design": "incompatible",
+    "nli_label": "contradiction",
+    "nli_binary_label": "contradiction",
+    "nli_scores": {
+      "contradiction": 0.8787594437599182,
+      "neutral": 0.08416018635034561,
+      "entailment": 0.03708042576909065
+    },
+    "rule_binary_label": "not_contradiction",
+    "rule_match": null
+  },
+  {
+    "pair_id": "NLI-247-entailment",
+    "true_label": "entailment",
+    "family": "action",
+    "design": "paraphrase",
+    "nli_label": "entailment",
+    "nli_binary_label": "not_contradiction",
+    "nli_scores": {
+      "contradiction": 0.09499011933803558,
+      "neutral": 0.0580415353178978,
+      "entailment": 0.846968412399292
+    },
+    "rule_binary_label": "not_contradiction",
+    "rule_match": null
+  },
+  {
+    "pair_id": "NLI-247-neutral",
+    "true_label": "neutral",
+    "family": "action",
+    "design": "unrelated",
+    "nli_label": "contradiction",
+    "nli_binary_label": "contradiction",
+    "nli_scores": {
+      "contradiction": 0.9094768762588501,
+      "neutral": 0.08479396253824234,
+      "entailment": 0.005729101598262787
+    },
+    "rule_binary_label": "not_contradiction",
+    "rule_match": null
+  },
+  {
+    "pair_id": "NLI-353-contradiction",
+    "true_label": "contradiction",
+    "family": "action",
+    "design": "incompatible",
+    "nli_label": "contradiction",
+    "nli_binary_label": "contradiction",
+    "nli_scores": {
+      "contradiction": 0.997636079788208,
+      "neutral": 0.0018472723895683885,
+      "entailment": 0.0005165942711755633
+    },
+    "rule_binary_label": "not_contradiction",
+    "rule_match": null
+  },
+  {
+    "pair_id": "NLI-353-entailment",
+    "true_label": "entailment",
+    "family": "action",
+    "design": "paraphrase",
+    "nli_label": "entailment",
+    "nli_binary_label": "not_contradiction",
+    "nli_scores": {
+      "contradiction": 0.021687956526875496,
+      "neutral": 0.19608591496944427,
+      "entailment": 0.7822261452674866
+    },
+    "rule_binary_label": "not_contradiction",
+    "rule_match": null
+  },
+  {
+    "pair_id": "NLI-353-neutral",
+    "true_label": "neutral",
+    "family": "action",
+    "design": "related",
+    "nli_label": "neutral",
+    "nli_binary_label": "not_contradiction",
+    "nli_scores": {
+      "contradiction": 0.08194064348936081,
+      "neutral": 0.9066117405891418,
+      "entailment": 0.011447624303400517
+    },
+    "rule_binary_label": "not_contradiction",
+    "rule_match": null
+  },
+  {
+    "pair_id": "NLI-379-contradiction",
+    "true_label": "contradiction",
+    "family": "action",
+    "design": "incompatible",
+    "nli_label": "contradiction",
+    "nli_binary_label": "contradiction",
+    "nli_scores": {
+      "contradiction": 0.9959707856178284,
+      "neutral": 0.003678971668705344,
+      "entailment": 0.0003502082545310259
+    },
+    "rule_binary_label": "not_contradiction",
+    "rule_match": null
+  },
+  {
+    "pair_id": "NLI-379-entailment",
+    "true_label": "entailment",
+    "family": "action",
+    "design": "paraphrase",
+    "nli_label": "entailment",
+    "nli_binary_label": "not_contradiction",
+    "nli_scores": {
+      "contradiction": 0.005018885247409344,
+      "neutral": 0.03150803595781326,
+      "entailment": 0.9634730219841003
+    },
+    "rule_binary_label": "not_contradiction",
+    "rule_match": null
+  },
+  {
+    "pair_id": "NLI-379-neutral",
+    "true_label": "neutral",
+    "family": "action",
+    "design": "related",
+    "nli_label": "contradiction",
+    "nli_binary_label": "contradiction",
+    "nli_scores": {
+      "contradiction": 0.836667537689209,
+      "neutral": 0.13557584583759308,
+      "entailment": 0.027756500989198685
+    },
+    "rule_binary_label": "not_contradiction",
+    "rule_match": null
+  },
+  {
+    "pair_id": "NLI-533-contradiction",
+    "true_label": "contradiction",
+    "family": "action",
+    "design": "incompatible",
+    "nli_label": "contradiction",
+    "nli_binary_label": "contradiction",
+    "nli_scores": {
+      "contradiction": 0.9929916858673096,
+      "neutral": 0.0038948089350014925,
+      "entailment": 0.0031135184690356255
+    },
+    "rule_binary_label": "not_contradiction",
+    "rule_match": null
+  },
+  {
+    "pair_id": "NLI-533-entailment",
+    "true_label": "entailment",
+    "family": "action",
+    "design": "paraphrase",
+    "nli_label": "entailment",
+    "nli_binary_label": "not_contradiction",
+    "nli_scores": {
+      "contradiction": 0.006682234816253185,
+      "neutral": 0.021076807752251625,
+      "entailment": 0.9722409844398499
+    },
+    "rule_binary_label": "not_contradiction",
+    "rule_match": null
+  },
+  {
+    "pair_id": "NLI-533-neutral",
+    "true_label": "neutral",
+    "family": "action",
+    "design": "related",
+    "nli_label": "contradiction",
+    "nli_binary_label": "contradiction",
+    "nli_scores": {
+      "contradiction": 0.7080092430114746,
+      "neutral": 0.21683748066425323,
+      "entailment": 0.07515326887369156
+    },
+    "rule_binary_label": "not_contradiction",
+    "rule_match": null
+  },
+  {
+    "pair_id": "NLI-405-contradiction",
+    "true_label": "contradiction",
+    "family": "condition",
+    "design": "incompatible",
+    "nli_label": "contradiction",
+    "nli_binary_label": "contradiction",
+    "nli_scores": {
+      "contradiction": 0.9973491430282593,
+      "neutral": 0.0017596904654055834,
+      "entailment": 0.0008911288459785283
+    },
+    "rule_binary_label": "not_contradiction",
+    "rule_match": null
+  },
+  {
+    "pair_id": "NLI-405-entailment",
+    "true_label": "entailment",
+    "family": "condition",
+    "design": "paraphrase",
+    "nli_label": "entailment",
+    "nli_binary_label": "not_contradiction",
+    "nli_scores": {
+      "contradiction": 0.018447112292051315,
+      "neutral": 0.0658506229519844,
+      "entailment": 0.9157023429870605
+    },
+    "rule_binary_label": "not_contradiction",
+    "rule_match": null
+  },
+  {
+    "pair_id": "NLI-405-neutral",
+    "true_label": "neutral",
+    "family": "condition",
+    "design": "related",
+    "nli_label": "neutral",
+    "nli_binary_label": "not_contradiction",
+    "nli_scores": {
+      "contradiction": 0.1868009716272354,
+      "neutral": 0.8069583177566528,
+      "entailment": 0.0062406728975474834
+    },
+    "rule_binary_label": "not_contradiction",
+    "rule_match": null
+  },
+  {
+    "pair_id": "NLI-467-contradiction",
+    "true_label": "contradiction",
+    "family": "condition",
+    "design": "incompatible",
+    "nli_label": "contradiction",
+    "nli_binary_label": "contradiction",
+    "nli_scores": {
+      "contradiction": 0.827115535736084,
+      "neutral": 0.05161600932478905,
+      "entailment": 0.12126842886209488
+    },
+    "rule_binary_label": "not_contradiction",
+    "rule_match": null
+  },
+  {
+    "pair_id": "NLI-467-entailment",
+    "true_label": "entailment",
+    "family": "condition",
+    "design": "paraphrase",
+    "nli_label": "entailment",
+    "nli_binary_label": "not_contradiction",
+    "nli_scores": {
+      "contradiction": 0.0188054870814085,
+      "neutral": 0.02245754934847355,
+      "entailment": 0.9587369561195374
+    },
+    "rule_binary_label": "not_contradiction",
+    "rule_match": null
+  },
+  {
+    "pair_id": "NLI-467-neutral",
+    "true_label": "neutral",
+    "family": "condition",
+    "design": "related",
+    "nli_label": "neutral",
+    "nli_binary_label": "not_contradiction",
+    "nli_scores": {
+      "contradiction": 0.0901564508676529,
+      "neutral": 0.8984038829803467,
+      "entailment": 0.011439642868936062
+    },
+    "rule_binary_label": "not_contradiction",
+    "rule_match": null
+  },
+  {
+    "pair_id": "NLI-657-contradiction",
+    "true_label": "contradiction",
+    "family": "condition",
+    "design": "incompatible",
+    "nli_label": "contradiction",
+    "nli_binary_label": "contradiction",
+    "nli_scores": {
+      "contradiction": 0.9980418682098389,
+      "neutral": 0.001436376478523016,
+      "entailment": 0.0005217618308961391
+    },
+    "rule_binary_label": "not_contradiction",
+    "rule_match": null
+  },
+  {
+    "pair_id": "NLI-657-entailment",
+    "true_label": "entailment",
+    "family": "condition",
+    "design": "paraphrase",
+    "nli_label": "entailment",
+    "nli_binary_label": "not_contradiction",
+    "nli_scores": {
+      "contradiction": 0.001615017419680953,
+      "neutral": 0.0233304426074028,
+      "entailment": 0.9750545620918274
+    },
+    "rule_binary_label": "not_contradiction",
+    "rule_match": null
+  },
+  {
+    "pair_id": "NLI-657-neutral",
+    "true_label": "neutral",
+    "family": "condition",
+    "design": "unrelated",
+    "nli_label": "neutral",
+    "nli_binary_label": "not_contradiction",
+    "nli_scores": {
+      "contradiction": 0.0034969353582710028,
+      "neutral": 0.9904601573944092,
+      "entailment": 0.006042902823537588
+    },
+    "rule_binary_label": "not_contradiction",
+    "rule_match": null
+  },
+  {
+    "pair_id": "NLI-815-contradiction",
+    "true_label": "contradiction",
+    "family": "condition",
+    "design": "incompatible",
+    "nli_label": "contradiction",
+    "nli_binary_label": "contradiction",
+    "nli_scores": {
+      "contradiction": 0.9712266325950623,
+      "neutral": 0.028349826112389565,
+      "entailment": 0.000423506076913327
+    },
+    "rule_binary_label": "not_contradiction",
+    "rule_match": null
+  },
+  {
+    "pair_id": "NLI-815-entailment",
+    "true_label": "entailment",
+    "family": "condition",
+    "design": "paraphrase",
+    "nli_label": "entailment",
+    "nli_binary_label": "not_contradiction",
+    "nli_scores": {
+      "contradiction": 0.0008931163465604186,
+      "neutral": 0.008432731032371521,
+      "entailment": 0.9906740784645081
+    },
+    "rule_binary_label": "not_contradiction",
+    "rule_match": null
+  },
+  {
+    "pair_id": "NLI-815-neutral",
+    "true_label": "neutral",
+    "family": "condition",
+    "design": "related",
+    "nli_label": "neutral",
+    "nli_binary_label": "not_contradiction",
+    "nli_scores": {
+      "contradiction": 0.30715686082839966,
+      "neutral": 0.6345998644828796,
+      "entailment": 0.058243293315172195
+    },
+    "rule_binary_label": "not_contradiction",
+    "rule_match": null
+  }
+]

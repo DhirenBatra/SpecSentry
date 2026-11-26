@@ -10,6 +10,7 @@ SpecSentry is a final-year Computational Linguistics and NLP lab project for rev
 - Phase 4 — Complete. Binary and 12-class DistilBERT checkpoints were evaluated against the Phase 3 baselines.
 - Phase 5 — Complete. An interpretable rule-based ambiguity detector was evaluated on a separate curated set.
 - Phase 6 — Complete. TF-IDF and SBERT duplicate detectors were evaluated using development-only cutoffs.
+- Phase 7 — Complete. A frozen NLI contradiction detector was compared with conservative conflict rules.
 
 ## Dataset
 
@@ -77,6 +78,17 @@ The curated set has 120 PROMISE_exp-derived pairs with 60 paraphrases and 60 non
 
 SBERT recovered one more paraphrase and rejected two more unrelated pairs. Both methods flagged all 25 hard negatives despite changes in roles, actions, negation, numeric limits, or intent. [Dataset design](ml/data/duplicates/README.md) · [Experiment, error analysis, and figures](ml/experiments/DUPLICATES.md)
 
+## NLI contradiction detection
+
+A frozen `cross-encoder/nli-MiniLM2-L6-H768` model and a rule baseline were evaluated on 120 curated PROMISE_exp-derived pairs. Forward NLI achieved the highest development binary F1. On the 60 held-out pairs, its three-class accuracy was 0.8833 and macro F1 was 0.8796.
+
+| Binary method | Accuracy | Precision | Recall | F1 |
+| --- | ---: | ---: | ---: | ---: |
+| MiniLM NLI | 0.8833 | 0.7407 | 1.0000 | 0.8511 |
+| Rule baseline | 0.7500 | 1.0000 | 0.2500 | 0.4000 |
+
+NLI found all 20 held-out contradictions and falsely flagged seven neutral pairs. The rules flagged five contradictions with zero false positives. [Dataset design](ml/data/contradictions/README.md) · [Experiment, error analysis, and figures](ml/experiments/CONTRADICTIONS.md)
+
 ## Planned architecture
 
 ```text
@@ -104,7 +116,7 @@ SpecSentry/
 │   ├── app/
 │   │   ├── api/             # HTTP routes
 │   │   ├── core/            # Local configuration
-│   │   ├── nlp/             # Ambiguity and duplicate detectors
+│   │   ├── nlp/             # Standalone ambiguity, duplicate, and contradiction detectors
 │   │   ├── schemas/         # Pydantic response models
 │   │   ├── services/        # Reserved for services such as SRS ingestion
 │   │   └── main.py
@@ -164,6 +176,6 @@ The default setup works without environment variables. To override the API URL, 
 
 ## Next phases
 
-1. Add SRS input and requirement extraction. Prepare a dataset and evaluation plan for contradiction detection.
+1. Add SRS input and requirement extraction.
 2. Add a requirement explorer and a quality report that links findings back to the SRS.
 3. Add optional LLM explanations and rewrite suggestions for findings from the NLP pipeline.

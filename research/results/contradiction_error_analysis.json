@@ -1,0 +1,85 @@
+{
+  "nli_three_class": {
+    "count": 7,
+    "by_true_and_predicted": {
+      "neutral -> contradiction": 7
+    },
+    "by_family": {
+      "obligation": 2,
+      "role": 1,
+      "numeric": 1,
+      "action": 3
+    },
+    "by_design": {
+      "related": 6,
+      "unrelated": 1
+    },
+    "pair_ids": [
+      "NLI-325-neutral",
+      "NLI-663-neutral",
+      "NLI-425-neutral",
+      "NLI-691-neutral",
+      "NLI-247-neutral",
+      "NLI-379-neutral",
+      "NLI-533-neutral"
+    ]
+  },
+  "nli_binary": {
+    "count": 7,
+    "by_true_and_predicted": {
+      "not_contradiction -> contradiction": 7
+    },
+    "by_family": {
+      "obligation": 2,
+      "role": 1,
+      "numeric": 1,
+      "action": 3
+    },
+    "by_design": {
+      "related": 6,
+      "unrelated": 1
+    },
+    "pair_ids": [
+      "NLI-325-neutral",
+      "NLI-663-neutral",
+      "NLI-425-neutral",
+      "NLI-691-neutral",
+      "NLI-247-neutral",
+      "NLI-379-neutral",
+      "NLI-533-neutral"
+    ]
+  },
+  "rule_binary": {
+    "count": 15,
+    "by_true_and_predicted": {
+      "contradiction -> not_contradiction": 15
+    },
+    "by_family": {
+      "obligation": 1,
+      "role": 4,
+      "numeric": 2,
+      "action": 4,
+      "condition": 4
+    },
+    "by_design": {
+      "incompatible": 15
+    },
+    "pair_ids": [
+      "NLI-858-contradiction",
+      "NLI-163-contradiction",
+      "NLI-425-contradiction",
+      "NLI-429-contradiction",
+      "NLI-667-contradiction",
+      "NLI-297-contradiction",
+      "NLI-605-contradiction",
+      "NLI-247-contradiction",
+      "NLI-353-contradiction",
+      "NLI-379-contradiction",
+      "NLI-533-contradiction",
+      "NLI-405-contradiction",
+      "NLI-467-contradiction",
+      "NLI-657-contradiction",
+      "NLI-815-contradiction"
+    ]
+  }
+}

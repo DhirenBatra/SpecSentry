@@ -1,0 +1,272 @@
+{
+  "dataset": {
+    "name": "SpecSentry curated NLI evaluation set",
+    "source_url": "https://raw.githubusercontent.com/AleksandarMitrevski/se-requirements-classification/1f5dc4501a1956f21011083594d925bac49f198c/1-exploratory-analysis/data/PROMISE_exp.csv",
+    "source_corpus_sha256": "adc438d0e8ab5e66e9fa946b2c668df26d9d9d324a22cb3a5a2b4f4b52773884",
+    "recipe_sha256": "d67cb0c884405cf040bb0bf9d7716cc112407b34d6737817e842e3cf10409810",
+    "split_seed": 42,
+    "development": {
+      "pairs": 60,
+      "label_counts": {
+        "contradiction": 20,
+        "entailment": 20,
+        "neutral": 20
+      },
+      "design_counts": {
+        "incompatible": 20,
+        "paraphrase": 20,
+        "related": 16,
+        "unrelated": 4
+      },
+      "sha256": "dfa2c1c128bc4f044e855feb0317d71eaca09e8660a95617ed4d9404668a40f0"
+    },
+    "evaluation": {
+      "pairs": 60,
+      "label_counts": {
+        "contradiction": 20,
+        "entailment": 20,
+        "neutral": 20
+      },
+      "design_counts": {
+        "incompatible": 20,
+        "paraphrase": 20,
+        "related": 15,
+        "unrelated": 5
+      },
+      "sha256": "5a3668225fed3295bf94f58acb18abcbf350c7b63e5d8a2abe6a611c18fe0f3f"
+    },
+    "source_projects": 20,
+    "shared_projects": 6
+  },
+  "model": {
+    "name": "cross-encoder/nli-MiniLM2-L6-H768",
+    "revision": "b95119ce93d3e065de6214e38cd4a97b0f2f2c6d",
+    "label2id": {
+      "contradiction": 0,
+      "entailment": 1,
+      "neutral": 2
+    },
+    "id2label": {
+      "0": "contradiction",
+      "1": "entailment",
+      "2": "neutral"
+    },
+    "device": "cpu",
+    "max_length": 256,
+    "batch_size": 16,
+    "torch_threads": 4
+  },
+  "environment": {
+    "python": "3.12.10",
+    "torch": "2.15.0+cpu",
+    "transformers": "5.24.1",
+    "scikit-learn": "1.9.1",
+    "matplotlib": "3.11.2"
+  },
+  "directionality": {
+    "decision": "Native NLI argmax",
+    "selected": "forward",
+    "minimum_bidirectional_f1_gain": 0.05,
+    "forward_reverse_label_disagreements": 12,
+    "development": {
+      "forward": {
+        "binary": {
+          "metrics": {
+            "accuracy": 0.8833333333333333,
+            "precision": 0.782608695652174,
+            "recall": 0.9,
+            "f1": 0.8372093023255814
+          },
+          "confusion_matrix": {
+            "label_order": [
+              "not_contradiction",
+              "contradiction"
+            ],
+            "counts": [
+              [
+                35,
+                5
+              ],
+              [
+                2,
+                18
+              ]
+            ]
+          }
+        },
+        "three_class": {
+          "accuracy": 0.85,
+          "macro_f1": 0.8520427404148334
+        }
+      },
+      "reverse": {
+        "binary": {
+          "metrics": {
+            "accuracy": 0.85,
+            "precision": 0.7037037037037037,
+            "recall": 0.95,
+            "f1": 0.8085106382978723
+          },
+          "confusion_matrix": {
+            "label_order": [
+              "not_contradiction",
+              "contradiction"
+            ],
+            "counts": [
+              [
+                32,
+                8
+              ],
+              [
+                1,
+                19
+              ]
+            ]
+          }
+        },
+        "three_class": {
+          "accuracy": 0.8166666666666667,
+          "macro_f1": 0.8124899714386573
+        }
+      },
+      "max_contradiction": {
+        "binary": {
+          "metrics": {
+            "accuracy": 0.85,
+            "precision": 0.6896551724137931,
+            "recall": 1.0,
+            "f1": 0.8163265306122449
+          },
+          "confusion_matrix": {
+            "label_order": [
+              "not_contradiction",
+              "contradiction"
+            ],
+            "counts": [
+              [
+                31,
+                9
+              ],
+              [
+                0,
+                20
+              ]
+            ]
+          }
+        },
+        "three_class": {
+          "accuracy": 0.8166666666666667,
+          "macro_f1": 0.8137092674907801
+        }
+      }
+    }
+  },
+  "held_out": {
+    "nli_three_class": {
+      "metrics": {
+        "accuracy": 0.8833333333333333,
+        "macro_precision": 0.9135802469135802,
+        "macro_recall": 0.8833333333333333,
+        "macro_f1": 0.8796475392220073
+      },
+      "per_class": {
+        "contradiction": {
+          "precision": 0.7407407407407407,
+          "recall": 1.0,
+          "f1-score": 0.851063829787234,
+          "support": 20.0
+        },
+        "neutral": {
+          "precision": 1.0,
+          "recall": 0.65,
+          "f1-score": 0.7878787878787878,
+          "support": 20.0
+        },
+        "entailment": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1-score": 1.0,
+          "support": 20.0
+        }
+      },
+      "confusion_matrix": {
+        "label_order": [
+          "contradiction",
+          "neutral",
+          "entailment"
+        ],
+        "counts": [
+          [
+            20,
+            0,
+            0
+          ],
+          [
+            7,
+            13,
+            0
+          ],
+          [
+            0,
+            0,
+            20
+          ]
+        ]
+      }
+    },
+    "nli_binary": {
+      "metrics": {
+        "accuracy": 0.8833333333333333,
+        "precision": 0.7407407407407407,
+        "recall": 1.0,
+        "f1": 0.851063829787234
+      },
+      "confusion_matrix": {
+        "label_order": [
+          "not_contradiction",
+          "contradiction"
+        ],
+        "counts": [
+          [
+            33,
+            7
+          ],
+          [
+            0,
+            20
+          ]
+        ]
+      }
+    },
+    "rule_binary": {
+      "metrics": {
+        "accuracy": 0.75,
+        "precision": 1.0,
+        "recall": 0.25,
+        "f1": 0.4
+      },
+      "confusion_matrix": {
+        "label_order": [
+          "not_contradiction",
+          "contradiction"
+        ],
+        "counts": [
+          [
+            40,
+            0
+          ],
+          [
+            15,
+            5
+          ]
+        ]
+      }
+    }
+  },
+  "nli_minus_rule_binary": {
+    "accuracy": 0.1333333333333333,
+    "precision": -0.2592592592592593,
+    "recall": 0.75,
+    "f1": 0.451063829787234
+  }
+}
