@@ -1,0 +1,17 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", Consolas, monospace;
+  --color-canvas: #f6f7f1;
+  --color-ink: #16251e;
+  --color-muted: #4e6056;
+  --color-line: #dbe2d8;
+  --color-accent: #296044;
+  --color-pine: #172e24;
+  --color-signal: #c8ee98;
+}
+
+.service-card {
+  background-image: radial-gradient(ellipse at top right, #335545, transparent 72%);
+}
