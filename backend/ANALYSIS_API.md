@@ -61,6 +61,8 @@ Send 1–20 requirements. IDs must be nonempty and unique after trimming whitesp
 
 Pair IDs refer to entries in `requirements`. Invalid requests return HTTP 422 before loading models. A missing artifact or model-loading failure returns HTTP 503 with a setup hint. Inference failures return HTTP 500 with diagnostic details in the server log.
 
+After reviewing the results, a caller can explicitly request an explanation or rewrite for a selected finding. [Optional AI assistance](AI_ASSISTANCE.md)
+
 ## Quality score
 
 Let `n` be the total requirements, `a` the number flagged as ambiguous, `d` the number of distinct requirement IDs in potential duplicate pairs, and `c` the number of distinct IDs in potential contradiction pairs. Calculate the point deductions and final score as follows.

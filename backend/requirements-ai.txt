@@ -1,0 +1,2 @@
+# Optional OpenAI SDK for POST /api/ai/assist.
+openai==3.60.0

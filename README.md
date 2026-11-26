@@ -12,6 +12,7 @@ SpecSentry is a final-year Computational Linguistics and NLP lab project for rev
 - Phase 6 — Complete. TF-IDF and SBERT duplicate detectors were evaluated using development-only cutoffs.
 - Phase 7 — Complete. A frozen NLI contradiction detector was compared with conservative conflict rules.
 - Phase 8 — Complete. FastAPI exposes the unified analysis engine with per-requirement evidence and a document quality score.
+- Phase 9 — Complete. A separate endpoint provides optional, user-triggered assistance for selected ambiguity and contradiction findings.
 
 ## Dataset
 
@@ -96,14 +97,19 @@ NLI found all 20 held-out contradictions and falsely flagged seven neutral pairs
 
 The real CPU demo returned HTTP 200 for 11 requirements in 20.243 seconds, including first-request model loading. It reported one ambiguous requirement, two potential duplicate pairs, and 17 potential contradiction pairs. [API setup, request examples, and scoring formula](backend/ANALYSIS_API.md) · [Recorded smoke result](research/results/analysis_api_smoke_results.json)
 
-## Planned architecture
+## Optional AI assistance
+
+`POST /api/ai/assist` can rewrite an ambiguous requirement or explain a potential contradiction using evidence already returned by the NLP pipeline. It uses the OpenAI Responses API with `gpt-4.1-mini` by default. Assistance runs only when a caller explicitly requests it. [Configuration and request examples](backend/AI_ASSISTANCE.md)
+
+## Architecture
 
 ```text
-Phase 1    React landing page → GET /api/health → FastAPI
-Planned    SRS input → Requirement extraction → NLP analysis → Quality report → Optional LLM assistance
+React landing page → GET /api/health
+Requirements → POST /api/analyze → NLP findings and quality score
+Selected finding → explicit POST /api/ai/assist → Optional LLM explanation and suggestion
 ```
 
-The NLP pipeline will detect ambiguous requirements, identify semantic duplicates and potential contradictions, classify requirement types, and generate an interpretable quality report. It will run independently of the LLM. Optional LLM assistance will explain flagged issues and suggest clearer wording.
+The NLP pipeline detects ambiguity, potential duplicates, and potential contradictions, classifies requirements, and computes the quality score independently of the optional assistance provider.
 
 ## Stack and layout
 
@@ -187,4 +193,3 @@ The default setup works without environment variables. To override the API URL, 
 
 1. Add SRS input and requirement extraction.
 2. Add a requirement explorer and a quality report that links findings back to the SRS.
-3. Add optional LLM explanations and rewrite suggestions for findings from the NLP pipeline.
